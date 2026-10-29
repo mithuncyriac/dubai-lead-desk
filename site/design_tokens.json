@@ -1,0 +1,62 @@
+{
+  "_about": "One small design system for the dashboard, story page, carousel, banners and report. Blue is the data, gold is the one thing each chart wants you to see, grey is context. Chart and highlight pass the dataviz palette validator (all pairs, light on #FBFAF7 and dark on #0F1B2D). chart_text is the chart blue lifted for text, so labels pass 4.5:1.",
+  "brand": {
+    "navy": "#0F1B2D",
+    "gold": "#C9A45C",
+    "cream": "#F3EFE6"
+  },
+  "light": {
+    "bg": "#FBFAF7",
+    "ink": "#0F1B2D",
+    "muted": "#5B6577",
+    "line": "#E6E2D8",
+    "grid": "#EEEBE3",
+    "tint": "#F2EFE7",
+    "chart": "#2F6FB5",
+    "highlight": "#A8792B",
+    "reference": "#7B8597",
+    "accent_text": "#8A6420",
+    "button": "#0F1B2D",
+    "button_text": "#FBFAF7",
+    "chart_text": "#2F6FB5"
+  },
+  "dark": {
+    "bg": "#0F1B2D",
+    "ink": "#F3EFE6",
+    "muted": "#A9B4C4",
+    "line": "#24344C",
+    "grid": "#1A2A40",
+    "tint": "#16243A",
+    "chart": "#3F82CF",
+    "highlight": "#B88A35",
+    "reference": "#7D8AA0",
+    "accent_text": "#C9A45C",
+    "button": "#C9A45C",
+    "button_text": "#0F1B2D",
+    "chart_text": "#6FA8E6"
+  },
+  "font": {
+    "serif": "Georgia, 'Times New Roman', serif",
+    "sans": "system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif"
+  },
+  "space": [
+    4,
+    8,
+    12,
+    16,
+    24,
+    32,
+    48,
+    72,
+    96
+  ],
+  "radius": 4,
+  "measure": "720px",
+  "type": {
+    "h1": "clamp(30px, 6vw, 46px)",
+    "h2": "clamp(22px, 4vw, 28px)",
+    "body": "17px",
+    "small": "14px",
+    "label": "12px"
+  }
+}
