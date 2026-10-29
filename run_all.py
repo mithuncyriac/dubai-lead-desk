@@ -20,6 +20,8 @@ DATASETS = [
     "build_dash_data.py", "build_v3_data.py", "validation.py",
     "stale_offplan.py", "supply.py", "real_agreement.py",
     "build_facts.py",       # -> site/facts.json + site/chart_data.json
+    "build_site.py",        # -> site/index.html, the dashboard, with the new numbers
+    "build_readme.py",      # -> public/README.md
 ]
 
 
@@ -42,7 +44,7 @@ if __name__ == "__main__":
     datasets = DATASETS
     if not HAVE_LISTINGS:   # public copy: rerun the DLD model, rebuild facts from the committed datasets
         print("public mode: raw listings and forum posts are private, so the committed dash_data/ is reused")
-        datasets = ["build_facts.py"]
+        datasets = ["build_facts.py", "build_site.py"]
     for s in ([] if "--skip-model" in sys.argv else MODEL) + datasets:
         run(s)
     print("done: site/facts.json")

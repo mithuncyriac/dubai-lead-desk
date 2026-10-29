@@ -10,7 +10,7 @@ S = Path("site")
 facts = json.loads((S / "facts.json").read_text(encoding="utf-8"))
 page = (S / "template.html").read_text(encoding="utf-8")
 gc = os.environ.get("GOATCOUNTER", "").strip()
-repo = os.environ.get("REPO_URL", "").strip()
+repo = os.environ.get("REPO_URL", "https://github.com/mithuncyriac/dubai-lead-desk").strip()
 safe = lambda o: json.dumps(o, ensure_ascii=False).replace("</", r"<\/")
 for key, val in {
     "__FACTS__": safe(facts),
@@ -22,7 +22,7 @@ for key, val in {
     "__DATA_TO__": facts["data_to_label"],
     "__BUILT__": facts["built"],
     "__LISTINGS__": str(facts["listings_checked"]),
-    "__PAGES__": os.environ.get("PAGES_URL", "").strip(),
+    "__PAGES__": os.environ.get("PAGES_URL", "https://mithuncyriac.github.io/dubai-lead-desk/").strip(),
 }.items():
     page = page.replace(key, val)
 assert "__" not in "".join(t for t in page.split("<script>")[0].split() if t.startswith("__")), "unfilled placeholder"
