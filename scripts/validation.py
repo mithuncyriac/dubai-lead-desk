@@ -27,7 +27,7 @@ add("Monthly sales Mar–Sep vs Jan–Feb 2026", pct(y["marsep_2026_per_month"],
 add("First 12 days of March, change vs 2025", pct(y["first12_mar_2026"], y["first12_mar_2025"]), -37, "pts", "Goldman Sachs (UAE-wide)", 5,
     "miss: Goldman covers the whole UAE with an unpublished method; March 2025 was Ramadan, which lowers our comparison base")
 add("Price move in March 2026 (ready flats, JVC)", pct(pi[("JVC", "Ready", "2026-03")], pi[("JVC", "Ready", "2026-02")]), -5.9, "pts", "ValuStrat Price Index", 2,
-    "miss in timing: ValuStrat is valuation-based and reacts at once; March registrations were mostly deals agreed before the war. Our index falls from May")
+    "miss in timing: ValuStrat is valuation-based and reacts at once; March registrations were mostly deals agreed before 28 February. Our index moves from May")
 add("Price move Feb–Oct 2026 (ready flats, JVC)", pct(pi[("JVC", "Ready", "2026-10")], pi[("JVC", "Ready", "2026-02")]), -10, "pts", "ValuStrat (cumulative since late Feb)", 3,
     "same direction, smaller: ValuStrat covers all Dubai incl. prime villas")
 add("JVC average flat price, AED", L["areas"]["JVC"]["mean_flat_price"], 1075878, "AED", "Bayut (DLD 12-month average)", 3, "different window, same source")

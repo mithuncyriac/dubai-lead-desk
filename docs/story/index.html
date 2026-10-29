@@ -1,73 +1,80 @@
 <!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Who kept buying homes in Dubai after 28 February?</title>
+<title>Who kept buying homes in Dubai since late February?</title>
 <link rel="canonical" href="https://mithuncyriac.github.io/dubai-lead-desk/story/">
 <meta name="description" content="What Dubai Land Department sales records show about who kept buying homes after 28 February 2026.">
-<meta property="og:title" content="Who kept buying homes in Dubai after 28 February?"><meta property="og:image" content="https://mithuncyriac.github.io/dubai-lead-desk/story/slide-1.png">
+<meta property="og:title" content="Who kept buying homes in Dubai since late February?"><meta property="og:image" content="https://mithuncyriac.github.io/dubai-lead-desk/story/slide-1.png">
 <meta name="author" content="Mithun Cyriac">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230F1B2D'/%3E%3Cpath d='M8 22V12m6 10V8m6 14v-7m6 7V10' stroke='%23C9A45C' stroke-width='3' stroke-linecap='round'/%3E%3C/svg%3E">
 <script data-goatcounter="https://dubai-lead-desk.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
 <style>
-body { margin: 0; background: #fcfcfb; color: #1a1a19; font: 19px/1.7 Georgia, "Times New Roman", serif; }
-main { max-width: 700px; margin: 0 auto; padding: 32px 16px 64px; }
-h1 { font-size: 40px; line-height: 1.2; margin: 0 0 12px; } h2 { font: 600 26px/1.3 system-ui, sans-serif; margin: 42px 0 10px; }
-a { color: #1c5cab; } figure { margin: 28px 0; } img { width: 100%; height: auto; border-radius: 8px; }
-blockquote { margin: 28px 0; padding: 16px 20px; background: #f1efe9; border-left: 4px solid #8a6a1f; font: 16px/1.6 system-ui, sans-serif; }
-@media (prefers-color-scheme: dark) { body { background: #141413; color: #f0efec; } a { color: #86b6ef; } blockquote { background: #24231f; } }
+body { margin: 0; background: #FBFAF7; color: #0F1B2D; font: 19px/1.7 Georgia, 'Times New Roman', serif; }
+main { max-width: 720px; margin: 0 auto; padding: 48px 20px 96px; }
+h1 { font-weight: 400; font-size: clamp(30px, 6vw, 46px); line-height: 1.15; margin: 0 0 16px; }
+h2 { font: 600 22px/1.3 system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif; margin: 56px 0 12px; }
+a { color: inherit; text-decoration-color: #A8792B; text-underline-offset: 3px; }
+figure { margin: 36px 0; } img { width: 100%; height: auto; border-radius: 4px; }
+blockquote { margin: 36px 0; padding: 4px 0 4px 20px; border-left: 2px solid #A8792B; font: 16px/1.6 system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif; color: #5B6577; }
+blockquote strong { color: #0F1B2D; }
+@media (prefers-color-scheme: dark) { body { background: #0F1B2D; color: #F3EFE6; } a { text-decoration-color: #B88A35; }
+  blockquote { border-left-color: #B88A35; color: #A9B4C4; } blockquote strong { color: #F3EFE6; } }
 </style></head>
 <body><main><article>
-<h1>Who kept buying homes in Dubai after 28 February?</h1>
-<p><em>What 472,404 Dubai Land Department sales records show, and the small tool I built from it. Data to 19 Oct 2026.</em></p>
-<figure><img src="slide-1.png" alt="carousel slide 1, &quot;Who kept buying homes in Dubai after 28 February?&quot;" width="1080" height="1350"></figure>
-<p>When the war began on 28 February, I wanted a straight answer to a simple question. Were people in Dubai still buying homes, and if so, which ones?</p>
-<p>Market reports give you a headline number, usually a quarter late. I wanted to see it month by month, split by price, from the records themselves. So I went to the source: the Dubai Land Department's open data. Every registered home sale since January 2024, 472,404 of them, plus 46,023 Ejari rental contracts and DLD's lists of projects and valuations.</p>
+<h1>Who kept buying homes in Dubai since late February?</h1>
+<p><em>What 472,404 Dubai Land Department sales records show, and the small tool I built from them. Data to 19 Oct 2026.</em></p>
+<figure><img src="slide-1.png" alt="carousel slide 1, &quot;Who kept buying homes in Dubai since late February?&quot;" width="1080" height="1350"></figure>
+<p>Dubai publishes its property records openly. Every registered sale, every Ejari rental contract, every project. Few cities make that possible. I wanted to use it to answer one plain question. Since late February, who has kept buying homes, and at what pace?</p>
+<p>Market reports give you a headline number, usually a quarter late. I wanted it month by month and split by price, straight from the records. So I took every registered home sale since January 2024: 472,404 of them. I added 46,023 Ejari rental contracts and DLD's lists of projects and valuations.</p>
 <p>Here's what I found, and what I'd do with it.</p>
-<h2>Sales are about a third below normal, and the gap is widening</h2>
-<p>You can't just compare this year with last year. Dubai sales move with the seasons, with Ramadan and Eid, and with the day of the week, and 2026 had its own trend before February. So I fitted a model to the pattern from January 2024 up to the war, then asked it what each month since March "should" have looked like.</p>
-<p>The answer: 87,052 sales were registered between 28 February and 19 Oct 2026, against about 137,260 the usual pattern would have predicted. That's 37% below. The honest range is wide, somewhere between 23% and 48%, but both versions of the model I tried point the same way.</p>
-<p>What surprised me more was the direction of travel. In March the gap was 32%. By September it was 46%. So far this doesn't look like a dip the market is climbing out of.</p>
+<h2>About two-thirds of the usual pace</h2>
+<p>From March to September, about 11,600 homes sold in Dubai each month. In the third quarter alone there were 34,047 sales worth AED 67.9 billion.</p>
+<p>To judge the pace fairly, you can't just compare this year with last. Sales move with the seasons, with Ramadan and Eid, and with the day of the week. So I fitted a model to the usual pattern, from January 2024 to February 2026. Then I compared each month since with what that pattern would expect.</p>
+<p>Since 28 February, 87,052 sales were registered, against about 137,260 in the usual pattern. That's about two-thirds of the usual pace, likely somewhere between 52% and 77%. The pace was 68% in March and 54% in September.</p>
 <figure><img src="slide-2.png" alt="carousel slide 2, monthly sales against the usual pattern" width="1080" height="1350"></figure>
-<h2>The cheaper the home, the smaller the drop</h2>
-<p>This is the part I think matters most. Split the same sales by price and the picture changes completely.</p>
+<h2>Everyday buyers were the steadiest</h2>
+<p>Split the same sales by price and the picture gets clearer:</p>
 <ul>
 <li>Under AED 1M: about 80% of the usual pace</li>
 <li>AED 1M to 2M: about 62%</li>
 <li>AED 2M to 5M: about 55%</li>
 <li>Above AED 5M: about 48%</li>
 </ul>
-<p>The smaller homes held up best. At the top end, sales have roughly halved.</p>
+<p>Homes under AED 1M, the ones most first-time buyers look at, held their pace best. Larger purchases are taking longer.</p>
 <figure><img src="slide-3.png" alt="carousel slide 3, sales by price band" width="1080" height="1350"></figure>
-<h2>Prices have moved much less than sales</h2>
-<p>A crude average price can mislead you here, because if fewer big apartments sell, the average falls even when nothing got cheaper. So I compared sales within the same buildings over time. On that basis, ready flats in JVC are about 8% cheaper than in January, and in Dubai Marina about 5%.</p>
-<p>Asking prices haven't fully caught up. The listings I checked on Bayut and Property Finder asked about 7% more than recent DLD sales in JVC, and about 9% more in Dubai Marina.</p>
-<h2>There is a lot of supply still to come</h2>
-<p>JVC has 19,756 flats that were sold off-plan since 2024 and haven't been handed over yet. At the post-war pace of 767 sales a month, that's about 26 months' worth of sales. In other words, there is no shortage of new stock on the way.</p>
+<h2>Prices moved less than sales</h2>
+<p>A simple average price can mislead. If fewer large apartments sell, the average goes down even when nothing got cheaper. So I compared sales within the same buildings over time. On that basis, ready flats in JVC are about 8% below their January level, and in Dubai Marina about 5%.</p>
+<p>Asking prices haven't fully caught up. The listings I checked on Bayut and Property Finder asked about 7% more than recent DLD sales in JVC. In Dubai Marina it was about 9%.</p>
+<h2>Renting out still pays</h2>
+<p>I matched Ejari leases with DLD sale prices since 28 February. A JVC flat earns a gross rental yield of about 7% a year. In Dubai Marina it's between 5% and 7%.</p>
+<h2>A lot of new supply is on the way</h2>
+<p>JVC has 19,756 flats that were sold off-plan since 2024 and haven't been handed over yet. At the current pace of 767 sales a month, that's about 26 months of sales. Buyers can take their time.</p>
 <h2>What this means if you're buying your first home</h2>
 <p>This is my reading, not advice, but here's what I'd take from it:</p>
 <ol>
-<li>Start from what homes actually sold for, not from the asking price. DLD's records are public.</li>
-<li>Under AED 1M, expect competition. Those homes are still selling at about 80% of the usual pace.</li>
+<li>Start from what homes actually sold for, not the asking price. DLD's records are public.</li>
+<li>Under AED 1M, expect competition. Those homes still sell at about 80% of their usual pace.</li>
 <li>With a bigger budget, you probably have more room to negotiate than you'd think.</li>
-<li>Prices have moved less than the headlines about sales might suggest.</li>
-<li>There's no need to rush into an off-plan deal in JVC with that much supply coming.</li>
+<li>Prices have moved less than sales, so there's time to compare.</li>
+<li>In JVC, a lot of new supply is on the way, so compare ready and off-plan before you commit.</li>
 </ol>
 <h2>What it means for a brokerage, and the tool I built</h2>
-<p>If I ran a brokerage, I'd notice that 70% of sales since February were under AED 2M, while the rare big ones are worth a senior agent's time from the first message. That's a recommendation, not a measured result. Whether faster replies actually win more deals is something a brokerage would have to test.</p>
-<p>So I built a small lead desk to try the idea. It runs in n8n, on my laptop, for free. An enquiry comes in by web form or message. The desk reads the area, bedrooms, budget, timing and how they're paying, checks the budget against DLD's recent sale prices for that kind of home, sorts the lead into Hot, Warm or Cold, and drafts a first reply. An agent approves the reply before anything goes out. If the same person writes in again from a slightly different number format, it merges the two.</p>
-<p>Then I tested it on 90 enquiries written for the test, including 30 built to trip it up, with the right answers hidden from the desk. The free version, which reads enquiries with plain rules, got 77 of 90 right. It stumbles on wording it has no rule for: numbers written as words, abbreviations like "mtg", or "a year and a half". An AI model reading the same messages blind got 90/90, but that version needs a paid API key. I'd rather show the free one honestly than oversell the paid one.</p>
-<p>One detail I liked: checking budgets against post-war prices instead of pre-war averages changed the tier of 4 of the 90 test leads. Small, but those are exactly the leads an agent would otherwise misjudge.</p>
+<p>If I ran a brokerage, I'd notice that 70% of sales since February were under AED 2M. Those buyers expect a quick answer. The rarer large purchases deserve a senior agent from the first message. That's a recommendation, not a measured result. Whether faster replies win more deals is something a brokerage would have to test.</p>
+<p>So I built a small lead desk to try the idea. It runs in n8n, on my laptop, for free. An enquiry comes in by web form or message. The desk reads the area, bedrooms, budget, timing and how they're paying. It checks the budget against DLD's recent sale prices for that kind of home. Then it sorts the lead into Hot, Warm or Cold and drafts a first reply. An agent approves the reply before anything goes out. If the same person writes in again with their number written differently, it merges the two.</p>
+<p>I tested it on 90 enquiries written for the test. Thirty were built to trip it up, and the answers were hidden from the desk. The free version, which reads enquiries with plain rules, got 77 of 90 right. It stumbles on wording it has no rule for, like numbers written as words. An AI model reading the same messages blind got 90/90, but that version needs a paid API key. I'd rather show the free one honestly than oversell the paid one.</p>
+<p>One detail I liked. Checking budgets against current prices, not older averages, changed the tier of 4 of the 90 test leads. Those are exactly the leads an agent might otherwise misjudge.</p>
 <figure><img src="slide-6.png" alt="screenshot of the n8n lead desk" width="1080" height="1350"></figure>
 <h2>A forecast you can check</h2>
-<p>Hindsight is easy, so here's something that can be wrong. For November 2026, I expect Dubai home sales to land between 9,800 and 11,600. The usual pattern alone would expect about 18,400. The low end assumes the gap of the latest weeks holds (47%), the high end that it goes back to the average since February (37%).</p>
-<p>DLD's November records should be out by 7 December 2026. I'll check then. If the real number lands outside the range, the model is missing something, and I'll say so.</p>
-<blockquote><p><strong>Method, briefly</strong></p><ul><li><strong>Data:</strong> Dubai Land Department open data. 472,404 residential sales from 1 January 2024 to 19 Oct 2026, 46,023 Ejari flat leases, plus DLD projects and valuations. 214 portal listings, checked on one day, for asking prices (only totals are published).</li><li><strong>The "usual pattern":</strong> a regression on daily sales with weekday, month, year, Ramadan and Eid effects, and a single step from 28 February (Python, statsmodels, with errors that allow for day-to-day correlation). The same model is run separately for each price band and area.</li><li><strong>Prices:</strong> a same-building index of price per square foot for ready flats, January 2026 = 100.</li><li><strong>Checks:</strong> my totals against figures others published from the same DLD records (6 match, 3 close, 3 miss, all listed in the repo with reasons). Every number reruns from one command, and GitHub reruns it on each change.</li><li><strong>Lead desk:</strong> n8n 2.42.5, self-hosted; rules-only reading; tested blind on 90 written enquiries.</li></ul></blockquote>
+<p>Hindsight is easy, so here's something that can be wrong. For November 2026, I expect between 9,800 and 11,600 home sales in Dubai. The usual pattern alone would expect about 18,400. The low end assumes the pace of recent weeks continues (53% of usual). The high end assumes the average pace since February (63%).</p>
+<p>DLD's November records should be out by 7 December 2026. I'll check then, and again on 7 January 2027, because DLD can still add late registrations. If the real number lands outside the range, the model needs another look, and I'll say so.</p>
+<blockquote><p><strong>Method, briefly</strong></p><ul><li><strong>Data:</strong> Dubai Land Department open data. 472,404 residential sales from 1 January 2024 to 19 Oct 2026, 46,023 Ejari flat leases, plus DLD projects and valuations. 214 portal listings, checked on one day, for asking prices (only totals are published).</li><li><strong>The usual pattern:</strong> a regression on daily sales (Python, statsmodels). It allows for weekday, month, year, Ramadan and Eid, with one step from 28 February. The same model is run for each price band and area.</li><li><strong>Prices:</strong> a same-building index of price per square foot for ready flats, January 2026 = 100.</li><li><strong>Checks:</strong> my totals against figures others published from the same DLD records. 6 match, 3 close and 3 miss, all listed in the repo with reasons. Every number reruns from one command, and GitHub reruns it on each change.</li><li><strong>Lead desk:</strong> n8n 2.42.5, self-hosted; rules-only reading; tested blind on 90 written enquiries.</li></ul></blockquote>
 <h2>Limitations</h2>
-<p>The model can't separate the war from anything else that changed after 28 February, so the honest phrase is "below the usual pattern", not "caused by". The range around the main number is wide, and a simpler trend model gives 35% instead of 37%. DLD records a sale when it's registered, which can be weeks after the deal, so the latest months may still rise a little, and October only runs to the 19th. Asking prices come from one day's listings. And the desk's test messages were written for the test, not sent by real buyers.</p>
-<p>Three published figures don't match mine. Goldman Sachs's early March number covers the whole UAE. One quarterly sales total includes property types I left out. And one price index reacts faster because it's based on valuations rather than registered sales. I've kept those misses in the comparison instead of quietly dropping them.</p>
+<p>The model describes what happened after 28 February, not why. The likely range around the overall pace is wide, and a simpler trend model gives 65% instead of 63%. DLD records a sale when it's registered, which can be weeks after the deal. So the latest months may still rise a little. October only runs to the 19th. Asking prices come from one day's listings. And the desk's test messages were written for the test, not sent by real buyers.</p>
+<p>Three published figures don't match mine. One covers the whole UAE. One quarterly total includes property types I left out. And one price index moves sooner because it's based on valuations rather than registered sales. I've kept those in the comparison instead of quietly dropping them.</p>
 <h2>See it, rerun it</h2>
 <ul>
 <li>The dashboard, written for first-time buyers: <a href="https://mithuncyriac.github.io/dubai-lead-desk/">https://mithuncyriac.github.io/dubai-lead-desk/</a></li>
 <li>The code, the data and every check: <a href="https://github.com/mithuncyriac/dubai-lead-desk">https://github.com/mithuncyriac/dubai-lead-desk</a></li>
 </ul>
 <p>If you work in Dubai property and something here doesn't match what you're seeing, I'd like to hear it.</p>
-<p><em>Independent analysis by Mithun Cyriac. Built with Python, statsmodels, n8n and an AI model. Source: Dubai Land Department open data, to 19 Oct 2026. Not financial advice.</em></p>
+<p><em>Independent analysis by Mithun Cyriac, made possible by the Dubai Land Department's open data. Built with Python, statsmodels, n8n and an AI model. Data to 19 Oct 2026. Not financial advice.</em></p>
 </article></main></body></html>

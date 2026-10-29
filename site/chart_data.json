@@ -552,7 +552,7 @@
    "source": "ValuStrat Price Index",
    "gap": "7.9",
    "verdict": "miss",
-   "why": "miss in timing: ValuStrat is valuation-based and reacts at once; March registrations were mostly deals agreed before the war. Our index falls from May"
+   "why": "miss in timing: ValuStrat is valuation-based and reacts at once; March registrations were mostly deals agreed before 28 February. Our index moves from May"
   },
   {
    "check": "Price move Feb–Oct 2026 (ready flats, JVC)",

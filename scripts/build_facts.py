@@ -82,6 +82,23 @@ facts = {
     "forecast": F,
 }
 
+# the same results stated as pace (100% = the usual pattern), for calm, plain wording; nothing new is estimated
+Y = {(r["area"], r["size_band"]): float(r["gross_yield_pct"]) for r in rows("yields")}
+raw = W["yoy_raw"]
+facts["pace"] = {
+    "overall_pct": round(100 + ye["effect_pct"]), "low_pct": round(100 + ye["ci_low_pct"]), "high_pct": round(100 + ye["ci_high_pct"]),
+    "march_pct": round(100 + gap("2026-03")), "september_pct": round(100 + gap("2026-09")),
+    "under1m_pct": round(100 + facts["band_under1m_pct"]), "1to2m_pct": round(100 + facts["band_1to2m_pct"]),
+    "2to5m_pct": round(100 + facts["band_2to5m_pct"]), "over5m_pct": round(100 + facts["band_over5m_pct"]),
+}
+facts["market"] = {
+    "sales_per_month_mar_sep": raw["marsep_2026_per_month"],          # average registered sales a month, Mar-Sep 2026
+    "q3_sales": raw["q3_2026"], "q3_value_aed_bn": raw["q3_value_2026_bn"],
+    "jvc_yield_low_pct": min(v for (a, s), v in Y.items() if a == "JVC"), "jvc_yield_high_pct": max(v for (a, s), v in Y.items() if a == "JVC"),
+    "marina_yield_low_pct": min(v for (a, s), v in Y.items() if a == "Dubai Marina"), "marina_yield_high_pct": max(v for (a, s), v in Y.items() if a == "Dubai Marina"),
+    "under2m_share_pct": round(100 * (int(seg["Price · Under AED 1M"]["actual_sales"]) + int(seg["Price · AED 1–2M"]["actual_sales"])) / ye["actual_post"]),
+}
+
 charts = {
     "monthly": [dict(area=r["area"], month=r["month"], actual=int(r["actual"]), expected=int(r["expected"])) for r in rows("war_monthly")],
     "bands": [dict(band=s["segment"].split(" · ")[1], gap=num(s["effect_pct"]), low=num(s["ci_low_pct"]), high=num(s["ci_high_pct"]), sales=int(s["actual_sales"]))

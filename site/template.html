@@ -4,101 +4,98 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Dubai Lead Desk</title>
-<meta name="description" content="Dubai home sales since 28 February 2026, explained for first-time buyers, from Dubai Land Department data. Data to __DATA_TO__.">
-<meta property="og:title" content="Dubai Lead Desk: who kept buying homes in Dubai since 28 February">
-<meta property="og:description" content="Sales ran about a third below the usual pattern. Homes under AED 1M held up best. From Dubai Land Department data, to __DATA_TO__.">
+<meta name="description" content="Who kept buying homes in Dubai since late February 2026, explained for first-time buyers, from the Dubai Land Department's open data. Data to __DATA_TO__.">
+<meta property="og:title" content="Dubai Lead Desk: who kept buying homes in Dubai since late February">
+<meta property="og:description" content="Sales ran at about 63% of their usual pace since 28 February, holding best under AED 1M. From the Dubai Land Department's open data, to __DATA_TO__.">
 <meta property="og:image" content="__PAGES__banner-1-findings.png">
 <meta property="og:url" content="__PAGES__">
 <meta name="twitter:card" content="summary_large_image">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%231c5cab'/%3E%3Cpath d='M8 22V12m6 10V8m6 14v-7m6 7V10' stroke='white' stroke-width='3' stroke-linecap='round'/%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230F1B2D'/%3E%3Cpath d='M8 22V12m6 10V8m6 14v-7m6 7V10' stroke='%23C9A45C' stroke-width='3' stroke-linecap='round'/%3E%3C/svg%3E">
 <style>
-:root {
-  color-scheme: light;
-  --bg: #fcfcfb; --card: #ffffff; --ink: #0b0b0b; --ink-2: #52514e; --ink-3: #6b6a66; --line: #e4e2dc; --grid: #ecebe6;
-  --s1: #2a78d6; --s2: #eb6834; --ghost: #b9b7b0; --accent: #8a6a1f; --good: #0f7a3d; --warn: #9a5b00; --bad: #b42318;
-  --chip: #f1efe9;
-}
-@media (prefers-color-scheme: dark) {
-  :root:where(:not([data-theme="light"])) {
-    color-scheme: dark;
-    --bg: #141413; --card: #1a1a19; --ink: #f0efec; --ink-2: #c3c2b7; --ink-3: #a3a29a; --line: #33322f; --grid: #2a2927;
-    --s1: #3987e5; --s2: #d95926; --ghost: #5d5c57; --accent: #d8b26a; --good: #4cc27e; --warn: #e3a64a; --bad: #f07a6e; --chip: #24231f;
-  }
-}
-:root[data-theme="dark"] {
-  color-scheme: dark;
-  --bg: #141413; --card: #1a1a19; --ink: #f0efec; --ink-2: #c3c2b7; --ink-3: #a3a29a; --line: #33322f; --grid: #2a2927;
-  --s1: #3987e5; --s2: #d95926; --ghost: #5d5c57; --accent: #d8b26a; --good: #4cc27e; --warn: #e3a64a; --bad: #f07a6e; --chip: #24231f;
-}
+__TOKENS_CSS__
 * { box-sizing: border-box; }
 html { -webkit-text-size-adjust: 100%; }
-body { margin: 0; background: var(--bg); color: var(--ink); font: 16px/1.55 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
-a { color: var(--s1); }
-main { max-width: 860px; margin: 0 auto; padding: 24px 16px 64px; }
-header.top { display: flex; justify-content: space-between; align-items: center; gap: 12px; font-size: 13px; color: var(--ink-3); letter-spacing: .04em; }
-header.top b { color: var(--accent); text-transform: uppercase; letter-spacing: .12em; font-weight: 600; }
-h1 { font-family: Georgia, "Times New Roman", serif; font-weight: 500; font-size: clamp(28px, 6vw, 42px); line-height: 1.15; margin: 18px 0 12px; letter-spacing: -.01em; }
-.lede { font-size: 18px; color: var(--ink-2); margin: 0 0 20px; max-width: 680px; }
-.stamp { display: inline-block; font-size: 13px; color: var(--ink-2); background: var(--chip); border-radius: 999px; padding: 4px 12px; }
-.tiles { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; margin: 24px 0 8px; }
-.tile { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 16px; }
-.tile .n { font-family: Georgia, serif; font-size: 34px; line-height: 1.1; font-variant-numeric: tabular-nums; }
-.tile .n small { font-size: 18px; color: var(--ink-3); }
-.tile p { margin: 6px 0 0; font-size: 14px; color: var(--ink-2); }
-section { margin-top: 40px; }
-section > h2 { font-size: 13px; text-transform: uppercase; letter-spacing: .12em; color: var(--accent); margin: 0 0 8px; font-weight: 600; }
-.card { background: var(--card); border: 1px solid var(--line); border-radius: 16px; padding: 20px; }
-.card + .card { margin-top: 14px; }
-.card h3 { font-family: Georgia, serif; font-weight: 500; font-size: 22px; line-height: 1.3; margin: 0 0 6px; }
-.card .sub { color: var(--ink-3); font-size: 14px; margin: 0 0 12px; }
-.means { margin: 14px 0 0; padding: 12px 14px; border-radius: 10px; background: var(--chip); font-size: 15px; }
-.means b { color: var(--ink); }
-.seg { display: inline-flex; gap: 4px; background: var(--chip); padding: 4px; border-radius: 999px; margin-bottom: 10px; flex-wrap: wrap; }
-.seg button { border: 0; background: transparent; color: var(--ink-2); font: inherit; font-size: 14px; padding: 6px 14px; border-radius: 999px; cursor: pointer; min-height: 36px; }
-.seg button[aria-pressed="true"] { background: var(--card); color: var(--ink); box-shadow: 0 1px 2px rgba(0,0,0,.12); }
+body { margin: 0; background: var(--bg); color: var(--ink); font: 17px/1.6 var(--sans); }
+a { color: var(--ink); text-decoration-color: var(--hl); text-underline-offset: 3px; }
+main { max-width: var(--measure); margin: 0 auto; padding: 32px 20px 96px; }
+header.top { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; font-size: 13px; color: var(--ink-3); }
+header.top b { color: var(--accent); text-transform: uppercase; letter-spacing: .14em; font-weight: 600; }
+h1 { font-family: var(--serif); font-weight: 400; font-size: var(--h1); line-height: 1.12; letter-spacing: -.01em; margin: 48px 0 16px; }
+.lede { font-size: 19px; color: var(--ink-2); margin: 0 0 16px; }
+.stamp { display: block; font-size: 14px; color: var(--ink-3); }
+.stamp b { color: var(--ink-2); font-weight: 600; }
+.tiles { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 28px; margin: 48px 0 0; }
+@media (max-width: 900px) { .tiles { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+.tile { border-top: 2px solid var(--hl); padding-top: 14px; }
+.tile .n { font-family: var(--serif); font-size: 44px; line-height: 1; font-variant-numeric: tabular-nums; }
+.tile p { margin: 10px 0 0; font-size: 15px; color: var(--ink-2); line-height: 1.45; }
+section { margin-top: 96px; }
+section > h2 { font-size: 12px; text-transform: uppercase; letter-spacing: .16em; color: var(--accent); margin: 0 0 14px; font-weight: 600; }
+.card + .card { margin-top: 56px; }
+.card h3 { font-family: var(--serif); font-weight: 400; font-size: var(--h2); line-height: 1.25; margin: 0 0 8px; }
+.card .sub { color: var(--ink-3); font-size: 15px; margin: 0 0 20px; line-height: 1.5; }
+.means { margin: 20px 0 0; padding-left: 16px; border-left: 2px solid var(--hl); font-size: 16px; color: var(--ink-2); }
+.means b { color: var(--ink); font-weight: 600; }
+.seg { display: flex; gap: 20px; margin: 0 0 14px; flex-wrap: wrap; }
+.seg button { border: 0; background: none; color: var(--ink-3); font: inherit; font-size: 15px; padding: 6px 0; cursor: pointer; min-height: 40px; border-bottom: 2px solid transparent; }
+.seg button[aria-pressed="true"] { color: var(--ink); border-bottom-color: var(--ink); }
 .chart { width: 100%; position: relative; }
 .chart svg { display: block; width: 100%; height: auto; overflow: visible; }
-.chart text { fill: var(--ink-2); font-size: 12px; font-family: inherit; }
+.chart text { fill: var(--ink-3); font-size: 12px; font-family: var(--sans); }
 .chart .lbl { fill: var(--ink); font-weight: 600; }
-.legend { display: flex; gap: 16px; flex-wrap: wrap; font-size: 13px; color: var(--ink-2); margin: 4px 0 8px; }
-.legend i { display: inline-block; width: 12px; height: 12px; border-radius: 3px; margin-right: 6px; vertical-align: -1px; }
-.tip { position: absolute; pointer-events: none; background: var(--ink); color: var(--bg); font-size: 13px; padding: 6px 10px; border-radius: 8px; white-space: nowrap; opacity: 0; transition: opacity .1s; z-index: 2; }
-details { margin-top: 10px; font-size: 14px; }
-details summary { cursor: pointer; color: var(--ink-2); }
-table { border-collapse: collapse; width: 100%; font-size: 14px; margin-top: 8px; font-variant-numeric: tabular-nums; }
-th, td { text-align: left; padding: 6px 8px; border-bottom: 1px solid var(--line); vertical-align: top; }
+.legend { display: flex; gap: 20px; flex-wrap: wrap; font-size: 14px; color: var(--ink-3); margin: 0 0 10px; }
+.legend i { display: inline-block; width: 10px; height: 10px; border-radius: 2px; margin-right: 8px; vertical-align: 0; }
+.tip { position: absolute; pointer-events: none; background: var(--ink); color: var(--bg); font-size: 13px; padding: 6px 10px; border-radius: var(--radius); white-space: nowrap; opacity: 0; transition: opacity .1s; z-index: 2; }
+details { margin-top: 16px; font-size: 14px; }
+details summary { cursor: pointer; color: var(--ink-3); }
+table { border-collapse: collapse; width: 100%; font-size: 14px; margin-top: 10px; font-variant-numeric: tabular-nums; }
+th, td { text-align: left; padding: 8px 10px 8px 0; border-bottom: 1px solid var(--line); vertical-align: top; }
 th { color: var(--ink-3); font-weight: 500; }
 .tablewrap { overflow-x: auto; }
-ul.plain { padding-left: 20px; margin: 8px 0 0; }
-ul.plain li { margin: 6px 0; }
-.tag { display: inline-block; font-size: 12px; border-radius: 999px; padding: 1px 8px; background: var(--chip); color: var(--ink-2); margin-left: 4px; vertical-align: 1px; }
-.steps { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 8px; margin: 8px 0 4px; counter-reset: s; }
-.steps div { background: var(--chip); border-radius: 10px; padding: 10px; font-size: 13px; color: var(--ink-2); }
-.steps div::before { counter-increment: s; content: counter(s); display: block; font-weight: 700; color: var(--accent); }
-textarea { width: 100%; min-height: 84px; font: inherit; font-size: 15px; padding: 10px 12px; border: 1px solid var(--line); border-radius: 10px; background: var(--bg); color: var(--ink); }
-.btn { border: 0; background: #1c5cab; color: #fff; font: inherit; font-size: 15px; padding: 10px 18px; border-radius: 10px; cursor: pointer; min-height: 44px; }
-.chips { display: flex; gap: 8px; flex-wrap: wrap; margin: 8px 0; }
-.chips button { border: 1px solid var(--line); background: var(--card); color: var(--ink-2); font: inherit; font-size: 13px; padding: 6px 12px; border-radius: 999px; cursor: pointer; min-height: 36px; }
-.result { margin-top: 14px; display: none; }
+ul.plain { padding-left: 20px; margin: 4px 0 0; }
+ul.plain li { margin: 10px 0; }
+.tag { font-size: 13px; color: var(--ink-3); font-style: italic; margin-left: 4px; }
+.steps { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 20px; margin: 20px 0 8px; counter-reset: s; }
+.steps div { border-top: 1px solid var(--line); padding-top: 10px; font-size: 14px; color: var(--ink-2); line-height: 1.45; }
+.steps div::before { counter-increment: s; content: counter(s); display: block; font-family: var(--serif); font-size: 22px; color: var(--accent); margin-bottom: 4px; }
+textarea { width: 100%; min-height: 96px; font: inherit; font-size: 16px; padding: 12px 14px; border: 1px solid var(--line); border-radius: var(--radius); background: var(--bg); color: var(--ink); }
+.btn { border: 0; background: var(--btn); color: var(--btn-ink); font: inherit; font-size: 15px; font-weight: 600; padding: 12px 22px; border-radius: var(--radius); cursor: pointer; min-height: 44px; }
+.chips { display: flex; gap: 20px; flex-wrap: wrap; margin: 12px 0 18px; }
+.chips button { border: 0; background: none; color: var(--ink-2); font: inherit; font-size: 14px; padding: 6px 0; cursor: pointer; min-height: 36px; text-decoration: underline; text-decoration-color: var(--line); text-underline-offset: 4px; }
+.result { margin-top: 24px; display: none; }
 .result.on { display: block; }
-.facts { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 6px; font-size: 14px; }
-.facts div { background: var(--chip); border-radius: 8px; padding: 6px 10px; }
+.facts { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px 24px; font-size: 15px; margin-top: 14px; }
+.facts div { border-top: 1px solid var(--line); padding-top: 6px; }
 .facts span { display: block; font-size: 12px; color: var(--ink-3); }
-.tier { display: inline-block; font-weight: 700; padding: 2px 12px; border-radius: 999px; color: #fff; }
-.tier.Hot { background: var(--bad); } .tier.Warm { background: var(--warn); } .tier.Cold { background: #4b5563; }
-.draft { margin-top: 10px; padding: 12px 14px; border-left: 3px solid var(--s1); background: var(--chip); border-radius: 0 10px 10px 0; font-size: 15px; }
-.forecast { display: grid; grid-template-columns: 1.2fr 1fr; gap: 16px; align-items: center; }
-.forecast .big { font-family: Georgia, serif; font-size: 38px; line-height: 1.1; }
-.box-warn { border-left: 4px solid var(--warn); }
-.verdict { font-weight: 600; } .verdict.match { color: var(--good); } .verdict.close { color: var(--warn); } .verdict.miss { color: var(--bad); }
-footer { margin-top: 48px; font-size: 13px; color: var(--ink-3); border-top: 1px solid var(--line); padding-top: 16px; }
-.themebtn { border: 1px solid var(--line); background: var(--card); color: var(--ink-2); border-radius: 999px; padding: 4px 12px; font: inherit; font-size: 13px; cursor: pointer; min-height: 32px; }
+.tier { display: inline-block; font-weight: 600; padding: 1px 12px; border: 1px solid currentColor; border-radius: 999px; }
+.tier.Hot { color: var(--accent); } .tier.Warm { color: var(--s1-text); } .tier.Cold { color: var(--ink-3); }
+.draft { margin-top: 18px; padding-left: 16px; border-left: 2px solid var(--s1); font-size: 16px; color: var(--ink-2); }
+.draft b { color: var(--ink); }
+.forecast { display: grid; grid-template-columns: 1.1fr 1fr; gap: 32px; align-items: start; }
+.forecast .big { font-family: var(--serif); font-size: 48px; line-height: 1.05; color: var(--accent); font-variant-numeric: tabular-nums; }
+.verdict { font-weight: 600; } .verdict.match { color: var(--s1-text); } .verdict.close { color: var(--accent); } .verdict.miss { color: var(--ink-3); }
+footer { margin-top: 96px; font-size: 13px; color: var(--ink-3); border-top: 1px solid var(--line); padding-top: 20px; line-height: 1.55; }
+.themebtn { border: 0; background: none; color: var(--ink-3); font: inherit; font-size: 13px; cursor: pointer; min-height: 32px; text-decoration: underline; text-underline-offset: 3px; }
 .sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
 @media (max-width: 640px) {
-  .tiles, .facts { grid-template-columns: 1fr; }
+  body { font-size: 16px; }
+  h1 { margin-top: 32px; }
+  .tiles { grid-template-columns: 1fr; gap: 28px; margin-top: 36px; }
+  .facts { grid-template-columns: 1fr 1fr; }
   .steps { grid-template-columns: 1fr 1fr; }
-  .forecast { grid-template-columns: 1fr; }
-  .card { padding: 16px; }
+  .forecast { grid-template-columns: 1fr; gap: 16px; }
+  section { margin-top: 72px; }
+}
+@media print {
+  :root { --bg: #ffffff; }
+  header.top .themebtn, #area-seg, details, .chips, textarea, #run, label[for="msg"], .tip { display: none !important; }
+  section { margin-top: 36px; }
+  section > h2, .card h3, .card .sub { break-after: avoid; }
+  .card + .card { margin-top: 28px; }
+  .card:not(:has(#t-val)) { break-inside: avoid; }
+  .card:has(#msg) { display: none; }
+  main { max-width: none; padding: 0; }
+  footer { margin-top: 36px; }
 }
 </style>
 __ANALYTICS__
@@ -107,8 +104,8 @@ __ANALYTICS__
 <main>
 <header class="top"><span><b>Dubai Lead Desk</b> · independent analysis</span><button class="themebtn" id="theme" type="button" aria-label="Switch light or dark theme">Theme</button></header>
 
-<h1>Dubai home sales have run about a third below normal since 28 February. Cheaper homes held up best.</h1>
-<p class="lede">What the Dubai Land Department's own records show, written for someone thinking about buying their first home in JVC or Dubai Marina.</p>
+<h1>Since 28 February, Dubai home sales have run at about 63% of their usual pace. Homes under AED 1M held up best.</h1>
+<p class="lede">What the Dubai Land Department's open records show. Written for first-time buyers in JVC and Dubai Marina.</p>
 <span class="stamp">Data to <b>__DATA_TO__</b> · Source: Dubai Land Department open data</span>
 
 <div class="tiles" id="tiles"></div>
@@ -116,14 +113,14 @@ __ANALYTICS__
 <section id="what">
   <h2>What happened</h2>
   <div class="card">
-    <h3 id="monthly-title">Every month since March, fewer homes sold than the usual pattern predicted</h3>
-    <p class="sub">Registered sales each month (bars) against what the pattern from 2024 to early 2026 would have predicted for that month (grey line). The pattern allows for weekdays, seasons, Ramadan and Eid.</p>
+    <h3 id="monthly-title">Homes kept selling every month, at about two-thirds of the usual pace</h3>
+    <p class="sub">Sales registered each month (bars) and the usual pattern for that month (grey line), based on 2024 to early 2026. The pattern allows for weekdays, seasons, Ramadan and Eid. Percentages show sales as a share of the usual pattern.</p>
     <div class="seg" role="group" aria-label="Choose an area" id="area-seg">
       <button type="button" data-area="All" aria-pressed="true">All Dubai</button>
       <button type="button" data-area="JVC" aria-pressed="false">JVC</button>
       <button type="button" data-area="Dubai Marina" aria-pressed="false">Dubai Marina</button>
     </div>
-    <div class="legend"><span><i style="background:var(--s1)"></i>Sales registered</span><span><i style="background:var(--ghost)"></i>Usual pattern</span></div>
+    <div class="legend"><span><i style="background:var(--s1)"></i>Sales registered</span><span><i style="background:var(--ghost); height:3px; vertical-align:3px"></i>Usual pattern</span></div>
     <div class="chart" id="c-monthly"></div>
     <p class="means" id="m-monthly"></p>
     <details><summary>Show the numbers</summary><div class="tablewrap" id="t-monthly"></div></details>
@@ -133,8 +130,8 @@ __ANALYTICS__
 <section id="who">
   <h2>Who kept buying</h2>
   <div class="card">
-    <h3>The more expensive the home, the bigger the drop</h3>
-    <p class="sub">Sales since 28 February as a share of the usual pace, by price. 100% would mean no change.</p>
+    <h3>Homes under AED 1M were the steadiest part of the market</h3>
+    <p class="sub">Sales since 28 February as a share of the usual pace, by price. 100% is the usual pace.</p>
     <div class="chart" id="c-bands"></div>
     <p class="means" id="m-bands"></p>
     <details><summary>Show the numbers</summary><div class="tablewrap" id="t-bands"></div></details>
@@ -144,7 +141,7 @@ __ANALYTICS__
 <section id="prices">
   <h2>Prices</h2>
   <div class="card">
-    <h3 id="price-title">Prices have moved far less than sales</h3>
+    <h3 id="price-title">Same-building prices are 5–8% below January</h3>
     <p class="sub">Price per sq ft of ready flats, comparing sales in the same buildings over time. January 2026 = 100.</p>
     <div class="legend"><span><i style="background:var(--s1)"></i>JVC</span><span><i style="background:var(--s2)"></i>Dubai Marina</span></div>
     <div class="chart" id="c-index"></div>
@@ -156,8 +153,8 @@ __ANALYTICS__
 <section id="supply">
   <h2>Supply still to come</h2>
   <div class="card">
-    <h3 id="supply-title">JVC has about two years of off-plan flats still to be handed over</h3>
-    <p class="sub">Units sold off-plan since 2024 that are not handed over yet, counted in months of sales at the post-war pace.</p>
+    <h3 id="supply-title">JVC has about two years of off-plan supply to come</h3>
+    <p class="sub">Homes sold off-plan since 2024 and not yet handed over. Shown as months of sales at today's pace.</p>
     <div class="chart" id="c-supply"></div>
     <p class="means" id="m-supply"></p>
   </div>
@@ -167,7 +164,7 @@ __ANALYTICS__
   <h2>What this means for you</h2>
   <div class="card">
     <h3>Five things a first-time buyer can take from this</h3>
-    <p class="sub">Our reading of the numbers above. It is not financial advice, and every purchase is different.</p>
+    <p class="sub">My reading of the numbers above. It is not financial advice, and every purchase is different.</p>
     <ul class="plain" id="you-list"></ul>
   </div>
 </section>
@@ -175,16 +172,16 @@ __ANALYTICS__
 <section id="decision">
   <h2>The decision, for a brokerage</h2>
   <div class="card">
-    <h3>Answer the many small enquiries fast, and save senior agents for the rare large ones</h3>
+    <h3>Answer the many everyday enquiries fast, and give the large ones a senior agent</h3>
     <ul class="plain" id="decision-list"></ul>
-    <p class="means"><b>This is a recommendation, not a measured result.</b> The numbers show where buyers still are; whether faster replies win more of them is an assumption a brokerage would need to test.</p>
+    <p class="means"><b>This is a recommendation, not a measured result.</b> The numbers show where buyers are. Whether faster replies win more of them is something a brokerage would need to test.</p>
   </div>
 </section>
 
 <section id="desk">
   <h2>The lead desk</h2>
   <div class="card">
-    <h3>A small tool that reads each enquiry and checks the budget against what homes are selling for</h3>
+    <h3>A small tool that reads each enquiry and checks the budget against what homes sold for</h3>
     <div class="steps">
       <div>An enquiry arrives by form or message</div>
       <div>It reads area, bedrooms, budget, timing and payment</div>
@@ -201,7 +198,7 @@ __ANALYTICS__
   </div>
   <div class="card">
     <h3>Try it</h3>
-    <p class="sub">This runs the free, rules-only version in your browser. Nothing you type leaves this page. Known weak spots: it reads any "now" as "buying now" (even "for now"), understands English only, and misses numbers written as words.</p>
+    <p class="sub">This runs the free, rules-only version in your browser. Nothing you type leaves this page. It has limits. It reads any "now" as "buying now", even "for now". It understands English only. It misses numbers written as words.</p>
     <label for="msg" class="sr">Enquiry message</label>
     <textarea id="msg" placeholder="e.g. Looking for a 1 bed in JVC, budget around 950k, mortgage pre-approved, want to move in 2 months"></textarea>
     <div class="chips" id="examples" aria-label="Example messages"></div>
@@ -221,9 +218,9 @@ __ANALYTICS__
 </section>
 
 <section id="checks">
-  <h2>How we checked it</h2>
+  <h2>How I checked it</h2>
   <div class="card">
-    <h3 id="val-title">Our totals match published figures from the same DLD records</h3>
+    <h3 id="val-title">My totals match published figures from the same DLD records</h3>
     <p class="sub">Each row compares a number from this analysis with one published by someone else. Where they differ, the reason is given.</p>
     <div class="tablewrap" id="t-val"></div>
     <p class="means" id="m-val"></p>
@@ -238,9 +235,10 @@ __ANALYTICS__
 </section>
 
 <footer>
-  <p>Source: Dubai Land Department open data (sales transactions, Ejari rental contracts, projects, valuations), plus a check of __LISTINGS__ live portal listings (aggregate figures only). Data to __DATA_TO__. Built __BUILT__.</p>
+  <p>Made possible by the Dubai Land Department's open data: sales transactions, Ejari rental contracts, projects and valuations. Asking prices come from __LISTINGS__ portal listings (totals only). Data to __DATA_TO__. Built __BUILT__.</p>
   <p>Method, code and tests: __REPO_LINK__. Every number on this page comes from one file, <code>facts.json</code>, produced by <code>python run_all.py</code>.</p>
   <p>Independent analysis by Mithun Cyriac. Not financial advice.</p>
+  <p>Privacy: visits are counted with GoatCounter, which uses no cookies and keeps no personal data. Nothing you type in "Try it" leaves this page.</p>
 </footer>
 </main>
 
@@ -292,9 +290,10 @@ __DESK__
 
   // ---------- tiles ----------
   $('tiles').innerHTML = [
-    [pct(F.war_gap_pct), `Home sales since 28 February, compared with what the usual pattern predicted (likely range ${pct(F.war_gap_high_pct)} to ${pct(F.war_gap_low_pct)})`],
-    [`${pct(F.band_under1m_pct)} <small>vs</small> ${pct(F.band_over5m_pct)}`, 'Sales of homes under AED 1M, against homes above AED 5M'],
-    [pct(F.jvc_ready_price_change_pct), `Price of JVC ready flats since January, same buildings (to ${MONY(F.price_index_last_month)})`],
+    [F.pace.overall_pct + '%', `of the usual pace of home sales across Dubai since 28 February (likely ${F.pace.low_pct}–${F.pace.high_pct}%)`],
+    [F.pace.under1m_pct + '%', 'of the usual pace for homes under AED 1M, the part of the market that held up best'],
+    [int(Math.round(F.market.sales_per_month_mar_sep / 100) * 100), 'homes sold a month on average, March to September 2026'],
+    [`${Math.round(Math.abs(F.jvc_ready_price_change_pct))}%`, 'below January for JVC ready flats, comparing the same buildings'],
   ].map(([n, p]) => `<div class="tile"><div class="n">${n}</div><p>${p}</p></div>`).join('');
 
   // ---------- monthly ----------
@@ -319,20 +318,20 @@ __DESK__
       el('path', { d: `M${bx},${base} V${top + 4} q0,-4 4,-4 h${bwid - 8} q4,0 4,4 V${base} Z`, fill: 'var(--s1)' }, svg);
       el('line', { x1: x + bw * 0.08, x2: x + bw * 0.92, y1: y(r.expected), y2: y(r.expected), stroke: 'var(--ghost)', 'stroke-width': 3, 'stroke-linecap': 'round' }, svg);
       el('text', { x: x + bw / 2, y: h - 8, 'text-anchor': 'middle' }, svg).textContent = MON(r.month) + (r.month === F.data_to.slice(0, 7) ? '*' : '');
-      const gap = Math.round(100 * (r.actual / r.expected - 1));
+      const share = Math.round(100 * r.actual / r.expected);
       const hit = el('rect', { x, y: m.t, width: bw, height: h - m.t - m.b, fill: 'transparent' }, svg);
-      const html = `<b>${MONY(r.month)}</b><br>${int(r.actual)} sold · usual ${int(r.expected)}<br>${pct(gap)} vs usual`;
+      const html = `<b>${MONY(r.month)}</b><br>${int(r.actual)} sold · usual pattern ${int(r.expected)}<br>${share}% of the usual pace`;
       hit.addEventListener('mousemove', e => tip(e, html)); hit.addEventListener('mouseleave', e => tip(e)); hit.addEventListener('touchstart', e => tip(e, html), { passive: true });
     });
     const last = rows[rows.length - 2] ?? rows[rows.length - 1];      // last full month gets the direct label
-    const li = rows.indexOf(last), gap = Math.round(100 * (last.actual / last.expected - 1));
-    el('text', { x: m.l + li * bw + bw / 2, y: y(last.expected) - 8, 'text-anchor': 'middle', class: 'lbl' }, svg).textContent = pct(gap);
-    const first = rows[0], g0 = Math.round(100 * (first.actual / first.expected - 1));
-    el('text', { x: m.l + bw / 2, y: y(first.expected) - 8, 'text-anchor': 'middle', class: 'lbl' }, svg).textContent = pct(g0);
-    table($('t-monthly'), ['Month', 'Sales registered', 'Usual pattern', 'Difference'],
-      rows.map(r => [MONY(r.month) + (r.month === F.data_to.slice(0, 7) ? ' (to ' + F.data_to_label + ')' : ''), int(r.actual), int(r.expected), pct1(Math.round(1000 * (r.actual / r.expected - 1)) / 10)]));
+    const li = rows.indexOf(last), s1 = Math.round(100 * last.actual / last.expected);
+    el('text', { x: m.l + li * bw + bw / 2, y: y(last.expected) - 8, 'text-anchor': 'middle', class: 'lbl' }, svg).textContent = s1 + '%';
+    const first = rows[0], s0 = Math.round(100 * first.actual / first.expected);
+    el('text', { x: m.l + bw / 2, y: y(first.expected) - 8, 'text-anchor': 'middle', class: 'lbl' }, svg).textContent = s0 + '%';
+    table($('t-monthly'), ['Month', 'Sales registered', 'Usual pattern', 'Share of usual pace'],
+      rows.map(r => [MONY(r.month) + (r.month === F.data_to.slice(0, 7) ? ' (to ' + F.data_to_label + ')' : ''), int(r.actual), int(r.expected), Math.round(100 * r.actual / r.expected) + '%']));
     const name = area === 'All' ? 'Across Dubai' : 'In ' + area;
-    $('m-monthly').innerHTML = `<b>What this means for you:</b> ${name}, the gap grew from ${pct(g0)} in ${MON(first.month)} to ${pct(gap)} in ${MON(last.month)}. Fewer buyers are competing than usual, which can give a buyer more time to compare. <span class="tag">our reading</span><br><small>* ${MON(F.data_to.slice(0, 7))} covers 1–${+F.data_to.slice(8)} ${MON(F.data_to.slice(0, 7))} only.</small>`;
+    $('m-monthly').innerHTML = `<b>What this means for you:</b> ${name}, the pace was ${s0}% in ${MON(first.month)} and ${s1}% in ${MON(last.month)}. With fewer buyers than usual, there is more time to compare homes. <span class="tag">my reading</span><br><small>* ${MON(F.data_to.slice(0, 7))} covers 1–${+F.data_to.slice(8)} ${MON(F.data_to.slice(0, 7))} only.</small>`;
   }
   document.querySelectorAll('#area-seg button').forEach(b => b.addEventListener('click', () => {
     area = b.dataset.area;
@@ -354,15 +353,15 @@ __DESK__
     rows.forEach((r, i) => {
       const share = 100 + r.gap, yy = m.t + i * rowH + 10, bh = 24;
       el('text', { x: m.l - 10, y: yy + bh / 2 + 4, 'text-anchor': 'end', class: 'lbl' }, svg).textContent = r.band;
-      el('path', { d: `M${x(0)},${yy} H${x(share) - 4} q4,0 4,4 V${yy + bh - 4} q0,4 -4,4 H${x(0)} Z`, fill: 'var(--s1)' }, svg);
+      el('path', { d: `M${x(0)},${yy} H${x(share) - 4} q4,0 4,4 V${yy + bh - 4} q0,4 -4,4 H${x(0)} Z`, fill: i === 0 ? 'var(--hl)' : 'var(--s1)' }, svg);
       el('text', { x: x(share) + 8, y: yy + bh / 2 + 4, class: 'lbl' }, svg).textContent = Math.round(share) + '%';
       const hit = el('rect', { x: 0, y: yy - 6, width: w, height: bh + 12, fill: 'transparent' }, svg);
-      const html = `<b>${r.band}</b><br>${Math.round(share)}% of the usual pace (${pct(r.gap)})<br>likely range ${pct(r.high)} to ${pct(r.low)}<br>${int(r.sales)} sold since 28 Feb`;
+      const html = `<b>${r.band}</b><br>${Math.round(share)}% of the usual pace<br>likely between ${Math.round(100 + r.low)}% and ${Math.round(100 + r.high)}%<br>${int(r.sales)} sold since 28 Feb`;
       hit.addEventListener('mousemove', e => tip(e, html)); hit.addEventListener('mouseleave', e => tip(e)); hit.addEventListener('touchstart', e => tip(e, html), { passive: true });
     });
-    table($('t-bands'), ['Price', 'Share of usual pace', 'Change', 'Likely range', 'Sales since 28 Feb'],
-      rows.map(r => [r.band, Math.round(100 + r.gap) + '%', pct1(r.gap), `${pct1(r.high)} to ${pct1(r.low)}`, int(r.sales)]));
-    $('m-bands').innerHTML = `<b>What this means for you:</b> homes under AED 1M are still selling at about ${Math.round(100 + F.band_under1m_pct)}% of the usual pace, so good ones can still go quickly. Above AED 5M it is about ${Math.round(100 + F.band_over5m_pct)}%, where buyers are scarcer. <span class="tag">our reading</span>`;
+    table($('t-bands'), ['Price', 'Share of usual pace', 'Likely range', 'Sales since 28 Feb'],
+      rows.map(r => [r.band, Math.round(100 + r.gap) + '%', `${Math.round(100 + r.low)}% to ${Math.round(100 + r.high)}%`, int(r.sales)]));
+    $('m-bands').innerHTML = `<b>What this means for you:</b> homes under AED 1M still sell at about ${F.pace.under1m_pct}% of the usual pace. Good ones can still go quickly. Above AED 5M the pace is about ${F.pace.over5m_pct}%, so there is more time to negotiate. <span class="tag">my reading</span>`;
   }
 
   // ---------- price index ----------
@@ -370,7 +369,7 @@ __DESK__
     const host = $('c-index'); host.innerHTML = '';
     const areas = [['JVC', 'var(--s1)'], ['Dubai Marina', 'var(--s2)']];
     const months = [...new Set(C.price_index.map(r => r.month))].sort();
-    const w = W(host), h = 250, m = { t: 14, r: 96, b: 28, l: 40 };
+    const w = W(host), h = 250, m = { t: 14, r: 128, b: 28, l: 40 };
     const svg = el('svg', { viewBox: `0 0 ${w} ${h}`, role: 'img', 'aria-label': 'Same-building price index for ready flats, JVC and Dubai Marina' }, host);
     const vals = C.price_index.map(r => r.index), lo = Math.floor(Math.min(...vals, 100) / 5) * 5 - 5, hi = Math.ceil(Math.max(...vals, 100) / 5) * 5 + 5;
     const x = i => m.l + (w - m.l - m.r) * i / (months.length - 1), y = v => m.t + (h - m.t - m.b) * (1 - (v - lo) / (hi - lo));
@@ -401,7 +400,7 @@ __DESK__
     };
     hit.addEventListener('mousemove', show); hit.addEventListener('mouseleave', e => tip(e)); hit.addEventListener('touchstart', show, { passive: true });
     table($('t-index'), ['Month', 'JVC', 'Dubai Marina'], months.map(mo => [MONY(mo), ...areas.map(([a]) => (C.price_index.find(p => p.area === a && p.month === mo) || {}).index ?? '–')]));
-    $('m-index').innerHTML = `<b>What this means for you:</b> JVC ready flats are about ${Math.round(Math.abs(F.jvc_ready_price_change_pct))}% cheaper than in January, Dubai Marina about ${Math.round(Math.abs(F.marina_ready_price_change_pct))}%. Asking prices on the portals sit above recent sales: about ${Math.round(F.jvc_asking_premium_pct)}% in JVC and ${Math.round(F.marina_asking_premium_pct)}% in Dubai Marina. Start from what homes actually sold for, not from the asking price.`;
+    $('m-index').innerHTML = `<b>What this means for you:</b> in the same buildings, JVC ready flats are about ${Math.round(Math.abs(F.jvc_ready_price_change_pct))}% below January. Dubai Marina is about ${Math.round(Math.abs(F.marina_ready_price_change_pct))}%. Asking prices on the portals sit about ${Math.round(F.jvc_asking_premium_pct)}% above recent sales in JVC and ${Math.round(F.marina_asking_premium_pct)}% in Dubai Marina. Start from what homes sold for, not the asking price.`;
   }
 
   // ---------- supply ----------
@@ -414,34 +413,34 @@ __DESK__
     rows.forEach((r, i) => {
       const yy = m.t + i * rowH + 10, bh = 26;
       el('text', { x: m.l - 10, y: yy + bh / 2 + 4, 'text-anchor': 'end', class: 'lbl' }, svg).textContent = r.area;
-      el('path', { d: `M${x(0)},${yy} H${x(r.months) - 4} q4,0 4,4 V${yy + bh - 4} q0,4 -4,4 H${x(0)} Z`, fill: 'var(--s1)' }, svg);
+      el('path', { d: `M${x(0)},${yy} H${x(r.months) - 4} q4,0 4,4 V${yy + bh - 4} q0,4 -4,4 H${x(0)} Z`, fill: r.area === 'JVC' ? 'var(--hl)' : 'var(--s2)' }, svg);
       el('text', { x: x(r.months) + 8, y: yy + bh / 2 + 4, class: 'lbl' }, svg).textContent = Math.round(r.months) + ' months';
-      el('title', {}, svg.lastChild).textContent = `${int(r.units)} units waiting; ${int(r.per_month)} sales a month since 28 Feb`;
+      el('title', {}, svg.lastChild).textContent = `${int(r.units)} homes to be handed over; ${int(r.per_month)} sales a month since 28 Feb`;
     });
-    $('m-supply').innerHTML = `<b>What this means for you:</b> ${int(F.jvc_pipeline_units)} JVC flats sold off-plan are still waiting for handover, about ${Math.round(F.jvc_pipeline_months)} months of sales at today's pace (${int(F.jvc_sales_per_month)} a month). Plenty of new stock is on the way, so there is no need to rush into an off-plan deal. <span class="tag">our reading</span>`;
+    $('m-supply').innerHTML = `<b>What this means for you:</b> ${int(F.jvc_pipeline_units)} JVC flats sold off-plan are still to be handed over. That is about ${Math.round(F.jvc_pipeline_months)} months of sales at today's pace of ${int(F.jvc_sales_per_month)} a month. That is a lot of new supply, so there is time to compare ready and off-plan. <span class="tag">my reading</span>`;
   }
 
   // ---------- what this means / decision / limitations ----------
   $('you-list').innerHTML = [
     `<b>Start from sold prices, not asking prices.</b> Listings in JVC ask about ${Math.round(F.jvc_asking_premium_pct)}% more than recent DLD sales of ready flats; in Dubai Marina about ${Math.round(F.marina_asking_premium_pct)}%.`,
-    `<b>Under AED 1M, expect competition.</b> These homes still sell at about ${Math.round(100 + F.band_under1m_pct)}% of the usual pace.`,
-    `<b>Bigger budgets have more room to negotiate.</b> Above AED 5M, sales run at about ${Math.round(100 + F.band_over5m_pct)}% of the usual pace.`,
-    `<b>Prices have moved less than sales.</b> JVC ready flats are ${Math.round(Math.abs(F.jvc_ready_price_change_pct))}% below January, comparing the same buildings.`,
-    `<b>New supply is coming.</b> JVC has about ${Math.round(F.jvc_pipeline_months)} months of off-plan sales still to be handed over.`,
+    `<b>Under AED 1M, expect competition.</b> These homes still sell at about ${F.pace.under1m_pct}% of the usual pace.`,
+    `<b>Bigger budgets have more room to negotiate.</b> Above AED 5M, sales run at about ${F.pace.over5m_pct}% of the usual pace.`,
+    `<b>Prices have moved less than sales.</b> JVC ready flats are about ${Math.round(Math.abs(F.jvc_ready_price_change_pct))}% below January, comparing the same buildings.`,
+    `<b>Renting out still pays.</b> Gross rental yields on JVC flats are about ${Math.round(F.market.jvc_yield_low_pct)}%.`,
   ].map(s => `<li>${s}</li>`).join('');
   $('decision-list').innerHTML = [
-    `Homes under AED 1M are ${Math.round(100 * C.bands[0].sales / C.bands.reduce((a, b) => a + b.sales, 0))}% of sales since 28 February, the largest group, and they held up best. That volume suits a fast, automatic first reply.`,
-    `Above AED 5M, sales fell by about half. Those leads are rare and valuable, so a senior agent should take them from the first message.`,
-    `Budgets should be checked against post-war DLD prices, refreshed every month. Using pre-war average prices instead, ${F.tier_changes} of 90 test leads land in the wrong tier.`,
+    `${F.market.under2m_share_pct}% of sales since 28 February were under AED 2M. That volume suits a fast, automatic first reply.`,
+    `Above AED 5M, sales run at about half their usual pace. Those buyers are fewer and each purchase is large, so a senior agent should take them from the first message.`,
+    `Budgets should be checked against current DLD prices, refreshed every month. With older average prices, ${F.tier_changes} of 90 test leads would land in the wrong tier.`,
   ].map(s => `<li>${s}</li>`).join('');
   $('limits-list').innerHTML = [
-    `The "usual pattern" is a model of 2024 to early 2026. It allows for weekdays, seasons, Ramadan and Eid, but it cannot separate the war from anything else that changed after 28 February, so the gap is "below the usual pattern", not "caused by" one thing.`,
-    `The likely range for the overall gap is wide (${pct(F.war_gap_high_pct)} to ${pct(F.war_gap_low_pct)}). A simpler trend model gives ${pct(F.war_gap_trend_model_pct)}.`,
+    `The "usual pattern" is a model of 2024 to early 2026. It allows for weekdays, seasons, Ramadan and Eid. It describes what happened after 28 February, not why.`,
+    `The likely range is wide: between ${F.pace.low_pct}% and ${F.pace.high_pct}% of the usual pace overall. A simpler trend model gives ${Math.round(100 + F.war_gap_trend_model_pct)}%.`,
     `Sales are counted when DLD registers them, which can be weeks after a deal is agreed. Recent months may still rise slightly.`,
     `${MON(F.data_to.slice(0, 7))} ${F.data_to.slice(0, 4)} covers only 1 to ${+F.data_to.slice(8)} ${MON(F.data_to.slice(0, 7))}.`,
-    `Portal asking prices come from ${F.listings_checked} listings checked on one day (21 Oct 2026); only totals are shown, never individual listings.`,
-    `The lead desk test messages were written for the test. The free rules-only version tested here sorts ${Math.round(F.rules_only_pass_pct * 0.9)} of 90 of them correctly; the AI model version scored ${F.desk_postwar_pass} but needs a paid API key.`,
-    `Some published figures differ from ours (see "How we checked it"). Each difference is explained rather than adjusted away.`,
+    `Asking prices come from ${F.listings_checked} portal listings checked on 21 Oct 2026. Only totals are shown, never single listings.`,
+    `The lead desk test messages were written for the test. The free rules-only version sorts ${Math.round(F.rules_only_pass_pct * 0.9)} of 90 correctly. The AI model scored ${F.desk_postwar_pass} but needs a paid API key.`,
+    `Some published figures differ from mine (see "How I checked it"). Each difference is explained, not adjusted away.`,
   ].map(s => `<li>${s}</li>`).join('');
 
   // ---------- evaluation ----------
@@ -449,7 +448,7 @@ __DESK__
     const host = $('c-eval'); host.innerHTML = '';
     const rows = [
       ['AI model · 60 plainly written', F.desk_clean_pass], ['AI model · 30 deliberately hard', F.desk_stress_pass],
-      ['AI model · 90, post-war prices', F.desk_postwar_pass], ['Rules only, free · same 90', `${Math.round(F.rules_only_pass_pct * 90 / 100)}/90`],
+      ['AI model · 90, current prices', F.desk_postwar_pass], ['Rules only, free · same 90', `${Math.round(F.rules_only_pass_pct * 90 / 100)}/90`],
       ['Repeat enquiries merged (phone match)', F.dupes_caught],
     ];
     const w = W(host), narrow = w < 520;                 // on phones the label sits above its bar
@@ -461,10 +460,10 @@ __DESK__
       if (narrow) el('text', { x: 0, y: yy - 6 }, svg).textContent = label;
       else el('text', { x: m.l - 10, y: yy + bh / 2 + 4, 'text-anchor': 'end' }, svg).textContent = label;
       el('rect', { x: x(0), y: yy, width: x(1) - x(0), height: bh, rx: 4, fill: 'var(--chip)' }, svg);
-      el('rect', { x: x(0), y: yy, width: Math.max(0, x(a / b) - x(0)), height: bh, rx: 4, fill: free ? 'var(--s2)' : 'var(--s1)' }, svg);
+      el('rect', { x: x(0), y: yy, width: Math.max(0, x(a / b) - x(0)), height: bh, rx: 4, fill: free ? 'var(--hl)' : 'var(--s1)' }, svg);
       el('text', { x: x(1) + 8, y: yy + bh / 2 + 4, class: 'lbl' }, svg).textContent = `${a}/${b}`;
     });
-    $('m-eval').innerHTML = `<b>What this shows:</b> the AI model sorted every test lead the way the written rules say, including messages built to trick it. The free rules-only version, the one running in n8n and on this page, gets ${Math.round(F.rules_only_pass_pct * 0.9)} of 90 right (${Math.round(F.rules_only_pass_pct)}%); it misses wording it has no rule for, such as numbers written as words, abbreviations like "mtg", or "a year and a half". Tested blind: the answers were hidden from the desk. <span class="tag">test messages, not real buyers</span>`;
+    $('m-eval').innerHTML = `<b>What this shows:</b> the AI model sorted every test lead correctly, even messages built to trick it. The free rules-only version runs in n8n and on this page. It gets ${Math.round(F.rules_only_pass_pct * 0.9)} of 90 right and misses wording it has no rule for, like numbers written as words. The answers were hidden from the desk. <span class="tag">test messages, not real buyers</span>`;
   }
 
   // ---------- try the desk ----------
@@ -491,9 +490,9 @@ __DESK__
 
   // ---------- forecast ----------
   const fc = F.forecast;
-  $('fc-range').textContent = `${int(fc.forecast_low)} to ${int(fc.forecast_high)} sales`;
-  $('fc-sub').innerHTML = `Our forecast for Dubai home sales in November 2026, written on ${new Date(F.built).toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' })}. The usual pattern would expect about ${int(Math.round(fc.expected_without_war / 100) * 100)}. <b>Check it on ${new Date(fc.check_on).toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' })}</b>, when DLD's November records are out.`;
-  $('fc-why').innerHTML = `How it was made: the low end assumes the gap of the latest weeks holds (${pct(fc.recent_gap_pct)}); the high end assumes the average gap since 28 February (${pct(fc.whole_period_gap_pct)}). If the real number lands outside this range, the model is missing something.`;
+  $('fc-range').textContent = `${int(fc.forecast_low)} to ${int(fc.forecast_high)}`;
+  $('fc-sub').innerHTML = `Expected Dubai home sales in November 2026, written down on ${new Date(F.built).toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' })}. The usual pattern would expect about ${int(Math.round(fc.expected_without_war / 100) * 100)}. <b>First check on ${new Date(fc.check_on).toLocaleDateString('en-GB', { day: 'numeric', month: 'long' })}</b>, and again on ${new Date(fc.recheck_on).toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' })}, because DLD can still add late registrations.`;
+  $('fc-why').innerHTML = `How it was made: the low end assumes the pace of recent weeks continues (${Math.round(100 + fc.recent_gap_pct)}% of usual). The high end assumes the average pace since 28 February (${Math.round(100 + fc.whole_period_gap_pct)}%). If the real number lands outside this range, the model needs another look.`;
 
   // ---------- validation ----------
   const V = C.validation;
@@ -501,7 +500,7 @@ __DESK__
   table($('t-val'), ['Check', 'Ours', 'Published', 'Source', 'Verdict'],
     V.map(r => [r.check, unit(r.ours, r.unit), unit(r.published, r.unit), r.source, `<span class="verdict ${r.verdict}">${r.verdict}</span>${r.verdict === 'match' ? '' : '<br><small>' + r.why + '</small>'}`]));
   const n = k => V.filter(r => r.verdict === k).length;
-  $('m-val').innerHTML = `<b>${n('match')} match, ${n('close')} close, ${n('miss')} miss.</b> The misses are kept in on purpose: two use a different scope (all of the UAE, or all property types), and one price index reacts faster because it is based on valuations, not registered sales.`;
+  $('m-val').innerHTML = `<b>${n('match')} match, ${n('close')} close, ${n('miss')} miss.</b> The misses stay in on purpose. Two cover a wider scope: all of the UAE, or all property types. One price index moves sooner because it uses valuations.`;
 
   const draw = () => { drawMonthly(); drawBands(); drawIndex(); drawSupply(); drawEval(); };
   draw();

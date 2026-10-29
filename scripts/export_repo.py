@@ -33,7 +33,7 @@ FILES = [
 PRIVATE_DATASETS = {"same_unit.csv", "stale_offplan.csv", "examples.csv"}
 DLD_RAW = ["transactions.csv", "rents_a.csv", "rents_b.csv", "rents_c.csv", "hist_sales_2024on.csv", "projects.csv", "valuations.csv"]
 EXTRA = {"README.md": "public/README.md", "LICENSE": "public/LICENSE", ".gitignore": "public/gitignore",
-         ".github/workflows/check.yml": "public/check.yml", "docs/banner-1-findings.png": "public/banners/banner-1-findings.png",
+         ".github/workflows/check.yml": "public/check.yml", "CITATION.cff": "public/CITATION.cff", "docs/banner-1-findings.png": "public/banners/banner-1-findings.png",
          "docs/screenshot.png": "public/shots/dashboard.png"}
 
 

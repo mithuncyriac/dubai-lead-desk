@@ -7,6 +7,7 @@
  "forecast_low": 9800,
  "forecast_high": 11600,
  "check_on": "2026-12-07",
- "rule": "Right if DLD's November 2026 residential sales land between forecast_low and forecast_high.",
+ "recheck_on": "2027-01-07",
+ "rule": "Right if DLD's November 2026 residential sales land between forecast_low and forecast_high. First check on check_on; checked again on recheck_on because DLD can still add late registrations.",
  "forecast_mid": 10700
 }

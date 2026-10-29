@@ -58,8 +58,8 @@ res = dict(month="2026-11", expected_without_war=round(expected),
            recent_window=f"2026-09-01 to {END.date()}",
            forecast_low=int(round(expected * (1 + min(whole_gap, recent_gap)), -2)),
            forecast_high=int(round(expected * (1 + max(whole_gap, recent_gap)), -2)),
-           check_on="2026-12-07",
-           rule="Right if DLD's November 2026 residential sales land between forecast_low and forecast_high.")
+           check_on="2026-12-07", recheck_on="2027-01-07",
+           rule="Right if DLD's November 2026 residential sales land between forecast_low and forecast_high. First check on check_on; checked again on recheck_on because DLD can still add late registrations.")
 res["forecast_mid"] = int(round((res["forecast_low"] + res["forecast_high"]) / 2, -2))
 Path("data/forecast.json").write_text(json.dumps(res, indent=1), encoding="utf-8")
 print(json.dumps(res, indent=1))

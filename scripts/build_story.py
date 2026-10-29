@@ -1,13 +1,14 @@
 """The Medium explainer as a plain web page (public/story/index.html, served at <pages>/story/), so Medium's
 "Import a story" can bring it in with its images and a canonical link back. Images are the carousel slides.
 Reads posts/medium_explainer.md and posts/Dubai-Lead-Desk-carousel.pdf."""
-import html, re
+import html, json, re
 from pathlib import Path
 import pymupdf as fitz
 
 OUT = Path("public/story")
 OUT.mkdir(parents=True, exist_ok=True)
 PAGES = "https://mithuncyriac.github.io/dubai-lead-desk/"
+T = json.loads(Path("site/design_tokens.json").read_text(encoding="utf-8")); L, DK = T["light"], T["dark"]
 IMAGES = {  # [Image: ...] marker -> carousel slide number
     "carousel slide 1": 1, "carousel slide 2": 2, "carousel slide 3": 3, "screenshot of the n8n lead desk": 6,
 }
@@ -76,14 +77,19 @@ page = f"""<!doctype html>
 <meta name="description" content="What Dubai Land Department sales records show about who kept buying homes after 28 February 2026.">
 <meta property="og:title" content="{html.escape(title)}"><meta property="og:image" content="{PAGES}story/slide-1.png">
 <meta name="author" content="Mithun Cyriac">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230F1B2D'/%3E%3Cpath d='M8 22V12m6 10V8m6 14v-7m6 7V10' stroke='%23C9A45C' stroke-width='3' stroke-linecap='round'/%3E%3C/svg%3E">
 <script data-goatcounter="https://dubai-lead-desk.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
 <style>
-body {{ margin: 0; background: #fcfcfb; color: #1a1a19; font: 19px/1.7 Georgia, "Times New Roman", serif; }}
-main {{ max-width: 700px; margin: 0 auto; padding: 32px 16px 64px; }}
-h1 {{ font-size: 40px; line-height: 1.2; margin: 0 0 12px; }} h2 {{ font: 600 26px/1.3 system-ui, sans-serif; margin: 42px 0 10px; }}
-a {{ color: #1c5cab; }} figure {{ margin: 28px 0; }} img {{ width: 100%; height: auto; border-radius: 8px; }}
-blockquote {{ margin: 28px 0; padding: 16px 20px; background: #f1efe9; border-left: 4px solid #8a6a1f; font: 16px/1.6 system-ui, sans-serif; }}
-@media (prefers-color-scheme: dark) {{ body {{ background: #141413; color: #f0efec; }} a {{ color: #86b6ef; }} blockquote {{ background: #24231f; }} }}
+body {{ margin: 0; background: {L['bg']}; color: {L['ink']}; font: 19px/1.7 {T['font']['serif']}; }}
+main {{ max-width: {T['measure']}; margin: 0 auto; padding: 48px 20px 96px; }}
+h1 {{ font-weight: 400; font-size: {T['type']['h1']}; line-height: 1.15; margin: 0 0 16px; }}
+h2 {{ font: 600 22px/1.3 {T['font']['sans']}; margin: 56px 0 12px; }}
+a {{ color: inherit; text-decoration-color: {L['highlight']}; text-underline-offset: 3px; }}
+figure {{ margin: 36px 0; }} img {{ width: 100%; height: auto; border-radius: {T['radius']}px; }}
+blockquote {{ margin: 36px 0; padding: 4px 0 4px 20px; border-left: 2px solid {L['highlight']}; font: 16px/1.6 {T['font']['sans']}; color: {L['muted']}; }}
+blockquote strong {{ color: {L['ink']}; }}
+@media (prefers-color-scheme: dark) {{ body {{ background: {DK['bg']}; color: {DK['ink']}; }} a {{ text-decoration-color: {DK['highlight']}; }}
+  blockquote {{ border-left-color: {DK['highlight']}; color: {DK['muted']}; }} blockquote strong {{ color: {DK['ink']}; }} }}
 </style></head>
 <body><main><article>
 <h1>{html.escape(title)}</h1>

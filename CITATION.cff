@@ -1,0 +1,19 @@
+cff-version: 1.2.0
+message: "If you use this analysis or its code, please cite it as below."
+title: "Dubai Lead Desk: who kept buying homes in Dubai since 28 February 2026"
+abstract: "An analysis of Dubai Land Department open data (472,404 residential sales, January 2024 to 19 October 2026): the pace of sales against the usual pattern by month and price band, same-building prices, rents and off-plan supply, a November 2026 forecast written down in advance, and a free n8n tool that answers buyer enquiries."
+type: software
+authors:
+  - family-names: Cyriac
+    given-names: Mithun
+repository-code: "https://github.com/mithuncyriac/dubai-lead-desk"
+url: "https://mithuncyriac.github.io/dubai-lead-desk/"
+license: MIT
+version: "1.0"
+date-released: "2026-10-29"
+keywords:
+  - Dubai
+  - real estate
+  - Dubai Land Department
+  - interrupted time series
+  - n8n
