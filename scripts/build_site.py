@@ -9,7 +9,7 @@ from pathlib import Path
 S = Path("site")
 facts = json.loads((S / "facts.json").read_text(encoding="utf-8"))
 page = (S / "template.html").read_text(encoding="utf-8")
-gc = os.environ.get("GOATCOUNTER", "").strip()
+gc = os.environ.get("GOATCOUNTER", "dubai-lead-desk").strip()          # GoatCounter account; set GOATCOUNTER= to turn off
 repo = os.environ.get("REPO_URL", "https://github.com/mithuncyriac/dubai-lead-desk").strip()
 safe = lambda o: json.dumps(o, ensure_ascii=False).replace("</", r"<\/")
 for key, val in {
