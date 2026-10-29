@@ -1,6 +1,6 @@
 # Dubai Lead Desk
 
-[![Rerun the numbers](https://github.com/mithuncyriac/dubai-lead-desk/actions/workflows/check.yml/badge.svg)](https://github.com/mithuncyriac/dubai-lead-desk/actions/workflows/check.yml)
+[![Rerun the numbers](https://github.com/mithuncyriac/dubai-lead-desk/actions/workflows/check.yml/badge.svg)](https://github.com/mithuncyriac/dubai-lead-desk/actions/workflows/check.yml) [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23759151.svg)](https://doi.org/10.5281/zenodo.23759151)
 
 Who kept buying homes in Dubai since late February 2026? The answer comes from the Dubai Land Department's open records. A free n8n tool that answers buyer enquiries is built on it.
 
@@ -88,6 +88,12 @@ My totals against figures other people published from the same DLD records: 6 ma
 - DLD registers a sale when it is recorded, sometimes weeks after the deal. The latest month covers only part of the month, and recent months may still rise a little.
 - Asking prices come from one day's listings.
 - The desk's test messages were written for the test.
+
+## Cite
+
+Cyriac, M. (2026). *Dubai Lead Desk: who kept buying homes in Dubai since 28 February 2026* (v1.0). Zenodo. https://doi.org/10.5281/zenodo.23759152
+
+The November forecast was written down and archived before the data existed: [Zenodo, v1.0](https://doi.org/10.5281/zenodo.23759152) and the [Internet Archive](https://web.archive.org/web/20261029083353/https://mithuncyriac.github.io/dubai-lead-desk/), both 2026-10-29.
 
 ## Licence
 

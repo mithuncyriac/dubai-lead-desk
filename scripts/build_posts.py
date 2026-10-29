@@ -10,6 +10,7 @@ FC, P, M = F["forecast"], F["pace"], F["market"]
 OUT = Path("posts")
 OUT.mkdir(exist_ok=True)
 PAGES, REPO = "https://mithuncyriac.github.io/dubai-lead-desk/", "https://github.com/mithuncyriac/dubai-lead-desk"
+REL = json.loads(Path("site/release.json").read_text(encoding="utf-8"))
 
 a = lambda v: abs(round(v))                       # -7.9 -> 8
 n = lambda v: f"{int(v):,}"
@@ -119,7 +120,7 @@ One detail I liked. Checking budgets against current prices, not older averages,
 
 Hindsight is easy, so here's something that can be wrong. For November 2026, I expect between {n(FC['forecast_low'])} and {n(FC['forecast_high'])} home sales in Dubai. The usual pattern alone would expect about {n(round(FC['expected_without_war'], -2))}. The low end assumes the pace of recent weeks continues ({round(100 + FC['recent_gap_pct'])}% of usual). The high end assumes the average pace since February ({round(100 + FC['whole_period_gap_pct'])}%).
 
-DLD's November records should be out by {d(FC['check_on'])}. I'll check then, and again on {d(FC['recheck_on'])}, because DLD can still add late registrations. If the real number lands outside the range, the model needs another look, and I'll say so.
+DLD's November records should be out by {d(FC['check_on'])}. I'll check then, and again on {d(FC['recheck_on'])}, because DLD can still add late registrations. If the real number lands outside the range, the model needs another look, and I'll say so. So nobody has to take my word for the timing, the forecast is archived with a DOI: https://doi.org/{REL['doi_version']}.
 
 > **Method, briefly**
 >

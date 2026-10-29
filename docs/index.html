@@ -618,7 +618,7 @@ if (typeof module !== 'undefined') module.exports = DESK;
   const fc = F.forecast;
   $('fc-range').textContent = `${int(fc.forecast_low)} to ${int(fc.forecast_high)}`;
   $('fc-sub').innerHTML = `Expected Dubai home sales in November 2026, written down on ${new Date(F.built).toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' })}. The usual pattern would expect about ${int(Math.round(fc.expected_without_war / 100) * 100)}. <b>First check on ${new Date(fc.check_on).toLocaleDateString('en-GB', { day: 'numeric', month: 'long' })}</b>, and again on ${new Date(fc.recheck_on).toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' })}, because DLD can still add late registrations.`;
-  $('fc-why').innerHTML = `How it was made: the low end assumes the pace of recent weeks continues (${Math.round(100 + fc.recent_gap_pct)}% of usual). The high end assumes the average pace since 28 February (${Math.round(100 + fc.whole_period_gap_pct)}%). If the real number lands outside this range, the model needs another look.`;
+  $('fc-why').innerHTML = `How it was made: the low end assumes the pace of recent weeks continues (${Math.round(100 + fc.recent_gap_pct)}% of usual). The high end assumes the average pace since 28 February (${Math.round(100 + fc.whole_period_gap_pct)}%). If the real number lands outside this range, the model needs another look. Archived on 2026-10-29 with DOI <a href="https://doi.org/10.5281/zenodo.23759152">10.5281/zenodo.23759152</a>, so the timing can be checked.`;
 
   // ---------- validation ----------
   const V = C.validation;

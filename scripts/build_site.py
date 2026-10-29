@@ -37,6 +37,8 @@ for key, val in {
     "__DATA_TO__": facts["data_to_label"],
     "__BUILT__": facts["built"],
     "__LISTINGS__": str(facts["listings_checked"]),
+    "__DOI__": json.loads((S / "release.json").read_text(encoding="utf-8"))["doi_version"],
+    "__ARCHIVED_ON__": json.loads((S / "release.json").read_text(encoding="utf-8"))["archived_on"],
     "__PAGES__": os.environ.get("PAGES_URL", "https://mithuncyriac.github.io/dubai-lead-desk/").strip(),
 }.items():
     page = page.replace(key, val)

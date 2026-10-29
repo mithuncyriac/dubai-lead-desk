@@ -21,7 +21,7 @@ FILES = [
     "desk/Dockerfile.pipeline", "desk/SETUP.md", "desk/DEMO_SCRIPT.md", "desk/tier_csv.js", "scripts/build_posts.py", "scripts/build_carousel.py", "scripts/build_story.py",
     "proof/comprehension_test.md", "proof/agent_blind_test.md", "proof/agent_sheet.csv",
     *[f"desk/workflows/{p.name}" for p in sorted((ROOT / "desk" / "workflows").glob("*.json"))],
-    "site/template.html", "site/design_tokens.json", "site/index.html", "site/facts.json", "site/chart_data.json", "site/desk_prices.json",
+    "site/template.html", "site/design_tokens.json", "site/release.json", "site/index.html", "site/facts.json", "site/chart_data.json", "site/desk_prices.json",
     "data/war_results.json", "data/dld_results.json", "data/forecast.json",
     *[f"eval/{n}" for n in ["specs.json", "hard_specs.json", "specs_v2_truth.json", "ref_v2.json", "dups.json", "eval_results.json",
                             "eval_results.csv", "hard_results.json", "desk_results.json", "desk_log.json", "tier_shift.json", "v2_results.json",

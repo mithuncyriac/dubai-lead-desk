@@ -8,6 +8,7 @@ V = list(csv.DictReader(open("dash_data/validation.csv", encoding="utf-8")))
 FC, P, MK = F["forecast"], F["pace"], F["market"]
 USER, REPO = "mithuncyriac", "dubai-lead-desk"
 PAGES = f"https://{USER}.github.io/{REPO}/"
+REL = json.loads(Path("site/release.json").read_text(encoding="utf-8"))
 pct = lambda v: ("−" if v < 0 else "+") + f"{abs(round(v))}%"
 n = lambda v: f"{int(v):,}"
 share = lambda gap: f"{round(100 + gap)}%"
@@ -25,7 +26,7 @@ check_on = f"{date.fromisoformat(FC['check_on']).day} {date.fromisoformat(FC['ch
 
 readme = f"""# Dubai Lead Desk
 
-[![Rerun the numbers](https://github.com/{USER}/{REPO}/actions/workflows/check.yml/badge.svg)](https://github.com/{USER}/{REPO}/actions/workflows/check.yml)
+[![Rerun the numbers](https://github.com/{USER}/{REPO}/actions/workflows/check.yml/badge.svg)](https://github.com/{USER}/{REPO}/actions/workflows/check.yml) [![DOI](https://zenodo.org/badge/DOI/{REL['doi_concept']}.svg)](https://doi.org/{REL['doi_concept']})
 
 Who kept buying homes in Dubai since late February 2026? The answer comes from the Dubai Land Department's open records. A free n8n tool that answers buyer enquiries is built on it.
 
@@ -102,6 +103,12 @@ My totals against figures other people published from the same DLD records: {ver
 - DLD registers a sale when it is recorded, sometimes weeks after the deal. The latest month covers only part of the month, and recent months may still rise a little.
 - Asking prices come from one day's listings.
 - The desk's test messages were written for the test.
+
+## Cite
+
+Cyriac, M. (2026). *Dubai Lead Desk: who kept buying homes in Dubai since 28 February 2026* (v{REL['version']}). Zenodo. https://doi.org/{REL['doi_version']}
+
+The November forecast was written down and archived before the data existed: [Zenodo, v{REL['version']}](https://doi.org/{REL['doi_version']}) and the [Internet Archive]({REL['archived_forecast']}), both {REL['archived_on']}.
 
 ## Licence
 

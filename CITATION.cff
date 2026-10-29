@@ -10,6 +10,11 @@ repository-code: "https://github.com/mithuncyriac/dubai-lead-desk"
 url: "https://mithuncyriac.github.io/dubai-lead-desk/"
 license: MIT
 version: "1.0"
+doi: "10.5281/zenodo.23759151"
+identifiers:
+  - type: doi
+    value: "10.5281/zenodo.23759152"
+    description: "The v1.0 release, including the November 2026 forecast"
 date-released: "2026-10-29"
 keywords:
   - Dubai
