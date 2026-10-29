@@ -1,7 +1,8 @@
 """Builds the standalone dashboard: site/index.html, one file with the data and the desk logic built in.
 No server, no login, no external requests (except optional GoatCounter analytics).
   GOATCOUNTER=<code> python scripts/build_site.py   adds free, cookie-free page-view counting
-  REPO_URL=<url>                                    links the footer to the public repo"""
+  REPO_URL=<url>                                    links the footer to the public repo
+  PAGES_URL=<url/>                                  absolute address for link previews (LinkedIn, WhatsApp)"""
 import html, json, os
 from pathlib import Path
 
@@ -21,6 +22,7 @@ for key, val in {
     "__DATA_TO__": facts["data_to_label"],
     "__BUILT__": facts["built"],
     "__LISTINGS__": str(facts["listings_checked"]),
+    "__PAGES__": os.environ.get("PAGES_URL", "").strip(),
 }.items():
     page = page.replace(key, val)
 assert "__" not in "".join(t for t in page.split("<script>")[0].split() if t.startswith("__")), "unfilled placeholder"
