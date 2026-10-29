@@ -18,7 +18,7 @@ FILES = [
                                   "make_specs", "make_hard_specs", "extract_history"]],
     "tests/test_facts.py", "tests/test_desk_parity.py", "tests/locked_headlines.json",
     "desk/desk_logic.js", "desk/build_workflows.py", "desk/test_set.json", "desk/pipeline_server.py", "desk/start-n8n.sh",
-    "desk/Dockerfile.pipeline", "desk/SETUP.md", "desk/DEMO_SCRIPT.md", "desk/tier_csv.js",
+    "desk/Dockerfile.pipeline", "desk/SETUP.md", "desk/DEMO_SCRIPT.md", "desk/tier_csv.js", "scripts/build_posts.py", "scripts/build_carousel.py", "scripts/build_story.py",
     "proof/comprehension_test.md", "proof/agent_blind_test.md", "proof/agent_sheet.csv",
     *[f"desk/workflows/{p.name}" for p in sorted((ROOT / "desk" / "workflows").glob("*.json"))],
     "site/template.html", "site/index.html", "site/facts.json", "site/chart_data.json", "site/desk_prices.json",
@@ -61,8 +61,10 @@ def main():
     for dst, src in EXTRA.items():
         (copy(ROOT / src, OUT / dst) if (ROOT / src).exists() else missing.append(src))
     copy(ROOT / "site" / "index.html", OUT / "docs" / "index.html")
+    for f in (ROOT / "public" / "story").glob("*"):      # the Medium explainer as a page, for Medium's "Import a story"
+        copy(f, OUT / "docs" / "story" / f.name)
     # guard: nothing private slipped through
-    leaks = [str(p.relative_to(OUT)) for p in OUT.rglob("*") if p.is_file() and ".git" not in p.parts and (
+    leaks = [str(p.relative_to(OUT)) for p in OUT.rglob("*") if p.is_file() and ".git" not in p.parts and (".secrets" in p.parts or p.name.startswith("publish_") or 
         p.name in {"pf_sale.csv", "pf_rent.csv", "listings_audit.csv", "audit_results.json", "real_messages.json", "real_posts.json",
                    "scores_real.json", "real_disagreements.json", "pull_pf.py"} or p.name in PRIVATE_DATASETS)]
     assert not leaks, f"private files in export: {leaks}"
