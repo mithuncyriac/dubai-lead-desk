@@ -84,6 +84,8 @@ My totals against figures other people published from the same DLD records: {ver
 |---|---|---|---|---|
 {rows}
 
+**Two checks anyone can run.** A one-minute comprehension test with five people who don't work in property ([proof/comprehension_test.md](proof/comprehension_test.md)), and a sheet for one agent to sort 20 real enquiries blind against the desk ([proof/agent_blind_test.md](proof/agent_blind_test.md)). Results go here once they're done.
+
 **A forecast you can check.** Dubai home sales in November 2026 should land between **{n(FC['forecast_low'])} and {n(FC['forecast_high'])}**. The usual pattern would expect about {n(round(FC['expected_without_war'], -2))}. The low end assumes the gap of the latest weeks holds ({pct(FC['recent_gap_pct'])}), the high end the average since 28 February ({pct(FC['whole_period_gap_pct'])}). I'll check it against DLD's November records on {check_on}. If it misses, the model is missing something.
 
 ## Data

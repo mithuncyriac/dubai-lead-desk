@@ -70,6 +70,8 @@ My totals against figures other people published from the same DLD records: 6 ma
 | JVC average flat price, AED | AED 1,070,795 | AED 1,075,878 | Bayut (DLD 12-month average) | **match** |
 | Marina flat sales per year | 2,197 | 2,205 | Bayut (DLD 12-month count) | **match** |
 
+**Two checks anyone can run.** A one-minute comprehension test with five people who don't work in property ([proof/comprehension_test.md](proof/comprehension_test.md)), and a sheet for one agent to sort 20 real enquiries blind against the desk ([proof/agent_blind_test.md](proof/agent_blind_test.md)). Results go here once they're done.
+
 **A forecast you can check.** Dubai home sales in November 2026 should land between **9,800 and 11,600**. The usual pattern would expect about 18,400. The low end assumes the gap of the latest weeks holds (−47%), the high end the average since 28 February (−37%). I'll check it against DLD's November records on 7 December 2026. If it misses, the model is missing something.
 
 ## Data
