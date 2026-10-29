@@ -1,0 +1,9 @@
+segment,effect_pct,ci_low_pct,ci_high_pct,actual_sales,lost_sales
+Price · Under AED 1M,-19.7,-33.9,-2.5,32136,4986
+Price · AED 1–2M,-38.2,-49.6,-24.3,29030,18078
+Price · AED 2–5M,-44.8,-56.6,-29.8,20958,18319
+Price · AED 5M+,-52.4,-61.4,-41.3,4928,5637
+Type · Off-plan,-39.5,-51.0,-25.5,63502,37925
+Type · Ready,-35.1,-50.5,-15.0,23550,14414
+Area · JVC,-39.5,-50.8,-25.4,5872,4644
+Area · Dubai Marina,-27.9,-40.9,-12.1,1131,608

@@ -1,0 +1,3 @@
+model,effect_pct,ci_low_pct,ci_high_pct,actual_sales,expected_sales,lost_sales,days
+Trend model,-34.7,-41.7,-26.7,87052,133072,46020,1023
+Year-effects model,-36.6,-48.1,-22.7,87052,137260,50208,1023

@@ -1,0 +1,5 @@
+case,area,beds,budget_aed,old_tier,new_tier
+E30,JVC,2 bed,1390000,Warm,Hot
+H06,Dubai Marina,2 bed,2360000,Cold,Warm
+H23,Dubai Marina,2 bed,2490000,Warm,Hot
+H30,Dubai Marina,Studio,740000,Cold,Warm

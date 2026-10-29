@@ -1,0 +1,9 @@
+measure,value,note
+Posts scored,30,"public Reddit posts by buyers, 2024–2026, in their own words"
+"Same tier, AI model vs parser",23/30,"no answer key exists; this is agreement, not accuracy"
+Same area read,22/30,
+Same bedrooms read,26/30,
+Same budget read (±5%),27/30,real posts often give ranges or no budget
+Budget not stated (AI model),9/30,these can never reach Hot under the rule
+Sent to human review,9/30,area unknown or confidence below 0.6
+AI tier mix,0 Hot · 27 Warm · 3 Cold,real buyers mostly arrive Warm

@@ -1,0 +1,15 @@
+{
+ "messages": 72,
+ "planted_duplicates": 12,
+ "duplicates_caught": 12,
+ "false_merges": 0,
+ "human_review": 0,
+ "routed": 60,
+ "agent_load": {
+  "Agent A": 18,
+  "Agent B": 18,
+  "Agent C": 12,
+  "Agent D": 12
+ },
+ "hot_with_5min_sla": 20
+}

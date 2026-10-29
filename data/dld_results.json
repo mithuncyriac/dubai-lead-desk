@@ -1,0 +1,714 @@
+{
+ "window": {
+  "first": "2026-01-01",
+  "last": "2026-10-21",
+  "rows": 128178
+ },
+ "dubai_monthly": [
+  {
+   "month": "2026-01",
+   "deals": 17123,
+   "offplan_share": 0.654,
+   "partial": false
+  },
+  {
+   "month": "2026-02",
+   "deals": 16301,
+   "offplan_share": 0.648,
+   "partial": false
+  },
+  {
+   "month": "2026-03",
+   "deals": 12874,
+   "offplan_share": 0.735,
+   "partial": false
+  },
+  {
+   "month": "2026-04",
+   "deals": 13727,
+   "offplan_share": 0.744,
+   "partial": false
+  },
+  {
+   "month": "2026-05",
+   "deals": 10116,
+   "offplan_share": 0.733,
+   "partial": false
+  },
+  {
+   "month": "2026-06",
+   "deals": 13565,
+   "offplan_share": 0.744,
+   "partial": false
+  },
+  {
+   "month": "2026-07",
+   "deals": 13914,
+   "offplan_share": 0.702,
+   "partial": false
+  },
+  {
+   "month": "2026-08",
+   "deals": 11645,
+   "offplan_share": 0.694,
+   "partial": false
+  },
+  {
+   "month": "2026-09",
+   "deals": 11008,
+   "offplan_share": 0.669,
+   "partial": false
+  },
+  {
+   "month": "2026-10",
+   "deals": 7905,
+   "offplan_share": 0.592,
+   "partial": true
+  }
+ ],
+ "dubai_top_areas": [
+  {
+   "area": "Madinat Al Mataar",
+   "deals": 12630
+  },
+  {
+   "area": "JUMEIRAH VILLAGE CIRCLE",
+   "deals": 8360
+  },
+  {
+   "area": "DUBAI LAND RESIDENCE COMPLEX",
+   "deals": 5108
+  },
+  {
+   "area": "BUSINESS BAY",
+   "deals": 5027
+  },
+  {
+   "area": "MAJAN",
+   "deals": 4390
+  },
+  {
+   "area": "Al Yelayiss 1",
+   "deals": 3884
+  },
+  {
+   "area": "Al Hebiah Fifth",
+   "deals": 3113
+  },
+  {
+   "area": "Palm Deira",
+   "deals": 3096
+  },
+  {
+   "area": "ARJAN",
+   "deals": 2777
+  },
+  {
+   "area": "CITY OF ARABIA",
+   "deals": 2695
+  }
+ ],
+ "dubai_offplan_share": 0.693,
+ "areas": {
+  "JVC": {
+   "deals": 8360,
+   "flat_deals": 7681,
+   "mean_flat_price": 1070795,
+   "median_flat_price": 1000000,
+   "offplan_share": 0.565,
+   "avg_monthly_deals_full_months": 869.9,
+   "ready_median_psf": 1271,
+   "offplan_median_psf": 1560,
+   "monthly": [
+    {
+     "month": "2026-01",
+     "deals": 1093,
+     "offplan_share": 0.562,
+     "partial": false
+    },
+    {
+     "month": "2026-02",
+     "deals": 1161,
+     "offplan_share": 0.612,
+     "partial": false
+    },
+    {
+     "month": "2026-03",
+     "deals": 904,
+     "offplan_share": 0.688,
+     "partial": false
+    },
+    {
+     "month": "2026-04",
+     "deals": 832,
+     "offplan_share": 0.68,
+     "partial": false
+    },
+    {
+     "month": "2026-05",
+     "deals": 548,
+     "offplan_share": 0.566,
+     "partial": false
+    },
+    {
+     "month": "2026-06",
+     "deals": 762,
+     "offplan_share": 0.526,
+     "partial": false
+    },
+    {
+     "month": "2026-07",
+     "deals": 966,
+     "offplan_share": 0.446,
+     "partial": false
+    },
+    {
+     "month": "2026-08",
+     "deals": 759,
+     "offplan_share": 0.481,
+     "partial": false
+    },
+    {
+     "month": "2026-09",
+     "deals": 804,
+     "offplan_share": 0.545,
+     "partial": false
+    },
+    {
+     "month": "2026-10",
+     "deals": 531,
+     "offplan_share": 0.499,
+     "partial": true
+    }
+   ],
+   "by_beds": [
+    {
+     "beds": 0,
+     "deals": 2392,
+     "median_price": 701950,
+     "ready_deals": 819,
+     "ready_median_price": 610000,
+     "ready_median_psf": 1425,
+     "offplan_median_psf": 1816
+    },
+    {
+     "beds": 1,
+     "deals": 4063,
+     "median_price": 1090000,
+     "ready_deals": 1805,
+     "ready_median_price": 990000,
+     "ready_median_psf": 1255,
+     "offplan_median_psf": 1480
+    },
+    {
+     "beds": 2,
+     "deals": 1085,
+     "median_price": 1665190,
+     "ready_deals": 478,
+     "ready_median_price": 1500000,
+     "ready_median_psf": 1175,
+     "offplan_median_psf": 1392
+    },
+    {
+     "beds": 3,
+     "deals": 132,
+     "median_price": 2252497,
+     "ready_deals": 72,
+     "ready_median_price": 2230737,
+     "ready_median_psf": 1402,
+     "offplan_median_psf": 1405
+    }
+   ],
+   "price_bands": [
+    {
+     "band": "<750k",
+     "deals": 1902
+    },
+    {
+     "band": "750k\u20131M",
+     "deals": 1991
+    },
+    {
+     "band": "1\u20131.5M",
+     "deals": 2774
+    },
+    {
+     "band": "1.5\u20132M",
+     "deals": 713
+    },
+    {
+     "band": "2\u20133M",
+     "deals": 271
+    },
+    {
+     "band": "3\u20135M",
+     "deals": 27
+    },
+    {
+     "band": "5M+",
+     "deals": 3
+    }
+   ],
+   "top_projects": [
+    {
+     "project": "Serenz by Danube",
+     "deals": 597
+    },
+    {
+     "project": "Binghatti Apex",
+     "deals": 262
+    },
+    {
+     "project": "Stax",
+     "deals": 233
+    },
+    {
+     "project": "Luma Park Views",
+     "deals": 165
+    },
+    {
+     "project": "OXFORD COVE",
+     "deals": 163
+    },
+    {
+     "project": "AURESTA TOWER",
+     "deals": 160
+    },
+    {
+     "project": "PEARL HOUSE IV BY IMTIAZ",
+     "deals": 156
+    },
+    {
+     "project": "368 Park Ln",
+     "deals": 110
+    }
+   ]
+  },
+  "Dubai Marina": {
+   "deals": 2103,
+   "flat_deals": 1770,
+   "mean_flat_price": 3946999,
+   "median_flat_price": 2521193,
+   "offplan_share": 0.201,
+   "avg_monthly_deals_full_months": 220.1,
+   "ready_median_psf": 1871,
+   "offplan_median_psf": 4107,
+   "monthly": [
+    {
+     "month": "2026-01",
+     "deals": 245,
+     "offplan_share": 0.216,
+     "partial": false
+    },
+    {
+     "month": "2026-02",
+     "deals": 305,
+     "offplan_share": 0.348,
+     "partial": false
+    },
+    {
+     "month": "2026-03",
+     "deals": 183,
+     "offplan_share": 0.301,
+     "partial": false
+    },
+    {
+     "month": "2026-04",
+     "deals": 234,
+     "offplan_share": 0.278,
+     "partial": false
+    },
+    {
+     "month": "2026-05",
+     "deals": 170,
+     "offplan_share": 0.159,
+     "partial": false
+    },
+    {
+     "month": "2026-06",
+     "deals": 173,
+     "offplan_share": 0.121,
+     "partial": false
+    },
+    {
+     "month": "2026-07",
+     "deals": 286,
+     "offplan_share": 0.147,
+     "partial": false
+    },
+    {
+     "month": "2026-08",
+     "deals": 217,
+     "offplan_share": 0.078,
+     "partial": false
+    },
+    {
+     "month": "2026-09",
+     "deals": 168,
+     "offplan_share": 0.113,
+     "partial": false
+    },
+    {
+     "month": "2026-10",
+     "deals": 122,
+     "offplan_share": 0.139,
+     "partial": true
+    }
+   ],
+   "by_beds": [
+    {
+     "beds": 0,
+     "deals": 108,
+     "median_price": 1065000,
+     "ready_deals": 102,
+     "ready_median_price": 1050000,
+     "ready_median_psf": 2342,
+     "offplan_median_psf": 3438
+    },
+    {
+     "beds": 1,
+     "deals": 695,
+     "median_price": 1750000,
+     "ready_deals": 571,
+     "ready_median_price": 1575000,
+     "ready_median_psf": 1914,
+     "offplan_median_psf": 3479
+    },
+    {
+     "beds": 2,
+     "deals": 614,
+     "median_price": 3100000,
+     "ready_deals": 432,
+     "ready_median_price": 2523908,
+     "ready_median_psf": 1822,
+     "offplan_median_psf": 4326
+    },
+    {
+     "beds": 3,
+     "deals": 272,
+     "median_price": 4789735,
+     "ready_deals": 197,
+     "ready_median_price": 4000000,
+     "ready_median_psf": 1807,
+     "offplan_median_psf": 4832
+    }
+   ],
+   "price_bands": [
+    {
+     "band": "<750k",
+     "deals": 19
+    },
+    {
+     "band": "750k\u20131M",
+     "deals": 81
+    },
+    {
+     "band": "1\u20131.5M",
+     "deals": 285
+    },
+    {
+     "band": "1.5\u20132M",
+     "deals": 266
+    },
+    {
+     "band": "2\u20133M",
+     "deals": 419
+    },
+    {
+     "band": "3\u20135M",
+     "deals": 367
+    },
+    {
+     "band": "5M+",
+     "deals": 333
+    }
+   ],
+   "top_projects": [
+    {
+     "project": "Ciel",
+     "deals": 165
+    },
+    {
+     "project": "The Residences at the Dubai Beach Edition",
+     "deals": 80
+    },
+    {
+     "project": "W Residences at Dubai Harbour",
+     "deals": 55
+    },
+    {
+     "project": "PARK ISLANDS",
+     "deals": 54
+    },
+    {
+     "project": "SILVERENE",
+     "deals": 39
+    },
+    {
+     "project": "PRINCESS TOWER",
+     "deals": 37
+    },
+    {
+     "project": "TORCH TOWER",
+     "deals": 34
+    },
+    {
+     "project": "DAMAC BAY",
+     "deals": 33
+    }
+   ]
+  }
+ },
+ "rents": {
+  "JVC": {
+   "contracts": 29021,
+   "new": 18233,
+   "renewed": 10788,
+   "renewal_share": 0.372,
+   "new_median_rent_per_sqm": 1009,
+   "renewed_median_rent_per_sqm": 906,
+   "new_vs_renewal_gap_pct": 11.3,
+   "monthly_new_leases": [
+    {
+     "month": "2026-01",
+     "n": 1963
+    },
+    {
+     "month": "2026-02",
+     "n": 1588
+    },
+    {
+     "month": "2026-03",
+     "n": 941
+    },
+    {
+     "month": "2026-04",
+     "n": 1073
+    },
+    {
+     "month": "2026-05",
+     "n": 1207
+    },
+    {
+     "month": "2026-06",
+     "n": 1997
+    },
+    {
+     "month": "2026-07",
+     "n": 2247
+    },
+    {
+     "month": "2026-08",
+     "n": 2603
+    },
+    {
+     "month": "2026-09",
+     "n": 3013
+    },
+    {
+     "month": "2026-10",
+     "n": 1601
+    }
+   ]
+  },
+  "Dubai Marina": {
+   "contracts": 17002,
+   "new": 9697,
+   "renewed": 7305,
+   "renewal_share": 0.43,
+   "new_median_rent_per_sqm": 1180,
+   "renewed_median_rent_per_sqm": 1098,
+   "new_vs_renewal_gap_pct": 7.4,
+   "monthly_new_leases": [
+    {
+     "month": "2026-01",
+     "n": 848
+    },
+    {
+     "month": "2026-02",
+     "n": 809
+    },
+    {
+     "month": "2026-03",
+     "n": 467
+    },
+    {
+     "month": "2026-04",
+     "n": 674
+    },
+    {
+     "month": "2026-05",
+     "n": 637
+    },
+    {
+     "month": "2026-06",
+     "n": 1077
+    },
+    {
+     "month": "2026-07",
+     "n": 1077
+    },
+    {
+     "month": "2026-08",
+     "n": 1333
+    },
+    {
+     "month": "2026-09",
+     "n": 1776
+    },
+    {
+     "month": "2026-10",
+     "n": 999
+    }
+   ]
+  }
+ },
+ "dld_yields": [
+  {
+   "area": "JVC",
+   "size_band": "Studio-size (<45 m\u00b2)",
+   "n_new_leases": 4234,
+   "n_ready_sales": 612,
+   "median_new_rent": 47528,
+   "median_ready_price": 620000,
+   "gross_yield_pct": 7.49
+  },
+  {
+   "area": "JVC",
+   "size_band": "1-bed size (45\u201385 m\u00b2)",
+   "n_new_leases": 9395,
+   "n_ready_sales": 1655,
+   "median_new_rent": 68000,
+   "median_ready_price": 950000,
+   "gross_yield_pct": 7.22
+  },
+  {
+   "area": "JVC",
+   "size_band": "2-bed size (85\u2013130 m\u00b2)",
+   "n_new_leases": 3645,
+   "n_ready_sales": 686,
+   "median_new_rent": 85000,
+   "median_ready_price": 1206764,
+   "gross_yield_pct": 7.17
+  },
+  {
+   "area": "JVC",
+   "size_band": "3-bed size (130\u2013200 m\u00b2)",
+   "n_new_leases": 773,
+   "n_ready_sales": 194,
+   "median_new_rent": 120000,
+   "median_ready_price": 1700000,
+   "gross_yield_pct": 7.19
+  },
+  {
+   "area": "Dubai Marina",
+   "size_band": "Studio-size (<45 m\u00b2)",
+   "n_new_leases": 449,
+   "n_ready_sales": 57,
+   "median_new_rent": 58000,
+   "median_ready_price": 990000,
+   "gross_yield_pct": 6.36
+  },
+  {
+   "area": "Dubai Marina",
+   "size_band": "1-bed size (45\u201385 m\u00b2)",
+   "n_new_leases": 3417,
+   "n_ready_sales": 460,
+   "median_new_rent": 88000,
+   "median_ready_price": 1520000,
+   "gross_yield_pct": 5.85
+  },
+  {
+   "area": "Dubai Marina",
+   "size_band": "2-bed size (85\u2013130 m\u00b2)",
+   "n_new_leases": 3128,
+   "n_ready_sales": 420,
+   "median_new_rent": 120750,
+   "median_ready_price": 2055000,
+   "gross_yield_pct": 5.8
+  },
+  {
+   "area": "Dubai Marina",
+   "size_band": "3-bed size (130\u2013200 m\u00b2)",
+   "n_new_leases": 2085,
+   "n_ready_sales": 280,
+   "median_new_rent": 165000,
+   "median_ready_price": 3000000,
+   "gross_yield_pct": 5.4
+  }
+ ],
+ "dld_yields_postwar": [
+  {
+   "area": "JVC",
+   "size_band": "Studio-size (<45 m\u00b2)",
+   "n_new_leases": 2361,
+   "n_ready_sales": 259,
+   "median_new_rent": 45000,
+   "median_ready_price": 615000,
+   "gross_yield_pct": 7.21
+  },
+  {
+   "area": "JVC",
+   "size_band": "1-bed size (45\u201385 m\u00b2)",
+   "n_new_leases": 4860,
+   "n_ready_sales": 712,
+   "median_new_rent": 65000,
+   "median_ready_price": 903000,
+   "gross_yield_pct": 7.22
+  },
+  {
+   "area": "JVC",
+   "size_band": "2-bed size (85\u2013130 m\u00b2)",
+   "n_new_leases": 1754,
+   "n_ready_sales": 296,
+   "median_new_rent": 80000,
+   "median_ready_price": 1150000,
+   "gross_yield_pct": 7.34
+  },
+  {
+   "area": "JVC",
+   "size_band": "3-bed size (130\u2013200 m\u00b2)",
+   "n_new_leases": 384,
+   "n_ready_sales": 85,
+   "median_new_rent": 115000,
+   "median_ready_price": 1580000,
+   "gross_yield_pct": 7.36
+  },
+  {
+   "area": "Dubai Marina",
+   "size_band": "Studio-size (<45 m\u00b2)",
+   "n_new_leases": 239,
+   "n_ready_sales": 21,
+   "median_new_rent": 55000,
+   "median_ready_price": 900000,
+   "gross_yield_pct": 6.86
+  },
+  {
+   "area": "Dubai Marina",
+   "size_band": "1-bed size (45\u201385 m\u00b2)",
+   "n_new_leases": 1922,
+   "n_ready_sales": 199,
+   "median_new_rent": 85000,
+   "median_ready_price": 1625000,
+   "gross_yield_pct": 5.1
+  },
+  {
+   "area": "Dubai Marina",
+   "size_band": "2-bed size (85\u2013130 m\u00b2)",
+   "n_new_leases": 1658,
+   "n_ready_sales": 171,
+   "median_new_rent": 119839,
+   "median_ready_price": 2200000,
+   "gross_yield_pct": 5.15
+  },
+  {
+   "area": "Dubai Marina",
+   "size_band": "3-bed size (130\u2013200 m\u00b2)",
+   "n_new_leases": 1086,
+   "n_ready_sales": 113,
+   "median_new_rent": 160000,
+   "median_ready_price": 3100000,
+   "gross_yield_pct": 5.02
+  }
+ ]
+}

@@ -1,0 +1,2 @@
+case,hardness,expected,got,why
+H09,decoy price or area in the text,Cold,Cold,misread timeline (unknown vs 0)

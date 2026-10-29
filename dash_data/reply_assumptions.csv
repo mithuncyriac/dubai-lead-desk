@@ -1,0 +1,6 @@
+reply,minutes,retained_pct
+Under 5 minutes,5,100
+30 minutes,30,60
+1 hour,60,45
+Same day,480,25
+Next day,1440,15

@@ -1,0 +1,13 @@
+check,ours,published,unit,source,gap,verdict,why
+Q3 2026 residential deals,34047,34000,deals,Cavendish Maxwell via The National,0.1,match,same DLD source
+"Q3 2026 deals, change vs Q3 2025",-36.5,-38,pts,Cavendish Maxwell via The National,1.5,match,same DLD source
+"Q3 2026 sales value, change vs Q3 2025",-46.4,-47,pts,Cavendish Maxwell via The National,0.6,match,same DLD source
+"Q3 2026 sales value, AED bn",67.9,72.6,AED bn,Cavendish Maxwell via The National,-6.5,miss,level differs: their total likely includes procedures we exclude (e.g. land and building sales classed outside 'Residential')
+Jan–Sep 2026 deals,110672,112580,deals,Cavendish Maxwell via The National,-1.7,match,same DLD source
+"Jan–Sep 2026 deals, change vs 2025",-19.9,-23,pts,Cavendish Maxwell via The National,3.1,close,small gap; their 2025 base may include late-registered deals our export dates differently
+Monthly sales Mar–Sep vs Jan–Feb 2026,-22.2,-26,pts,S&P Global Ratings (DLD data),3.8,close,S&P counts all sales incl. commercial; we count residential only
+"First 12 days of March, change vs 2025",-6.4,-37,pts,Goldman Sachs (UAE-wide),30.6,miss,"miss: Goldman covers the whole UAE with an unpublished method; March 2025 was Ramadan, which lowers our comparison base"
+"Price move in March 2026 (ready flats, JVC)",2.0,-5.9,pts,ValuStrat Price Index,7.9,miss,miss in timing: ValuStrat is valuation-based and reacts at once; March registrations were mostly deals agreed before the war. Our index falls from May
+"Price move Feb–Oct 2026 (ready flats, JVC)",-5.8,-10,pts,ValuStrat (cumulative since late Feb),4.2,close,"same direction, smaller: ValuStrat covers all Dubai incl. prime villas"
+"JVC average flat price, AED",1070795,1075878,AED,Bayut (DLD 12-month average),-0.5,match,"different window, same source"
+Marina flat sales per year,2197,2205,deals,Bayut (DLD 12-month count),-0.4,match,"different window, same source"

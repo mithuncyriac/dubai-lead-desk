@@ -1,0 +1,14 @@
+test,cases,passed,note,pass_rate_pct
+Plain enquiries · tier,60,60,60 messages with facts stated plainly,100.0
+Same answer on 3 runs,60,60,identical tier in three separate runs,100.0
+"Arabic, Hinglish, Russian, broken English",60,60,same tier as the English original,100.0
+Unrealistic-budget flag,6,6,"precision 100%, recall 100%",100.0
+Duplicate re-enquiries merged,12,12,"phone written 4 different ways, name spelt differently",100.0
+Stress · decoy price or area in the text,5,5,1 with a misread fact,100.0
+Stress · timeline relative to a date,5,5,all facts read correctly,100.0
+"Stress · under 15 words, abbreviations",5,5,all facts read correctly,100.0
+Stress · budget in words or odd format,5,5,all facts read correctly,100.0
+"Stress · payment implied, not named",5,5,all facts read correctly,100.0
+Stress · facts spread over 3 messages,5,5,all facts read correctly,100.0
+"Post-war rule · AI model, blind",90,90,includes all 4 leads whose tier changed,100.0
+Rules-only parser (no AI) · baseline,90,77,regular expressions + same rule; shows what the AI adds,85.6

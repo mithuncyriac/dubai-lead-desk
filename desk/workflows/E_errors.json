@@ -1,0 +1,81 @@
+{
+ "id": "DLDeskErrors0001",
+ "name": "Dubai Lead Desk · E · Errors",
+ "nodes": [
+  {
+   "id": "when-a-desk-workflow-fails",
+   "name": "When a desk workflow fails",
+   "type": "n8n-nodes-base.errorTrigger",
+   "typeVersion": 1,
+   "position": [
+    0,
+    0
+   ],
+   "parameters": {}
+  },
+  {
+   "id": "write-to-errors.log",
+   "name": "Write to errors.log",
+   "type": "n8n-nodes-base.code",
+   "typeVersion": 2,
+   "position": [
+    240,
+    0
+   ],
+   "parameters": {
+    "jsCode": "const fs = require('fs'), path = require('path');\nconst e = $json;\nconst line = `${new Date().toISOString()} workflow=\"${e.workflow?.name}\" node=\"${e.execution?.lastNodeExecuted}\" error=\"${e.execution?.error?.message}\" execution=${e.execution?.id}\\n`;\nfs.appendFileSync(path.join($env.DESK_DIR, 'errors.log'), line);\nreturn [{ json: { logged: line.trim() } }];\n",
+    "mode": "runOnceForAllItems",
+    "language": "javaScript"
+   }
+  },
+  {
+   "id": "alert-on-telegram-optional",
+   "name": "Alert on Telegram (optional)",
+   "type": "n8n-nodes-base.telegram",
+   "typeVersion": 1.2,
+   "position": [
+    480,
+    0
+   ],
+   "parameters": {
+    "chatId": "={{ $env.TELEGRAM_CHAT_ID }}",
+    "text": "={{ 'Dubai Lead Desk error: ' + $json.logged }}",
+    "additionalFields": {
+     "appendAttribution": false
+    }
+   },
+   "disabled": true
+  }
+ ],
+ "connections": {
+  "When a desk workflow fails": {
+   "main": [
+    [
+     {
+      "node": "Write to errors.log",
+      "type": "main",
+      "index": 0
+     }
+    ]
+   ]
+  },
+  "Write to errors.log": {
+   "main": [
+    [
+     {
+      "node": "Alert on Telegram (optional)",
+      "type": "main",
+      "index": 0
+     }
+    ]
+   ]
+  }
+ },
+ "settings": {
+  "executionOrder": "v1",
+  "timezone": "Asia/Dubai",
+  "saveManualExecutions": true
+ },
+ "active": false,
+ "pinData": {}
+}

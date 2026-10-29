@@ -1,0 +1,232 @@
+{
+ "id": "DLDeskHarness001",
+ "name": "Dubai Lead Desk · B · Test harness",
+ "nodes": [
+  {
+   "id": "run-harness-webhook",
+   "name": "Run harness (webhook)",
+   "type": "n8n-nodes-base.webhook",
+   "typeVersion": 2,
+   "position": [
+    0,
+    0
+   ],
+   "parameters": {
+    "httpMethod": "POST",
+    "path": "desk-test",
+    "responseMode": "responseNode",
+    "options": {}
+   },
+   "webhookId": "9b1f0d6e-6a51-4c1e-9f0a-1d2b3c4d5e03"
+  },
+  {
+   "id": "run-harness-manual",
+   "name": "Run harness (manual)",
+   "type": "n8n-nodes-base.manualTrigger",
+   "typeVersion": 1,
+   "position": [
+    0,
+    200
+   ],
+   "parameters": {}
+  },
+  {
+   "id": "load-test-set",
+   "name": "Load test set",
+   "type": "n8n-nodes-base.code",
+   "typeVersion": 2,
+   "position": [
+    240,
+    100
+   ],
+   "parameters": {
+    "jsCode": "// the hidden answers stay in this workflow; A only ever sees the message\nconst fs = require('fs'), path = require('path');\nconst cases = JSON.parse(fs.readFileSync(path.join($env.DESK_DIR, '..', 'test_set.json'), 'utf8'));\nreturn cases.map(c => ({ json: c }));\n",
+    "mode": "runOnceForAllItems",
+    "language": "javaScript"
+   }
+  },
+  {
+   "id": "send-to-lead-desk",
+   "name": "Send to lead desk",
+   "type": "n8n-nodes-base.httpRequest",
+   "typeVersion": 4.2,
+   "position": [
+    480,
+    100
+   ],
+   "parameters": {
+    "method": "POST",
+    "url": "http://127.0.0.1:5678/webhook/lead-desk",
+    "sendBody": true,
+    "specifyBody": "json",
+    "jsonBody": "={{ { message: $json.message, name: $json.name, phone: $json.phone, channel: 'Test harness', test_run: true, as_of: '2026-10' } }}",
+    "options": {
+     "batching": {
+      "batch": {
+       "batchSize": 10,
+       "batchInterval": 200
+      }
+     },
+     "timeout": 30000
+    }
+   }
+  },
+  {
+   "id": "score-against-hidden-answers",
+   "name": "Score against hidden answers",
+   "type": "n8n-nodes-base.code",
+   "typeVersion": 2,
+   "position": [
+    720,
+    100
+   ],
+   "parameters": {
+    "jsCode": "const fs = require('fs'), path = require('path');\nconst cases = $('Load test set').all().map(i => i.json);\nconst got = $input.all().map(i => i.json);\nconst rows = cases.map((c, i) => ({ id: c.id, set: c.set, expected: c.truth, got: got[i].tier, ok: got[i].tier === c.truth }));\nconst by = s => { const r = rows.filter(x => x.set === s); return `${r.filter(x => x.ok).length}/${r.length}`; };\nconst report = { ran_at: new Date().toISOString(), cases: rows.length, correct: rows.filter(r => r.ok).length,\n  accuracy_pct: Math.round(1000 * rows.filter(r => r.ok).length / rows.length) / 10,\n  plain_set: by('plain'), stress_set: by('stress'), misses: rows.filter(r => !r.ok),\n  note: 'Rules-only reading (no AI). The published Python baseline is 77/90 (85.6%); the AI model scored 90/90 blind.' };\nfs.writeFileSync(path.join($env.DESK_DIR, 'harness_report.json'), JSON.stringify(report, null, 1));\nreturn [{ json: report }];\n",
+    "mode": "runOnceForAllItems",
+    "language": "javaScript"
+   }
+  },
+  {
+   "id": "came-from-webhook",
+   "name": "Came from webhook?",
+   "type": "n8n-nodes-base.if",
+   "typeVersion": 2.2,
+   "position": [
+    960,
+    100
+   ],
+   "parameters": {
+    "conditions": {
+     "options": {
+      "caseSensitive": true,
+      "leftValue": "",
+      "typeValidation": "loose",
+      "version": 2
+     },
+     "combinator": "and",
+     "conditions": [
+      {
+       "id": "w2",
+       "leftValue": "={{ $('Run harness (webhook)').isExecuted }}",
+       "rightValue": true,
+       "operator": {
+        "type": "boolean",
+        "operation": "true",
+        "singleValue": true
+       }
+      }
+     ]
+    },
+    "looseTypeValidation": true,
+    "options": {}
+   }
+  },
+  {
+   "id": "return-report",
+   "name": "Return report",
+   "type": "n8n-nodes-base.respondToWebhook",
+   "typeVersion": 1.1,
+   "position": [
+    1200,
+    100
+   ],
+   "parameters": {
+    "respondWith": "json",
+    "responseBody": "={{ $json }}",
+    "options": {}
+   }
+  },
+  {
+   "id": "note-1405",
+   "name": "Note 1405",
+   "type": "n8n-nodes-base.stickyNote",
+   "typeVersion": 1,
+   "position": [
+    -40,
+    -260
+   ],
+   "parameters": {
+    "content": "## B · Test harness\n90 test enquiries (60 plain, 30 deliberately hard) go through A exactly like real ones, marked as test runs so nothing is logged. The tiers are scored against answers A never sees. Report: `desk/runtime/harness_report.json`.",
+    "width": 520,
+    "height": 200,
+    "color": 5
+   }
+  }
+ ],
+ "connections": {
+  "Run harness (webhook)": {
+   "main": [
+    [
+     {
+      "node": "Load test set",
+      "type": "main",
+      "index": 0
+     }
+    ]
+   ]
+  },
+  "Run harness (manual)": {
+   "main": [
+    [
+     {
+      "node": "Load test set",
+      "type": "main",
+      "index": 0
+     }
+    ]
+   ]
+  },
+  "Load test set": {
+   "main": [
+    [
+     {
+      "node": "Send to lead desk",
+      "type": "main",
+      "index": 0
+     }
+    ]
+   ]
+  },
+  "Send to lead desk": {
+   "main": [
+    [
+     {
+      "node": "Score against hidden answers",
+      "type": "main",
+      "index": 0
+     }
+    ]
+   ]
+  },
+  "Score against hidden answers": {
+   "main": [
+    [
+     {
+      "node": "Came from webhook?",
+      "type": "main",
+      "index": 0
+     }
+    ]
+   ]
+  },
+  "Came from webhook?": {
+   "main": [
+    [
+     {
+      "node": "Return report",
+      "type": "main",
+      "index": 0
+     }
+    ]
+   ]
+  }
+ },
+ "settings": {
+  "executionOrder": "v1",
+  "timezone": "Asia/Dubai",
+  "saveManualExecutions": true,
+  "errorWorkflow": "DLDeskErrors0001"
+ },
+ "active": false,
+ "pinData": {}
+}

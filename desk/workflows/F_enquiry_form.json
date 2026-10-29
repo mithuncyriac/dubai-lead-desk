@@ -1,0 +1,104 @@
+{
+ "id": "DLDeskForm000001",
+ "name": "Dubai Lead Desk · F · Enquiry form",
+ "nodes": [
+  {
+   "id": "enquiry-form",
+   "name": "Enquiry form",
+   "type": "n8n-nodes-base.formTrigger",
+   "typeVersion": 2.2,
+   "position": [
+    0,
+    0
+   ],
+   "parameters": {
+    "formTitle": "Ask about a home in JVC or Dubai Marina",
+    "formDescription": "Demo of the Dubai Lead Desk. Please use test details, not real ones.",
+    "formFields": {
+     "values": [
+      {
+       "fieldLabel": "Name",
+       "requiredField": true
+      },
+      {
+       "fieldLabel": "Phone",
+       "requiredField": true
+      },
+      {
+       "fieldLabel": "Message",
+       "fieldType": "textarea",
+       "requiredField": true
+      }
+     ]
+    },
+    "responseMode": "onReceived",
+    "options": {
+     "path": "lead-form",
+     "respondWithOptions": {
+      "values": {
+       "formSubmittedText": "Thanks. An agent will reply shortly."
+      }
+     }
+    }
+   },
+   "webhookId": "9b1f0d6e-6a51-4c1e-9f0a-1d2b3c4d5e02"
+  },
+  {
+   "id": "hand-to-lead-desk",
+   "name": "Hand to lead desk",
+   "type": "n8n-nodes-base.httpRequest",
+   "typeVersion": 4.2,
+   "position": [
+    260,
+    0
+   ],
+   "parameters": {
+    "method": "POST",
+    "url": "http://127.0.0.1:5678/webhook/lead-desk",
+    "sendBody": true,
+    "specifyBody": "json",
+    "jsonBody": "={{ { name: $json.Name, phone: $json.Phone, message: $json.Message, channel: 'Web form' } }}",
+    "options": {
+     "timeout": 30000
+    }
+   }
+  },
+  {
+   "id": "note-2514",
+   "name": "Note 2514",
+   "type": "n8n-nodes-base.stickyNote",
+   "typeVersion": 1,
+   "position": [
+    -40,
+    -220
+   ],
+   "parameters": {
+    "content": "## F · Enquiry form\nOpen `/form/lead-form`. Each submission goes to the lead desk (A) exactly like a webhook enquiry.",
+    "width": 420,
+    "height": 160,
+    "color": 4
+   }
+  }
+ ],
+ "connections": {
+  "Enquiry form": {
+   "main": [
+    [
+     {
+      "node": "Hand to lead desk",
+      "type": "main",
+      "index": 0
+     }
+    ]
+   ]
+  }
+ },
+ "settings": {
+  "executionOrder": "v1",
+  "timezone": "Asia/Dubai",
+  "saveManualExecutions": true,
+  "errorWorkflow": "DLDeskErrors0001"
+ },
+ "active": false,
+ "pinData": {}
+}

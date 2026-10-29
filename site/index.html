@@ -1,0 +1,634 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dubai Lead Desk</title>
+<meta name="description" content="Dubai home sales since 28 February 2026, explained for first-time buyers, from Dubai Land Department data. Data to 19 Oct 2026.">
+<meta property="og:title" content="Dubai Lead Desk: who kept buying homes in Dubai since 28 February">
+<meta property="og:description" content="Sales ran about a third below the usual pattern. Homes under AED 1M held up best. From Dubai Land Department data, to 19 Oct 2026.">
+<meta property="og:image" content="banner-1-findings.png">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%231c5cab'/%3E%3Cpath d='M8 22V12m6 10V8m6 14v-7m6 7V10' stroke='white' stroke-width='3' stroke-linecap='round'/%3E%3C/svg%3E">
+<style>
+:root {
+  color-scheme: light;
+  --bg: #fcfcfb; --card: #ffffff; --ink: #0b0b0b; --ink-2: #52514e; --ink-3: #6b6a66; --line: #e4e2dc; --grid: #ecebe6;
+  --s1: #2a78d6; --s2: #eb6834; --ghost: #b9b7b0; --accent: #8a6a1f; --good: #0f7a3d; --warn: #9a5b00; --bad: #b42318;
+  --chip: #f1efe9;
+}
+@media (prefers-color-scheme: dark) {
+  :root:where(:not([data-theme="light"])) {
+    color-scheme: dark;
+    --bg: #141413; --card: #1a1a19; --ink: #f0efec; --ink-2: #c3c2b7; --ink-3: #a3a29a; --line: #33322f; --grid: #2a2927;
+    --s1: #3987e5; --s2: #d95926; --ghost: #5d5c57; --accent: #d8b26a; --good: #4cc27e; --warn: #e3a64a; --bad: #f07a6e; --chip: #24231f;
+  }
+}
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --bg: #141413; --card: #1a1a19; --ink: #f0efec; --ink-2: #c3c2b7; --ink-3: #a3a29a; --line: #33322f; --grid: #2a2927;
+  --s1: #3987e5; --s2: #d95926; --ghost: #5d5c57; --accent: #d8b26a; --good: #4cc27e; --warn: #e3a64a; --bad: #f07a6e; --chip: #24231f;
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: var(--bg); color: var(--ink); font: 16px/1.55 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
+a { color: var(--s1); }
+main { max-width: 860px; margin: 0 auto; padding: 24px 16px 64px; }
+header.top { display: flex; justify-content: space-between; align-items: center; gap: 12px; font-size: 13px; color: var(--ink-3); letter-spacing: .04em; }
+header.top b { color: var(--accent); text-transform: uppercase; letter-spacing: .12em; font-weight: 600; }
+h1 { font-family: Georgia, "Times New Roman", serif; font-weight: 500; font-size: clamp(28px, 6vw, 42px); line-height: 1.15; margin: 18px 0 12px; letter-spacing: -.01em; }
+.lede { font-size: 18px; color: var(--ink-2); margin: 0 0 20px; max-width: 680px; }
+.stamp { display: inline-block; font-size: 13px; color: var(--ink-2); background: var(--chip); border-radius: 999px; padding: 4px 12px; }
+.tiles { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; margin: 24px 0 8px; }
+.tile { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 16px; }
+.tile .n { font-family: Georgia, serif; font-size: 34px; line-height: 1.1; font-variant-numeric: tabular-nums; }
+.tile .n small { font-size: 18px; color: var(--ink-3); }
+.tile p { margin: 6px 0 0; font-size: 14px; color: var(--ink-2); }
+section { margin-top: 40px; }
+section > h2 { font-size: 13px; text-transform: uppercase; letter-spacing: .12em; color: var(--accent); margin: 0 0 8px; font-weight: 600; }
+.card { background: var(--card); border: 1px solid var(--line); border-radius: 16px; padding: 20px; }
+.card + .card { margin-top: 14px; }
+.card h3 { font-family: Georgia, serif; font-weight: 500; font-size: 22px; line-height: 1.3; margin: 0 0 6px; }
+.card .sub { color: var(--ink-3); font-size: 14px; margin: 0 0 12px; }
+.means { margin: 14px 0 0; padding: 12px 14px; border-radius: 10px; background: var(--chip); font-size: 15px; }
+.means b { color: var(--ink); }
+.seg { display: inline-flex; gap: 4px; background: var(--chip); padding: 4px; border-radius: 999px; margin-bottom: 10px; flex-wrap: wrap; }
+.seg button { border: 0; background: transparent; color: var(--ink-2); font: inherit; font-size: 14px; padding: 6px 14px; border-radius: 999px; cursor: pointer; min-height: 36px; }
+.seg button[aria-pressed="true"] { background: var(--card); color: var(--ink); box-shadow: 0 1px 2px rgba(0,0,0,.12); }
+.chart { width: 100%; position: relative; }
+.chart svg { display: block; width: 100%; height: auto; overflow: visible; }
+.chart text { fill: var(--ink-2); font-size: 12px; font-family: inherit; }
+.chart .lbl { fill: var(--ink); font-weight: 600; }
+.legend { display: flex; gap: 16px; flex-wrap: wrap; font-size: 13px; color: var(--ink-2); margin: 4px 0 8px; }
+.legend i { display: inline-block; width: 12px; height: 12px; border-radius: 3px; margin-right: 6px; vertical-align: -1px; }
+.tip { position: absolute; pointer-events: none; background: var(--ink); color: var(--bg); font-size: 13px; padding: 6px 10px; border-radius: 8px; white-space: nowrap; opacity: 0; transition: opacity .1s; z-index: 2; }
+details { margin-top: 10px; font-size: 14px; }
+details summary { cursor: pointer; color: var(--ink-2); }
+table { border-collapse: collapse; width: 100%; font-size: 14px; margin-top: 8px; font-variant-numeric: tabular-nums; }
+th, td { text-align: left; padding: 6px 8px; border-bottom: 1px solid var(--line); vertical-align: top; }
+th { color: var(--ink-3); font-weight: 500; }
+.tablewrap { overflow-x: auto; }
+ul.plain { padding-left: 20px; margin: 8px 0 0; }
+ul.plain li { margin: 6px 0; }
+.tag { display: inline-block; font-size: 12px; border-radius: 999px; padding: 1px 8px; background: var(--chip); color: var(--ink-2); margin-left: 4px; vertical-align: 1px; }
+.steps { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 8px; margin: 8px 0 4px; counter-reset: s; }
+.steps div { background: var(--chip); border-radius: 10px; padding: 10px; font-size: 13px; color: var(--ink-2); }
+.steps div::before { counter-increment: s; content: counter(s); display: block; font-weight: 700; color: var(--accent); }
+textarea { width: 100%; min-height: 84px; font: inherit; font-size: 15px; padding: 10px 12px; border: 1px solid var(--line); border-radius: 10px; background: var(--bg); color: var(--ink); }
+.btn { border: 0; background: #1c5cab; color: #fff; font: inherit; font-size: 15px; padding: 10px 18px; border-radius: 10px; cursor: pointer; min-height: 44px; }
+.chips { display: flex; gap: 8px; flex-wrap: wrap; margin: 8px 0; }
+.chips button { border: 1px solid var(--line); background: var(--card); color: var(--ink-2); font: inherit; font-size: 13px; padding: 6px 12px; border-radius: 999px; cursor: pointer; min-height: 36px; }
+.result { margin-top: 14px; display: none; }
+.result.on { display: block; }
+.facts { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 6px; font-size: 14px; }
+.facts div { background: var(--chip); border-radius: 8px; padding: 6px 10px; }
+.facts span { display: block; font-size: 12px; color: var(--ink-3); }
+.tier { display: inline-block; font-weight: 700; padding: 2px 12px; border-radius: 999px; color: #fff; }
+.tier.Hot { background: var(--bad); } .tier.Warm { background: var(--warn); } .tier.Cold { background: #4b5563; }
+.draft { margin-top: 10px; padding: 12px 14px; border-left: 3px solid var(--s1); background: var(--chip); border-radius: 0 10px 10px 0; font-size: 15px; }
+.forecast { display: grid; grid-template-columns: 1.2fr 1fr; gap: 16px; align-items: center; }
+.forecast .big { font-family: Georgia, serif; font-size: 38px; line-height: 1.1; }
+.box-warn { border-left: 4px solid var(--warn); }
+.verdict { font-weight: 600; } .verdict.match { color: var(--good); } .verdict.close { color: var(--warn); } .verdict.miss { color: var(--bad); }
+footer { margin-top: 48px; font-size: 13px; color: var(--ink-3); border-top: 1px solid var(--line); padding-top: 16px; }
+.themebtn { border: 1px solid var(--line); background: var(--card); color: var(--ink-2); border-radius: 999px; padding: 4px 12px; font: inherit; font-size: 13px; cursor: pointer; min-height: 32px; }
+.sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+@media (max-width: 640px) {
+  .tiles, .facts { grid-template-columns: 1fr; }
+  .steps { grid-template-columns: 1fr 1fr; }
+  .forecast { grid-template-columns: 1fr; }
+  .card { padding: 16px; }
+}
+</style>
+
+</head>
+<body>
+<main>
+<header class="top"><span><b>Dubai Lead Desk</b> · independent analysis</span><button class="themebtn" id="theme" type="button" aria-label="Switch light or dark theme">Theme</button></header>
+
+<h1>Dubai home sales have run about a third below normal since 28 February. Cheaper homes held up best.</h1>
+<p class="lede">What the Dubai Land Department's own records show, written for someone thinking about buying their first home in JVC or Dubai Marina.</p>
+<span class="stamp">Data to <b>19 Oct 2026</b> · Source: Dubai Land Department open data</span>
+
+<div class="tiles" id="tiles"></div>
+
+<section id="what">
+  <h2>What happened</h2>
+  <div class="card">
+    <h3 id="monthly-title">Every month since March, fewer homes sold than the usual pattern predicted</h3>
+    <p class="sub">Registered sales each month (bars) against what the pattern from 2024 to early 2026 would have predicted for that month (grey line). The pattern allows for weekdays, seasons, Ramadan and Eid.</p>
+    <div class="seg" role="group" aria-label="Choose an area" id="area-seg">
+      <button type="button" data-area="All" aria-pressed="true">All Dubai</button>
+      <button type="button" data-area="JVC" aria-pressed="false">JVC</button>
+      <button type="button" data-area="Dubai Marina" aria-pressed="false">Dubai Marina</button>
+    </div>
+    <div class="legend"><span><i style="background:var(--s1)"></i>Sales registered</span><span><i style="background:var(--ghost)"></i>Usual pattern</span></div>
+    <div class="chart" id="c-monthly"></div>
+    <p class="means" id="m-monthly"></p>
+    <details><summary>Show the numbers</summary><div class="tablewrap" id="t-monthly"></div></details>
+  </div>
+</section>
+
+<section id="who">
+  <h2>Who kept buying</h2>
+  <div class="card">
+    <h3>The more expensive the home, the bigger the drop</h3>
+    <p class="sub">Sales since 28 February as a share of the usual pace, by price. 100% would mean no change.</p>
+    <div class="chart" id="c-bands"></div>
+    <p class="means" id="m-bands"></p>
+    <details><summary>Show the numbers</summary><div class="tablewrap" id="t-bands"></div></details>
+  </div>
+</section>
+
+<section id="prices">
+  <h2>Prices</h2>
+  <div class="card">
+    <h3 id="price-title">Prices have moved far less than sales</h3>
+    <p class="sub">Price per sq ft of ready flats, comparing sales in the same buildings over time. January 2026 = 100.</p>
+    <div class="legend"><span><i style="background:var(--s1)"></i>JVC</span><span><i style="background:var(--s2)"></i>Dubai Marina</span></div>
+    <div class="chart" id="c-index"></div>
+    <p class="means" id="m-index"></p>
+    <details><summary>Show the numbers</summary><div class="tablewrap" id="t-index"></div></details>
+  </div>
+</section>
+
+<section id="supply">
+  <h2>Supply still to come</h2>
+  <div class="card">
+    <h3 id="supply-title">JVC has about two years of off-plan flats still to be handed over</h3>
+    <p class="sub">Units sold off-plan since 2024 that are not handed over yet, counted in months of sales at the post-war pace.</p>
+    <div class="chart" id="c-supply"></div>
+    <p class="means" id="m-supply"></p>
+  </div>
+</section>
+
+<section id="you">
+  <h2>What this means for you</h2>
+  <div class="card">
+    <h3>Five things a first-time buyer can take from this</h3>
+    <p class="sub">Our reading of the numbers above. It is not financial advice, and every purchase is different.</p>
+    <ul class="plain" id="you-list"></ul>
+  </div>
+</section>
+
+<section id="decision">
+  <h2>The decision, for a brokerage</h2>
+  <div class="card">
+    <h3>Answer the many small enquiries fast, and save senior agents for the rare large ones</h3>
+    <ul class="plain" id="decision-list"></ul>
+    <p class="means"><b>This is a recommendation, not a measured result.</b> The numbers show where buyers still are; whether faster replies win more of them is an assumption a brokerage would need to test.</p>
+  </div>
+</section>
+
+<section id="desk">
+  <h2>The lead desk</h2>
+  <div class="card">
+    <h3>A small tool that reads each enquiry and checks the budget against what homes are selling for</h3>
+    <div class="steps">
+      <div>An enquiry arrives by form or message</div>
+      <div>It reads area, bedrooms, budget, timing and payment</div>
+      <div>It checks the budget against DLD's recent sale prices</div>
+      <div>It sorts the lead into Hot, Warm or Cold</div>
+      <div>It drafts a reply that an agent approves before it is sent</div>
+    </div>
+    <p class="sub">Built in n8n, free to run. Repeat enquiries from the same phone are merged into one lead.</p>
+  </div>
+  <div class="card">
+    <h3>How well it sorts leads, tested against answers it never saw</h3>
+    <div class="chart" id="c-eval"></div>
+    <p class="means" id="m-eval"></p>
+  </div>
+  <div class="card">
+    <h3>Try it</h3>
+    <p class="sub">This runs the free, rules-only version in your browser. Nothing you type leaves this page. Known weak spots: it reads any "now" as "buying now" (even "for now"), understands English only, and misses numbers written as words.</p>
+    <label for="msg" class="sr">Enquiry message</label>
+    <textarea id="msg" placeholder="e.g. Looking for a 1 bed in JVC, budget around 950k, mortgage pre-approved, want to move in 2 months"></textarea>
+    <div class="chips" id="examples" aria-label="Example messages"></div>
+    <button class="btn" id="run" type="button">Read this enquiry</button>
+    <div class="result" id="result" aria-live="polite"></div>
+  </div>
+</section>
+
+<section id="forecast">
+  <h2>A forecast you can check</h2>
+  <div class="card box-warn">
+    <div class="forecast">
+      <div><div class="big" id="fc-range"></div><p class="sub" id="fc-sub" style="margin-top:6px"></p></div>
+      <div id="fc-why" style="font-size:15px;color:var(--ink-2)"></div>
+    </div>
+  </div>
+</section>
+
+<section id="checks">
+  <h2>How we checked it</h2>
+  <div class="card">
+    <h3 id="val-title">Our totals match published figures from the same DLD records</h3>
+    <p class="sub">Each row compares a number from this analysis with one published by someone else. Where they differ, the reason is given.</p>
+    <div class="tablewrap" id="t-val"></div>
+    <p class="means" id="m-val"></p>
+  </div>
+</section>
+
+<section id="limits">
+  <h2>Limitations</h2>
+  <div class="card">
+    <ul class="plain" id="limits-list"></ul>
+  </div>
+</section>
+
+<footer>
+  <p>Source: Dubai Land Department open data (sales transactions, Ejari rental contracts, projects, valuations), plus a check of 214 live portal listings (aggregate figures only). Data to 19 Oct 2026. Built 2026-10-29.</p>
+  <p>Method, code and tests: <a href="https://github.com/mithuncyriac/dubai-lead-desk">github.com/mithuncyriac/dubai-lead-desk</a>. Every number on this page comes from one file, <code>facts.json</code>, produced by <code>python run_all.py</code>.</p>
+  <p>Independent analysis by Mithun Cyriac. Not financial advice.</p>
+</footer>
+</main>
+
+<script>
+const FACTS = {"data_to": "2026-10-19", "data_to_label": "19 Oct 2026", "war_start": "2026-02-28", "built": "2026-10-29", "source": "Dubai Land Department open data (sales transactions, Ejari rent contracts, projects, valuations)", "sales_read": 472404, "sales_read_from": "2024-01-01", "leases_read": 46023, "listings_checked": 214, "war_gap_pct": -36.6, "war_gap_low_pct": -48.1, "war_gap_high_pct": -22.7, "war_gap_trend_model_pct": -34.7, "sales_actual_post": 87052, "sales_expected_post": 137260, "sales_missing_post": 50208, "gap_march_pct": -32.5, "gap_september_pct": -46.0, "band_under1m_pct": -19.7, "band_1to2m_pct": -38.2, "band_2to5m_pct": -44.8, "band_over5m_pct": -52.4, "jvc_gap_pct": -39.5, "marina_gap_pct": -27.9, "jvc_ready_price_change_pct": -7.9, "marina_ready_price_change_pct": -4.8, "price_index_last_month": "2026-10", "jvc_pipeline_units": 19756, "jvc_pipeline_months": 25.8, "jvc_sales_per_month": 767, "jvc_asking_premium_pct": 7.3, "marina_asking_premium_pct": 9.4, "duplicate_share_pct": 13.6, "desk_clean_pass": "60/60", "desk_stress_pass": "30/30", "desk_postwar_pass": "90/90", "rules_only_pass_pct": 85.6, "dupes_caught": "12/12", "tier_changes": 4, "forecast": {"month": "2026-11", "expected_without_war": 18378, "whole_period_gap_pct": -36.6, "recent_gap_pct": -46.6, "recent_window": "2026-09-01 to 2026-10-19", "forecast_low": 9800, "forecast_high": 11600, "check_on": "2026-12-07", "rule": "Right if DLD's November 2026 residential sales land between forecast_low and forecast_high.", "forecast_mid": 10700}};
+const CHARTS = {"monthly": [{"area": "All", "month": "2026-03", "actual": 12408, "expected": 18370}, {"area": "All", "month": "2026-04", "actual": 12726, "expected": 18197}, {"area": "All", "month": "2026-05", "actual": 9541, "expected": 13580}, {"area": "All", "month": "2026-06", "actual": 12223, "expected": 18990}, {"area": "All", "month": "2026-07", "actual": 12768, "expected": 19236}, {"area": "All", "month": "2026-08", "actual": 11041, "expected": 18268}, {"area": "All", "month": "2026-09", "actual": 10238, "expected": 18943}, {"area": "All", "month": "2026-10", "actual": 6107, "expected": 11677}, {"area": "JVC", "month": "2026-03", "actual": 890, "expected": 1492}, {"area": "JVC", "month": "2026-04", "actual": 819, "expected": 1380}, {"area": "JVC", "month": "2026-05", "actual": 530, "expected": 1105}, {"area": "JVC", "month": "2026-06", "actual": 718, "expected": 1394}, {"area": "JVC", "month": "2026-07", "actual": 898, "expected": 1428}, {"area": "JVC", "month": "2026-08", "actual": 746, "expected": 1361}, {"area": "JVC", "month": "2026-09", "actual": 785, "expected": 1510}, {"area": "JVC", "month": "2026-10", "actual": 486, "expected": 845}, {"area": "Dubai Marina", "month": "2026-03", "actual": 141, "expected": 245}, {"area": "Dubai Marina", "month": "2026-04", "actual": 121, "expected": 224}, {"area": "Dubai Marina", "month": "2026-05", "actual": 104, "expected": 196}, {"area": "Dubai Marina", "month": "2026-06", "actual": 130, "expected": 237}, {"area": "Dubai Marina", "month": "2026-07", "actual": 226, "expected": 256}, {"area": "Dubai Marina", "month": "2026-08", "actual": 190, "expected": 243}, {"area": "Dubai Marina", "month": "2026-09", "actual": 137, "expected": 209}, {"area": "Dubai Marina", "month": "2026-10", "actual": 82, "expected": 129}], "bands": [{"band": "Under AED 1M", "gap": -19.7, "low": -33.9, "high": -2.5, "sales": 32136}, {"band": "AED 1–2M", "gap": -38.2, "low": -49.6, "high": -24.3, "sales": 29030}, {"band": "AED 2–5M", "gap": -44.8, "low": -56.6, "high": -29.8, "sales": 20958}, {"band": "AED 5M+", "gap": -52.4, "low": -61.4, "high": -41.3, "sales": 4928}], "price_index": [{"area": "Dubai Marina", "month": "2025-07", "index": 97.1, "n": 189}, {"area": "Dubai Marina", "month": "2025-08", "index": 96.3, "n": 158}, {"area": "Dubai Marina", "month": "2025-09", "index": 96.1, "n": 185}, {"area": "Dubai Marina", "month": "2025-10", "index": 98.6, "n": 201}, {"area": "Dubai Marina", "month": "2025-11", "index": 97.6, "n": 197}, {"area": "Dubai Marina", "month": "2025-12", "index": 102.5, "n": 178}, {"area": "Dubai Marina", "month": "2026-01", "index": 100.0, "n": 142}, {"area": "Dubai Marina", "month": "2026-02", "index": 100.1, "n": 174}, {"area": "Dubai Marina", "month": "2026-03", "index": 102.5, "n": 124}, {"area": "Dubai Marina", "month": "2026-04", "index": 97.9, "n": 107}, {"area": "Dubai Marina", "month": "2026-05", "index": 93.0, "n": 95}, {"area": "Dubai Marina", "month": "2026-06", "index": 94.5, "n": 126}, {"area": "Dubai Marina", "month": "2026-07", "index": 94.3, "n": 168}, {"area": "Dubai Marina", "month": "2026-08", "index": 95.3, "n": 170}, {"area": "Dubai Marina", "month": "2026-09", "index": 92.0, "n": 124}, {"area": "Dubai Marina", "month": "2026-10", "index": 95.2, "n": 72}, {"area": "JVC", "month": "2025-07", "index": 97.6, "n": 727}, {"area": "JVC", "month": "2025-08", "index": 96.5, "n": 381}, {"area": "JVC", "month": "2025-09", "index": 97.6, "n": 423}, {"area": "JVC", "month": "2025-10", "index": 97.4, "n": 466}, {"area": "JVC", "month": "2025-11", "index": 100.5, "n": 384}, {"area": "JVC", "month": "2025-12", "index": 97.5, "n": 463}, {"area": "JVC", "month": "2026-01", "index": 100.0, "n": 383}, {"area": "JVC", "month": "2026-02", "index": 97.8, "n": 388}, {"area": "JVC", "month": "2026-03", "index": 99.8, "n": 265}, {"area": "JVC", "month": "2026-04", "index": 97.9, "n": 236}, {"area": "JVC", "month": "2026-05", "index": 89.2, "n": 216}, {"area": "JVC", "month": "2026-06", "index": 92.6, "n": 321}, {"area": "JVC", "month": "2026-07", "index": 91.5, "n": 446}, {"area": "JVC", "month": "2026-08", "index": 88.7, "n": 327}, {"area": "JVC", "month": "2026-09", "index": 91.1, "n": 343}, {"area": "JVC", "month": "2026-10", "index": 92.1, "n": 223}], "supply": [{"area": "JVC", "units": 19756, "per_month": 767, "months": 25.8}, {"area": "Dubai Marina", "units": 2697, "per_month": 148, "months": 18.3}], "evaluation": [{"test": "Plain enquiries · tier", "cases": 60, "passed": 60, "note": "60 messages with facts stated plainly"}, {"test": "Same answer on 3 runs", "cases": 60, "passed": 60, "note": "identical tier in three separate runs"}, {"test": "Arabic, Hinglish, Russian, broken English", "cases": 60, "passed": 60, "note": "same tier as the English original"}, {"test": "Unrealistic-budget flag", "cases": 6, "passed": 6, "note": "precision 100%, recall 100%"}, {"test": "Duplicate re-enquiries merged", "cases": 12, "passed": 12, "note": "phone written 4 different ways, name spelt differently"}, {"test": "Stress · decoy price or area in the text", "cases": 5, "passed": 5, "note": "1 with a misread fact"}, {"test": "Stress · timeline relative to a date", "cases": 5, "passed": 5, "note": "all facts read correctly"}, {"test": "Stress · under 15 words, abbreviations", "cases": 5, "passed": 5, "note": "all facts read correctly"}, {"test": "Stress · budget in words or odd format", "cases": 5, "passed": 5, "note": "all facts read correctly"}, {"test": "Stress · payment implied, not named", "cases": 5, "passed": 5, "note": "all facts read correctly"}, {"test": "Stress · facts spread over 3 messages", "cases": 5, "passed": 5, "note": "all facts read correctly"}, {"test": "Post-war rule · AI model, blind", "cases": 90, "passed": 90, "note": "includes all 4 leads whose tier changed"}, {"test": "Rules-only parser (no AI) · baseline", "cases": 90, "passed": 77, "note": "regular expressions + same rule; shows what the AI adds"}], "validation": [{"check": "Q3 2026 residential deals", "ours": "34047", "published": "34000", "unit": "deals", "source": "Cavendish Maxwell via The National", "gap": "0.1", "verdict": "match", "why": "same DLD source"}, {"check": "Q3 2026 deals, change vs Q3 2025", "ours": "-36.5", "published": "-38", "unit": "pts", "source": "Cavendish Maxwell via The National", "gap": "1.5", "verdict": "match", "why": "same DLD source"}, {"check": "Q3 2026 sales value, change vs Q3 2025", "ours": "-46.4", "published": "-47", "unit": "pts", "source": "Cavendish Maxwell via The National", "gap": "0.6", "verdict": "match", "why": "same DLD source"}, {"check": "Q3 2026 sales value, AED bn", "ours": "67.9", "published": "72.6", "unit": "AED bn", "source": "Cavendish Maxwell via The National", "gap": "-6.5", "verdict": "miss", "why": "level differs: their total likely includes procedures we exclude (e.g. land and building sales classed outside 'Residential')"}, {"check": "Jan–Sep 2026 deals", "ours": "110672", "published": "112580", "unit": "deals", "source": "Cavendish Maxwell via The National", "gap": "-1.7", "verdict": "match", "why": "same DLD source"}, {"check": "Jan–Sep 2026 deals, change vs 2025", "ours": "-19.9", "published": "-23", "unit": "pts", "source": "Cavendish Maxwell via The National", "gap": "3.1", "verdict": "close", "why": "small gap; their 2025 base may include late-registered deals our export dates differently"}, {"check": "Monthly sales Mar–Sep vs Jan–Feb 2026", "ours": "-22.2", "published": "-26", "unit": "pts", "source": "S&P Global Ratings (DLD data)", "gap": "3.8", "verdict": "close", "why": "S&P counts all sales incl. commercial; we count residential only"}, {"check": "First 12 days of March, change vs 2025", "ours": "-6.4", "published": "-37", "unit": "pts", "source": "Goldman Sachs (UAE-wide)", "gap": "30.6", "verdict": "miss", "why": "miss: Goldman covers the whole UAE with an unpublished method; March 2025 was Ramadan, which lowers our comparison base"}, {"check": "Price move in March 2026 (ready flats, JVC)", "ours": "2.0", "published": "-5.9", "unit": "pts", "source": "ValuStrat Price Index", "gap": "7.9", "verdict": "miss", "why": "miss in timing: ValuStrat is valuation-based and reacts at once; March registrations were mostly deals agreed before the war. Our index falls from May"}, {"check": "Price move Feb–Oct 2026 (ready flats, JVC)", "ours": "-5.8", "published": "-10", "unit": "pts", "source": "ValuStrat (cumulative since late Feb)", "gap": "4.2", "verdict": "close", "why": "same direction, smaller: ValuStrat covers all Dubai incl. prime villas"}, {"check": "JVC average flat price, AED", "ours": "1070795", "published": "1075878", "unit": "AED", "source": "Bayut (DLD 12-month average)", "gap": "-0.5", "verdict": "match", "why": "different window, same source"}, {"check": "Marina flat sales per year", "ours": "2197", "published": "2205", "unit": "deals", "source": "Bayut (DLD 12-month count)", "gap": "-0.4", "verdict": "match", "why": "different window, same source"}], "rule_prices": [{"area": "Dubai Marina", "beds": "Studio", "median": 985000, "n": 32}, {"area": "Dubai Marina", "beds": "1 bed", "median": 1750000, "n": 257}, {"area": "Dubai Marina", "beds": "2 bed", "median": 2850000, "n": 185}, {"area": "Dubai Marina", "beds": "3 bed", "median": 4300000, "n": 77}, {"area": "JVC", "beds": "Studio", "median": 680000, "n": 912}, {"area": "JVC", "beds": "1 bed", "median": 1054123, "n": 1412}, {"area": "JVC", "beds": "2 bed", "median": 1634638, "n": 386}, {"area": "JVC", "beds": "3 bed", "median": 2207355, "n": 60}], "yields": [{"area": "JVC", "size": "Studio-size (<45 m²)", "gross_yield": 7.21}, {"area": "JVC", "size": "1-bed size (45–85 m²)", "gross_yield": 7.22}, {"area": "JVC", "size": "2-bed size (85–130 m²)", "gross_yield": 7.34}, {"area": "JVC", "size": "3-bed size (130–200 m²)", "gross_yield": 7.36}, {"area": "Dubai Marina", "size": "Studio-size (<45 m²)", "gross_yield": 6.86}, {"area": "Dubai Marina", "size": "1-bed size (45–85 m²)", "gross_yield": 5.1}, {"area": "Dubai Marina", "size": "2-bed size (85–130 m²)", "gross_yield": 5.15}, {"area": "Dubai Marina", "size": "3-bed size (130–200 m²)", "gross_yield": 5.02}]};
+const PRICES = {"as_of": "2026-10-19", "prices": {"Dubai Marina|0": 985000, "Dubai Marina|1": 1750000, "Dubai Marina|2": 2850000, "Dubai Marina|3": 4300000, "JVC|0": 680000, "JVC|1": 1054123, "JVC|2": 1634638, "JVC|3": 2207355}};
+</script>
+<script>
+// Dubai Lead Desk: the free, no-AI reading of a buyer enquiry. An exact port of scripts/rule_parser.py
+// (tests/test_desk_parity.py checks both give identical output on every test message), plus the tier rule,
+// phone clean-up for duplicates and the drafted reply. Used inside the n8n Code nodes and by the dashboard.
+
+const DESK = (() => {
+  const MONTHS = ['jan', 'feb', 'mar', 'apr', 'may', 'jun', 'jul', 'aug', 'sep', 'oct', 'nov', 'dec'];
+  const WORDNUM = { one: 1, two: 2, three: 3, four: 4, five: 5, six: 6, seven: 7, eight: 8, nine: 9, ten: 10, twelve: 12, eighteen: 18 };
+
+  // Python's round(x, -4) rounds halves to even; match it so budgets agree to the dirham
+  function roundTo10k(v) {
+    const q = v / 1e4, f = Math.floor(q), diff = q - f;
+    const r = Math.abs(diff - 0.5) < 1e-9 ? (f % 2 === 0 ? f : f + 1) : Math.round(q);
+    return r * 1e4;
+  }
+
+  function area(t) {
+    if (/\b(jvc|jumeirah village circle|jumeira village)\b/.test(t)) return 'JVC';
+    if (/\b(dubai marina|marina|mrna)\b/.test(t)) return 'Dubai Marina';
+    return 'unknown';
+  }
+
+  function beds(t) {
+    const found = [];
+    for (const m of t.matchAll(/\bstudio\b/g)) found.push([m.index, 0]);
+    for (const m of t.matchAll(/\b(\d)\s*-?\s*(?:br|bhk|bed|beds|bedroom|bedrooms|b\/r)\b/g)) found.push([m.index, +m[1]]);
+    if (!found.length) return 'unknown';
+    found.sort((a, b) => a[0] - b[0] || a[1] - b[1]);
+    return found[found.length - 1][1];                // last mention wins ("sorry, I meant 2 beds")
+  }
+
+  function budget(t) {
+    let best = null;
+    for (const m of t.matchAll(/(?:aed|dhs|dh)?\s*(\d+(?:[.,]\d+)*)\s*(m|mn|mil|million|k)?\b/g)) {
+      const num = m[1], unit = m[2] || '';
+      const s = num.includes(',') && unit === '' ? num.replace(/,/g, '') : num.replace(/,/g, '.');
+      if (!/^\d+(\.\d+)?$/.test(s)) continue;          // Python's float() rejects "1.500.000"
+      let v = parseFloat(s);
+      v = ['m', 'mn', 'mil', 'million'].includes(unit) ? v * 1e6 : unit === 'k' ? v * 1e3 : v;
+      if (!(v >= 2e5 && v <= 5e7)) continue;
+      const ctx = t.slice(Math.max(0, m.index - 40), m.index);
+      let score = /budget|max|up to|upto|range|afford|around|spend/.test(ctx) ? 2 : 1;
+      if (/listed|saw|asking|another (site|portal)|for \d/.test(ctx)) score = 0;   // decoy prices
+      if (best === null || score > best[0]) best = [score, roundTo10k(v)];
+    }
+    return best && best[0] > 0 ? best[1] : 'unknown';
+  }
+
+  function timeline(t, asOf) {
+    if (/\b(asap|now|immediately|right away|this week|ready to (buy|move|transfer))\b/.test(t)) return 0;
+    let m = t.match(new RegExp('\\b(\\d+|' + Object.keys(WORDNUM).join('|') + ')\\s*(month|months|year|years|yr|yrs)\\b'));
+    if (m) {
+      const n = /^\d+$/.test(m[1]) ? +m[1] : WORDNUM[m[1]];
+      return m[2].startsWith('y') ? n * 12 : n;
+    }
+    if (/\bwithin a month|next month\b/.test(t)) return 1;
+    if (/\b(a|one) year\b|next year/.test(t)) return 12;
+    m = t.match(new RegExp('\\b(' + MONTHS.join('|') + ')[a-z]*\\s*(20\\d\\d)?'));
+    if (m) {
+      const mon = MONTHS.indexOf(m[1]) + 1;
+      const y = m[2] ? +m[2] : (mon > asOf.m ? asOf.y : asOf.y + 1);
+      return (y - asOf.y) * 12 + mon - asOf.m;
+    }
+    return 'unknown';
+  }
+
+  function finance(t) {
+    if (/pre-?approv|approval letter|approved (my )?mortgage/.test(t)) return 'mortgage_preapproved';
+    if (/\bcash\b|no loan|without (a )?(loan|mortgage)|from (my )?savings|full payment/.test(t)) return 'cash';
+    if (/mortgage|bank|financ|loan/.test(t)) return 'mortgage_not_started';
+    return 'unknown';
+  }
+
+  // asOf = {y, m}: the month "December" or "next year" is counted from. Tests pin it to Oct 2026.
+  function parse(text, asOf) {
+    const t = String(text).toLowerCase();
+    return { area: area(t), beds: beds(t), budget_aed: budget(t), timeline_months: timeline(t, asOf), finance: finance(t),
+             browsing: /just (looking|browsing|researching)|research(ing)?|not serious|getting a feel|curious/.test(t) };
+  }
+
+  // prices: {"JVC|1": 1054123, ...} = DLD post-war median sale price by area and bedrooms
+  function tier(f, prices) {
+    const ref = f.area !== 'unknown' && f.beds !== 'unknown' ? prices[`${f.area}|${f.beds}`] ?? null : null;
+    const ratio = ref && f.budget_aed !== 'unknown' ? f.budget_aed / ref : null;
+    const tl = f.timeline_months;
+    let t = 'Warm';
+    if (f.browsing || (ratio !== null && ratio < 0.70) || (tl !== 'unknown' && tl > 12)) t = 'Cold';
+    else if (ratio !== null && ratio >= 0.85 && tl !== 'unknown' && tl <= 3 && ['cash', 'mortgage_preapproved'].includes(f.finance)) t = 'Hot';
+    return { tier: t, ref, ratio: ratio === null ? null : Math.round(ratio * 1000) / 1000 };
+  }
+
+  // same phone written four ways -> one key (UAE numbers)
+  function e164(raw) {
+    let d = String(raw || '').replace(/\D/g, '');
+    if (d.startsWith('00')) d = d.slice(2);
+    if (d.startsWith('0')) d = '971' + d.slice(1);
+    if (!d.startsWith('971')) d = '971' + d;
+    return '+' + d;
+  }
+
+  // demo stand-in for an agent's calendar: the next two weekdays after `now`, evening then morning
+  function viewingSlots(now) {
+    const out = [], d = new Date(now), f = x => x.toLocaleDateString('en-GB', { weekday: 'long', day: 'numeric', month: 'short', timeZone: 'Asia/Dubai' });
+    while (out.length < 2) { d.setDate(d.getDate() + 1); if (d.getDay() !== 0 && d.getDay() !== 6) out.push(new Date(d)); }
+    return [`${f(out[0])} at 6pm`, `${f(out[1])} at 11am`];
+  }
+
+  const aed = v => 'AED ' + (v >= 1e6 ? (v / 1e6).toFixed(2).replace(/\.?0+$/, '') + 'M' : Math.round(v / 1e3) + 'k');
+
+  function draftReply(f, res, now) {
+    const missing = f.budget_aed === 'unknown' ? 'What budget range are you working with?'
+      : f.finance === 'unknown' ? 'Will you be buying with cash or a mortgage?'
+      : f.timeline_months === 'unknown' ? 'When are you hoping to move or complete?'
+      : f.beds === 'unknown' ? 'How many bedrooms do you need?'
+      : f.area === 'unknown' ? 'Which areas are you considering?' : null;
+    const what = `${f.beds === 'unknown' ? 'a home' : f.beds === 0 ? 'a studio' : 'a ' + f.beds + '-bed'}${f.area === 'unknown' ? '' : ' in ' + f.area}`;
+    const reality = res && res.ratio !== null && res.ratio < 0.7 ? `Recent sales for ${what} have been nearer ${aed(res.ref)}, so I can also share options that fit your budget. ` : '';
+    const [s1, s2] = viewingSlots(now);
+    return `Hi, thanks for your message about ${what}. ${reality}${missing ? missing + ' ' : ''}I can show you two options: would ${s1} or ${s2} suit you?`;
+  }
+
+  return { parse, tier, e164, draftReply, viewingSlots, aed };
+})();
+
+if (typeof module !== 'undefined') module.exports = DESK;
+
+</script>
+<script>
+(() => {
+  const F = FACTS, C = CHARTS;
+  const $ = id => document.getElementById(id);
+  const pct = v => { const r = Math.round(v); return (r > 0 ? '+' : r < 0 ? '−' : '') + Math.abs(r) + '%'; };   // whole numbers for readers; tables keep one decimal
+  const pct1 = v => (v > 0 ? '+' : v < 0 ? '−' : '') + Math.abs(v).toLocaleString('en-GB', { maximumFractionDigits: 1 }) + '%';
+  const int = v => Math.round(v).toLocaleString('en-GB');
+  const MON = m => new Date(m + '-01T00:00:00').toLocaleDateString('en-GB', { month: 'short' });
+  const MONY = m => new Date(m + '-01T00:00:00').toLocaleDateString('en-GB', { month: 'short', year: 'numeric' });
+  const NS = 'http://www.w3.org/2000/svg';
+  const el = (tag, attrs = {}, parent) => { const e = document.createElementNS(NS, tag); for (const [k, v] of Object.entries(attrs)) e.setAttribute(k, v); if (parent) parent.appendChild(e); return e; };
+
+  // theme toggle (remembered per viewer; the page works without storage)
+  const root = document.documentElement;
+  try { const t = localStorage.getItem('ld-theme'); if (t) root.dataset.theme = t; } catch (e) {}
+  $('theme').addEventListener('click', () => {
+    const dark = root.dataset.theme ? root.dataset.theme === 'dark' : matchMedia('(prefers-color-scheme: dark)').matches;
+    root.dataset.theme = dark ? 'light' : 'dark';
+    try { localStorage.setItem('ld-theme', root.dataset.theme); } catch (e) {}
+  });
+
+  function table(host, head, rows) {
+    host.innerHTML = '<table><thead><tr>' + head.map(h => `<th scope="col">${h}</th>`).join('') + '</tr></thead><tbody>' +
+      rows.map(r => '<tr>' + r.map(c => `<td>${c}</td>`).join('') + '</tr>').join('') + '</tbody></table>';
+  }
+
+  function tipper(host) {
+    const tip = document.createElement('div'); tip.className = 'tip'; host.appendChild(tip);
+    return (evt, html) => {
+      if (!html) { tip.style.opacity = 0; return; }
+      tip.innerHTML = html; tip.style.opacity = 1;
+      const r = host.getBoundingClientRect(), x = (evt.touches ? evt.touches[0] : evt).clientX - r.left, y = (evt.touches ? evt.touches[0] : evt).clientY - r.top;
+      tip.style.left = Math.min(Math.max(0, x - tip.offsetWidth / 2), r.width - tip.offsetWidth) + 'px';
+      tip.style.top = Math.max(0, y - tip.offsetHeight - 12) + 'px';
+    };
+  }
+  const W = host => Math.max(300, Math.min(820, host.clientWidth || 600));
+
+  // ---------- tiles ----------
+  $('tiles').innerHTML = [
+    [pct(F.war_gap_pct), `Home sales since 28 February, compared with what the usual pattern predicted (likely range ${pct(F.war_gap_high_pct)} to ${pct(F.war_gap_low_pct)})`],
+    [`${pct(F.band_under1m_pct)} <small>vs</small> ${pct(F.band_over5m_pct)}`, 'Sales of homes under AED 1M, against homes above AED 5M'],
+    [pct(F.jvc_ready_price_change_pct), `Price of JVC ready flats since January, same buildings (to ${MONY(F.price_index_last_month)})`],
+  ].map(([n, p]) => `<div class="tile"><div class="n">${n}</div><p>${p}</p></div>`).join('');
+
+  // ---------- monthly ----------
+  let area = 'All';
+  function drawMonthly() {
+    const host = $('c-monthly'); host.innerHTML = '';
+    const rows = C.monthly.filter(r => r.area === area);
+    const w = W(host), h = 260, m = { t: 26, r: 10, b: 28, l: 44 };
+    const svg = el('svg', { viewBox: `0 0 ${w} ${h}`, role: 'img', 'aria-label': `Monthly sales against the usual pattern, ${area === 'All' ? 'all Dubai' : area}` }, host);
+    const max = Math.max(...rows.map(r => Math.max(r.actual, r.expected))) * 1.08;
+    const y = v => m.t + (h - m.t - m.b) * (1 - v / max);
+    const bw = (w - m.l - m.r) / rows.length;
+    for (let i = 0; i <= 4; i++) {
+      const v = max * i / 4, yy = y(v);
+      el('line', { x1: m.l, x2: w - m.r, y1: yy, y2: yy, stroke: 'var(--grid)' }, svg);
+      el('text', { x: m.l - 6, y: yy + 4, 'text-anchor': 'end' }, svg).textContent = v >= 1000 ? Math.round(v / 1000) + 'k' : Math.round(v);
+    }
+    const tip = tipper(host);
+    rows.forEach((r, i) => {
+      const x = m.l + i * bw, bx = x + bw * 0.2, bwid = bw * 0.6;
+      const top = y(r.actual), base = y(0);
+      el('path', { d: `M${bx},${base} V${top + 4} q0,-4 4,-4 h${bwid - 8} q4,0 4,4 V${base} Z`, fill: 'var(--s1)' }, svg);
+      el('line', { x1: x + bw * 0.08, x2: x + bw * 0.92, y1: y(r.expected), y2: y(r.expected), stroke: 'var(--ghost)', 'stroke-width': 3, 'stroke-linecap': 'round' }, svg);
+      el('text', { x: x + bw / 2, y: h - 8, 'text-anchor': 'middle' }, svg).textContent = MON(r.month) + (r.month === F.data_to.slice(0, 7) ? '*' : '');
+      const gap = Math.round(100 * (r.actual / r.expected - 1));
+      const hit = el('rect', { x, y: m.t, width: bw, height: h - m.t - m.b, fill: 'transparent' }, svg);
+      const html = `<b>${MONY(r.month)}</b><br>${int(r.actual)} sold · usual ${int(r.expected)}<br>${pct(gap)} vs usual`;
+      hit.addEventListener('mousemove', e => tip(e, html)); hit.addEventListener('mouseleave', e => tip(e)); hit.addEventListener('touchstart', e => tip(e, html), { passive: true });
+    });
+    const last = rows[rows.length - 2] ?? rows[rows.length - 1];      // last full month gets the direct label
+    const li = rows.indexOf(last), gap = Math.round(100 * (last.actual / last.expected - 1));
+    el('text', { x: m.l + li * bw + bw / 2, y: y(last.expected) - 8, 'text-anchor': 'middle', class: 'lbl' }, svg).textContent = pct(gap);
+    const first = rows[0], g0 = Math.round(100 * (first.actual / first.expected - 1));
+    el('text', { x: m.l + bw / 2, y: y(first.expected) - 8, 'text-anchor': 'middle', class: 'lbl' }, svg).textContent = pct(g0);
+    table($('t-monthly'), ['Month', 'Sales registered', 'Usual pattern', 'Difference'],
+      rows.map(r => [MONY(r.month) + (r.month === F.data_to.slice(0, 7) ? ' (to ' + F.data_to_label + ')' : ''), int(r.actual), int(r.expected), pct1(Math.round(1000 * (r.actual / r.expected - 1)) / 10)]));
+    const name = area === 'All' ? 'Across Dubai' : 'In ' + area;
+    $('m-monthly').innerHTML = `<b>What this means for you:</b> ${name}, the gap grew from ${pct(g0)} in ${MON(first.month)} to ${pct(gap)} in ${MON(last.month)}. Fewer buyers are competing than usual, which can give a buyer more time to compare. <span class="tag">our reading</span><br><small>* ${MON(F.data_to.slice(0, 7))} covers 1–${+F.data_to.slice(8)} ${MON(F.data_to.slice(0, 7))} only.</small>`;
+  }
+  document.querySelectorAll('#area-seg button').forEach(b => b.addEventListener('click', () => {
+    area = b.dataset.area;
+    document.querySelectorAll('#area-seg button').forEach(x => x.setAttribute('aria-pressed', String(x === b)));
+    drawMonthly();
+  }));
+
+  // ---------- price bands ----------
+  function drawBands() {
+    const host = $('c-bands'); host.innerHTML = '';
+    const rows = C.bands, w = W(host), rowH = 46, m = { t: 8, r: 70, b: 22, l: 112 }, h = m.t + m.b + rows.length * rowH;
+    const svg = el('svg', { viewBox: `0 0 ${w} ${h}`, role: 'img', 'aria-label': 'Sales as a share of the usual pace, by price band' }, host);
+    const x = v => m.l + (w - m.l - m.r) * v / 100;
+    [0, 50, 100].forEach(v => {
+      el('line', { x1: x(v), x2: x(v), y1: m.t, y2: h - m.b, stroke: v === 100 ? 'var(--ink-3)' : 'var(--grid)', 'stroke-dasharray': v === 100 ? '4 4' : '' }, svg);
+      el('text', { x: x(v), y: h - 6, 'text-anchor': 'middle' }, svg).textContent = v === 100 ? 'usual pace' : v + '%';
+    });
+    const tip = tipper(host);
+    rows.forEach((r, i) => {
+      const share = 100 + r.gap, yy = m.t + i * rowH + 10, bh = 24;
+      el('text', { x: m.l - 10, y: yy + bh / 2 + 4, 'text-anchor': 'end', class: 'lbl' }, svg).textContent = r.band;
+      el('path', { d: `M${x(0)},${yy} H${x(share) - 4} q4,0 4,4 V${yy + bh - 4} q0,4 -4,4 H${x(0)} Z`, fill: 'var(--s1)' }, svg);
+      el('text', { x: x(share) + 8, y: yy + bh / 2 + 4, class: 'lbl' }, svg).textContent = Math.round(share) + '%';
+      const hit = el('rect', { x: 0, y: yy - 6, width: w, height: bh + 12, fill: 'transparent' }, svg);
+      const html = `<b>${r.band}</b><br>${Math.round(share)}% of the usual pace (${pct(r.gap)})<br>likely range ${pct(r.high)} to ${pct(r.low)}<br>${int(r.sales)} sold since 28 Feb`;
+      hit.addEventListener('mousemove', e => tip(e, html)); hit.addEventListener('mouseleave', e => tip(e)); hit.addEventListener('touchstart', e => tip(e, html), { passive: true });
+    });
+    table($('t-bands'), ['Price', 'Share of usual pace', 'Change', 'Likely range', 'Sales since 28 Feb'],
+      rows.map(r => [r.band, Math.round(100 + r.gap) + '%', pct1(r.gap), `${pct1(r.high)} to ${pct1(r.low)}`, int(r.sales)]));
+    $('m-bands').innerHTML = `<b>What this means for you:</b> homes under AED 1M are still selling at about ${Math.round(100 + F.band_under1m_pct)}% of the usual pace, so good ones can still go quickly. Above AED 5M it is about ${Math.round(100 + F.band_over5m_pct)}%, where buyers are scarcer. <span class="tag">our reading</span>`;
+  }
+
+  // ---------- price index ----------
+  function drawIndex() {
+    const host = $('c-index'); host.innerHTML = '';
+    const areas = [['JVC', 'var(--s1)'], ['Dubai Marina', 'var(--s2)']];
+    const months = [...new Set(C.price_index.map(r => r.month))].sort();
+    const w = W(host), h = 250, m = { t: 14, r: 96, b: 28, l: 40 };
+    const svg = el('svg', { viewBox: `0 0 ${w} ${h}`, role: 'img', 'aria-label': 'Same-building price index for ready flats, JVC and Dubai Marina' }, host);
+    const vals = C.price_index.map(r => r.index), lo = Math.floor(Math.min(...vals, 100) / 5) * 5 - 5, hi = Math.ceil(Math.max(...vals, 100) / 5) * 5 + 5;
+    const x = i => m.l + (w - m.l - m.r) * i / (months.length - 1), y = v => m.t + (h - m.t - m.b) * (1 - (v - lo) / (hi - lo));
+    for (let v = lo; v <= hi; v += 5) {
+      el('line', { x1: m.l, x2: w - m.r, y1: y(v), y2: y(v), stroke: v === 100 ? 'var(--ink-3)' : 'var(--grid)', 'stroke-dasharray': v === 100 ? '4 4' : '' }, svg);
+      el('text', { x: m.l - 6, y: y(v) + 4, 'text-anchor': 'end' }, svg).textContent = v;
+    }
+    months.forEach((mo, i) => { if (i % 3 === 0 || i === months.length - 1) el('text', { x: x(i), y: h - 8, 'text-anchor': 'middle' }, svg).textContent = MON(mo) + (mo.endsWith('-01') || i === 0 ? " '" + mo.slice(2, 4) : ''); });
+    const war = months.indexOf('2026-02') + 0.93;
+    el('line', { x1: x(war), x2: x(war), y1: m.t, y2: h - m.b, stroke: 'var(--ink-3)', 'stroke-width': 1 }, svg);
+    el('text', { x: x(war) + 4, y: m.t + 10 }, svg).textContent = '28 Feb';
+    const tip = tipper(host), ends = [];
+    areas.forEach(([a, col]) => {
+      const pts = months.map((mo, i) => { const r = C.price_index.find(p => p.area === a && p.month === mo); return r ? [x(i), y(r.index), r] : null; }).filter(Boolean);
+      el('path', { d: 'M' + pts.map(p => p[0].toFixed(1) + ',' + p[1].toFixed(1)).join(' L'), fill: 'none', stroke: col, 'stroke-width': 2.5, 'stroke-linejoin': 'round' }, svg);
+      const lp = pts[pts.length - 1];
+      el('circle', { cx: lp[0], cy: lp[1], r: 4.5, fill: col, stroke: 'var(--card)', 'stroke-width': 2 }, svg);
+      ends.push([lp[1], `${a} ${lp[2].index}`, col]);
+    });
+    ends.sort((a, b) => a[0] - b[0]); if (ends.length === 2 && ends[1][0] - ends[0][0] < 16) { ends[0][0] -= 8; ends[1][0] += 8; }
+    ends.forEach(([yy, t]) => { el('text', { x: w - m.r + 10, y: yy + 4, class: 'lbl' }, svg).textContent = t; });
+    const hit = el('rect', { x: m.l, y: m.t, width: w - m.l - m.r, height: h - m.t - m.b, fill: 'transparent' }, svg);
+    const show = e => {
+      const r = svg.getBoundingClientRect(), px = ((e.touches ? e.touches[0] : e).clientX - r.left) * w / r.width;
+      const i = Math.max(0, Math.min(months.length - 1, Math.round((px - m.l) / (w - m.l - m.r) * (months.length - 1))));
+      const row = a => C.price_index.find(p => p.area === a && p.month === months[i]);
+      tip(e, `<b>${MONY(months[i])}</b><br>` + areas.map(([a]) => row(a) ? `${a}: ${row(a).index}` : '').filter(Boolean).join('<br>'));
+    };
+    hit.addEventListener('mousemove', show); hit.addEventListener('mouseleave', e => tip(e)); hit.addEventListener('touchstart', show, { passive: true });
+    table($('t-index'), ['Month', 'JVC', 'Dubai Marina'], months.map(mo => [MONY(mo), ...areas.map(([a]) => (C.price_index.find(p => p.area === a && p.month === mo) || {}).index ?? '–')]));
+    $('m-index').innerHTML = `<b>What this means for you:</b> JVC ready flats are about ${Math.round(Math.abs(F.jvc_ready_price_change_pct))}% cheaper than in January, Dubai Marina about ${Math.round(Math.abs(F.marina_ready_price_change_pct))}%. Asking prices on the portals sit above recent sales: about ${Math.round(F.jvc_asking_premium_pct)}% in JVC and ${Math.round(F.marina_asking_premium_pct)}% in Dubai Marina. Start from what homes actually sold for, not from the asking price.`;
+  }
+
+  // ---------- supply ----------
+  function drawSupply() {
+    const host = $('c-supply'); host.innerHTML = '';
+    const rows = C.supply, w = W(host), rowH = 52, m = { t: 6, r: 90, b: 22, l: 112 }, h = m.t + m.b + rows.length * rowH;
+    const svg = el('svg', { viewBox: `0 0 ${w} ${h}`, role: 'img', 'aria-label': 'Months of sales waiting for handover, by area' }, host);
+    const max = Math.ceil(Math.max(...rows.map(r => r.months)) / 6) * 6, x = v => m.l + (w - m.l - m.r) * v / max;
+    for (let v = 0; v <= max; v += 6) { el('line', { x1: x(v), x2: x(v), y1: m.t, y2: h - m.b, stroke: 'var(--grid)' }, svg); el('text', { x: x(v), y: h - 6, 'text-anchor': 'middle' }, svg).textContent = v + ' mo'; }
+    rows.forEach((r, i) => {
+      const yy = m.t + i * rowH + 10, bh = 26;
+      el('text', { x: m.l - 10, y: yy + bh / 2 + 4, 'text-anchor': 'end', class: 'lbl' }, svg).textContent = r.area;
+      el('path', { d: `M${x(0)},${yy} H${x(r.months) - 4} q4,0 4,4 V${yy + bh - 4} q0,4 -4,4 H${x(0)} Z`, fill: 'var(--s1)' }, svg);
+      el('text', { x: x(r.months) + 8, y: yy + bh / 2 + 4, class: 'lbl' }, svg).textContent = Math.round(r.months) + ' months';
+      el('title', {}, svg.lastChild).textContent = `${int(r.units)} units waiting; ${int(r.per_month)} sales a month since 28 Feb`;
+    });
+    $('m-supply').innerHTML = `<b>What this means for you:</b> ${int(F.jvc_pipeline_units)} JVC flats sold off-plan are still waiting for handover, about ${Math.round(F.jvc_pipeline_months)} months of sales at today's pace (${int(F.jvc_sales_per_month)} a month). Plenty of new stock is on the way, so there is no need to rush into an off-plan deal. <span class="tag">our reading</span>`;
+  }
+
+  // ---------- what this means / decision / limitations ----------
+  $('you-list').innerHTML = [
+    `<b>Start from sold prices, not asking prices.</b> Listings in JVC ask about ${Math.round(F.jvc_asking_premium_pct)}% more than recent DLD sales of ready flats; in Dubai Marina about ${Math.round(F.marina_asking_premium_pct)}%.`,
+    `<b>Under AED 1M, expect competition.</b> These homes still sell at about ${Math.round(100 + F.band_under1m_pct)}% of the usual pace.`,
+    `<b>Bigger budgets have more room to negotiate.</b> Above AED 5M, sales run at about ${Math.round(100 + F.band_over5m_pct)}% of the usual pace.`,
+    `<b>Prices have moved less than sales.</b> JVC ready flats are ${Math.round(Math.abs(F.jvc_ready_price_change_pct))}% below January, comparing the same buildings.`,
+    `<b>New supply is coming.</b> JVC has about ${Math.round(F.jvc_pipeline_months)} months of off-plan sales still to be handed over.`,
+  ].map(s => `<li>${s}</li>`).join('');
+  $('decision-list').innerHTML = [
+    `Homes under AED 1M are ${Math.round(100 * C.bands[0].sales / C.bands.reduce((a, b) => a + b.sales, 0))}% of sales since 28 February, the largest group, and they held up best. That volume suits a fast, automatic first reply.`,
+    `Above AED 5M, sales fell by about half. Those leads are rare and valuable, so a senior agent should take them from the first message.`,
+    `Budgets should be checked against post-war DLD prices, refreshed every month. Using pre-war average prices instead, ${F.tier_changes} of 90 test leads land in the wrong tier.`,
+  ].map(s => `<li>${s}</li>`).join('');
+  $('limits-list').innerHTML = [
+    `The "usual pattern" is a model of 2024 to early 2026. It allows for weekdays, seasons, Ramadan and Eid, but it cannot separate the war from anything else that changed after 28 February, so the gap is "below the usual pattern", not "caused by" one thing.`,
+    `The likely range for the overall gap is wide (${pct(F.war_gap_high_pct)} to ${pct(F.war_gap_low_pct)}). A simpler trend model gives ${pct(F.war_gap_trend_model_pct)}.`,
+    `Sales are counted when DLD registers them, which can be weeks after a deal is agreed. Recent months may still rise slightly.`,
+    `${MON(F.data_to.slice(0, 7))} ${F.data_to.slice(0, 4)} covers only 1 to ${+F.data_to.slice(8)} ${MON(F.data_to.slice(0, 7))}.`,
+    `Portal asking prices come from ${F.listings_checked} listings checked on one day (21 Oct 2026); only totals are shown, never individual listings.`,
+    `The lead desk test messages were written for the test. The free rules-only version tested here sorts ${Math.round(F.rules_only_pass_pct * 0.9)} of 90 of them correctly; the AI model version scored ${F.desk_postwar_pass} but needs a paid API key.`,
+    `Some published figures differ from ours (see "How we checked it"). Each difference is explained rather than adjusted away.`,
+  ].map(s => `<li>${s}</li>`).join('');
+
+  // ---------- evaluation ----------
+  function drawEval() {
+    const host = $('c-eval'); host.innerHTML = '';
+    const rows = [
+      ['AI model · 60 plainly written', F.desk_clean_pass], ['AI model · 30 deliberately hard', F.desk_stress_pass],
+      ['AI model · 90, post-war prices', F.desk_postwar_pass], ['Rules only, free · same 90', `${Math.round(F.rules_only_pass_pct * 90 / 100)}/90`],
+      ['Repeat enquiries merged (phone match)', F.dupes_caught],
+    ];
+    const w = W(host), narrow = w < 520;                 // on phones the label sits above its bar
+    const rowH = narrow ? 52 : 40, m = { t: 4, r: 56, b: 4, l: narrow ? 0 : Math.min(230, w * 0.48) }, h = m.t + m.b + rows.length * rowH;
+    const svg = el('svg', { viewBox: `0 0 ${w} ${h}`, role: 'img', 'aria-label': 'Lead desk test results' }, host);
+    const x = v => m.l + (w - m.l - m.r) * v;
+    rows.forEach(([label, frac], i) => {
+      const [a, b] = frac.split('/').map(Number), yy = m.t + i * rowH + (narrow ? 22 : 8), bh = 22, free = label.startsWith('Rules');
+      if (narrow) el('text', { x: 0, y: yy - 6 }, svg).textContent = label;
+      else el('text', { x: m.l - 10, y: yy + bh / 2 + 4, 'text-anchor': 'end' }, svg).textContent = label;
+      el('rect', { x: x(0), y: yy, width: x(1) - x(0), height: bh, rx: 4, fill: 'var(--chip)' }, svg);
+      el('rect', { x: x(0), y: yy, width: Math.max(0, x(a / b) - x(0)), height: bh, rx: 4, fill: free ? 'var(--s2)' : 'var(--s1)' }, svg);
+      el('text', { x: x(1) + 8, y: yy + bh / 2 + 4, class: 'lbl' }, svg).textContent = `${a}/${b}`;
+    });
+    $('m-eval').innerHTML = `<b>What this shows:</b> the AI model sorted every test lead the way the written rules say, including messages built to trick it. The free rules-only version, the one running in n8n and on this page, gets ${Math.round(F.rules_only_pass_pct * 0.9)} of 90 right (${Math.round(F.rules_only_pass_pct)}%); it misses wording it has no rule for, such as numbers written as words, abbreviations like "mtg", or "a year and a half". Tested blind: the answers were hidden from the desk. <span class="tag">test messages, not real buyers</span>`;
+  }
+
+  // ---------- try the desk ----------
+  const EXAMPLES = [
+    'Hi, looking for a 1 bed in JVC. Mortgage pre-approved for about 950k, hoping to move in within 2 months.',
+    'Just researching at the moment. Maybe a 2 bedroom in Dubai Marina next year, budget around 1.8M.',
+    'Cash buyer, studio in JVC, around 650k, ready to buy this week.',
+  ];
+  EXAMPLES.forEach((t, i) => { const b = document.createElement('button'); b.type = 'button'; b.textContent = `Example ${i + 1}`; b.addEventListener('click', () => { $('msg').value = t; run(); }); $('examples').appendChild(b); });
+  function run() {
+    const text = $('msg').value.trim(), out = $('result');
+    if (!text) { out.className = 'result on'; out.textContent = 'Type an enquiry first, or pick an example.'; return; }
+    const now = new Date(), f = DESK.parse(text, { y: now.getFullYear(), m: now.getMonth() + 1 }), t = DESK.tier(f, PRICES.prices);
+    const show = (k, v) => `<div><span>${k}</span>${v}</div>`;
+    out.className = 'result on';
+    out.innerHTML = `<p>Tier: <span class="tier ${t.tier}">${t.tier}</span></p><div class="facts">` +
+      show('Area', f.area) + show('Bedrooms', f.beds === 0 ? 'studio' : f.beds) + show('Budget', f.budget_aed === 'unknown' ? 'unknown' : DESK.aed(f.budget_aed)) +
+      show('Timing', f.timeline_months === 'unknown' ? 'unknown' : f.timeline_months === 0 ? 'now' : f.timeline_months + ' months') +
+      show('Payment', String(f.finance).replace(/_/g, ' ')) +
+      show('Budget vs DLD price', t.ratio === null ? 'not enough detail' : Math.round(t.ratio * 100) + '% of ' + DESK.aed(t.ref)) +
+      `</div><div class="draft"><b>Draft reply for the agent to approve:</b><br>${DESK.draftReply(f, t, now).replace(/</g, '&lt;')}</div>`;
+  }
+  $('run').addEventListener('click', run);
+
+  // ---------- forecast ----------
+  const fc = F.forecast;
+  $('fc-range').textContent = `${int(fc.forecast_low)} to ${int(fc.forecast_high)} sales`;
+  $('fc-sub').innerHTML = `Our forecast for Dubai home sales in November 2026, written on ${new Date(F.built).toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' })}. The usual pattern would expect about ${int(Math.round(fc.expected_without_war / 100) * 100)}. <b>Check it on ${new Date(fc.check_on).toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' })}</b>, when DLD's November records are out.`;
+  $('fc-why').innerHTML = `How it was made: the low end assumes the gap of the latest weeks holds (${pct(fc.recent_gap_pct)}); the high end assumes the average gap since 28 February (${pct(fc.whole_period_gap_pct)}). If the real number lands outside this range, the model is missing something.`;
+
+  // ---------- validation ----------
+  const V = C.validation;
+  const unit = (v, u) => u === 'pts' ? pct1(+v) : u === 'AED bn' ? `AED ${v} bn` : u === 'AED' ? `AED ${Number(v).toLocaleString('en-GB')}` : Number(v).toLocaleString('en-GB');
+  table($('t-val'), ['Check', 'Ours', 'Published', 'Source', 'Verdict'],
+    V.map(r => [r.check, unit(r.ours, r.unit), unit(r.published, r.unit), r.source, `<span class="verdict ${r.verdict}">${r.verdict}</span>${r.verdict === 'match' ? '' : '<br><small>' + r.why + '</small>'}`]));
+  const n = k => V.filter(r => r.verdict === k).length;
+  $('m-val').innerHTML = `<b>${n('match')} match, ${n('close')} close, ${n('miss')} miss.</b> The misses are kept in on purpose: two use a different scope (all of the UAE, or all property types), and one price index reacts faster because it is based on valuations, not registered sales.`;
+
+  const draw = () => { drawMonthly(); drawBands(); drawIndex(); drawSupply(); drawEval(); };
+  draw();
+  let t; addEventListener('resize', () => { clearTimeout(t); t = setTimeout(draw, 150); });
+})();
+</script>
+</body>
+</html>

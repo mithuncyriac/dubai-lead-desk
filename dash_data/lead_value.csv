@@ -1,0 +1,7 @@
+area,scenario,avg_deal_aed,commission_pct,close_rate_pct,commission_per_deal_aed,value_per_lead_aed,value_per_100_leads_aed
+JVC,Low,1070795,2,1,21416,214,21416
+JVC,Base,1070795,2,2,21416,428,42832
+JVC,High,1070795,2,3,21416,642,64248
+Dubai Marina,Low,3946999,2,1,78940,789,78940
+Dubai Marina,Base,3946999,2,2,78940,1579,157880
+Dubai Marina,High,3946999,2,3,78940,2368,236820

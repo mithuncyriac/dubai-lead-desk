@@ -1,0 +1,24 @@
+# Reruns every number from the raw DLD files on each push, then checks the headline numbers have not moved.
+name: Rerun the numbers
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+jobs:
+  rerun:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.14"
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - run: pip install -r requirements.txt
+      - name: Unpack the DLD open data
+        run: gunzip -k data/dld/*.csv.gz
+      - name: Rerun the model and rebuild facts.json
+        run: python run_all.py
+      - name: Check the headline numbers and the JavaScript desk
+        run: python -m pytest -v tests

@@ -1,0 +1,50 @@
+{
+ "n": 60,
+ "accuracy": 1.0,
+ "run_accuracy": [
+  1.0,
+  1.0,
+  1.0
+ ],
+ "confusion_true_by_pred": {
+  "Hot": {
+   "Hot": 20,
+   "Warm": 0,
+   "Cold": 0
+  },
+  "Warm": {
+   "Hot": 0,
+   "Warm": 20,
+   "Cold": 0
+  },
+  "Cold": {
+   "Hot": 0,
+   "Warm": 0,
+   "Cold": 20
+  }
+ },
+ "hot_precision": 1.0,
+ "hot_recall": 1.0,
+ "field_accuracy": {
+  "budget": 1.0,
+  "timeline": 1.0,
+  "finance": 1.0
+ },
+ "stability_3runs": 1.0,
+ "language_consistency": {
+  "ar": "15/15",
+  "hi-latn": "15/15",
+  "ru": "15/15",
+  "en-broken": "15/15"
+ },
+ "language_consistency_overall": 1.0,
+ "variants_vs_truth": 1.0,
+ "unrealistic_flag": {
+  "tp": 6,
+  "fp": 0,
+  "fn": 0,
+  "precision": 1.0,
+  "recall": 1.0
+ },
+ "misses": []
+}

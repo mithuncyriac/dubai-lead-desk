@@ -1,0 +1,86 @@
+[
+ {
+  "id": "D01",
+  "duplicate_of": "E20",
+  "phone_raw": "0501472849",
+  "name_raw": "arjun clarke",
+  "channel": "WhatsApp"
+ },
+ {
+  "id": "D02",
+  "duplicate_of": "E55",
+  "phone_raw": "00971504410089",
+  "name_raw": "V. Khan",
+  "channel": "Bayut"
+ },
+ {
+  "id": "D03",
+  "duplicate_of": "E51",
+  "phone_raw": "+971 50 811 2431",
+  "name_raw": "Hannah Sokolovaa",
+  "channel": "WhatsApp"
+ },
+ {
+  "id": "D04",
+  "duplicate_of": "E47",
+  "phone_raw": "971503914070",
+  "name_raw": "Arjun",
+  "channel": "WhatsApp"
+ },
+ {
+  "id": "D05",
+  "duplicate_of": "E59",
+  "phone_raw": "0508358790",
+  "name_raw": "elena menon",
+  "channel": "Instagram DM"
+ },
+ {
+  "id": "D06",
+  "duplicate_of": "E21",
+  "phone_raw": "00971504043105",
+  "name_raw": "F. Al Hashimi",
+  "channel": "Bayut"
+ },
+ {
+  "id": "D07",
+  "duplicate_of": "E25",
+  "phone_raw": "+971 50 939 0406",
+  "name_raw": "Dmitri Saaeed",
+  "channel": "WhatsApp"
+ },
+ {
+  "id": "D08",
+  "duplicate_of": "E24",
+  "phone_raw": "971503799487",
+  "name_raw": "Omar",
+  "channel": "Website form"
+ },
+ {
+  "id": "D09",
+  "duplicate_of": "E58",
+  "phone_raw": "0501683440",
+  "name_raw": "irina khan",
+  "channel": "Instagram DM"
+ },
+ {
+  "id": "D10",
+  "duplicate_of": "E30",
+  "phone_raw": "00971509534240",
+  "name_raw": "S. Sokolova",
+  "channel": "Instagram DM"
+ },
+ {
+  "id": "D11",
+  "duplicate_of": "E60",
+  "phone_raw": "+971 50 942 7241",
+  "name_raw": "Dmitri Menon",
+  "channel": "Website form"
+ },
+ {
+  "id": "D12",
+  "duplicate_of": "E23",
+  "phone_raw": "971503848624",
+  "name_raw": "Aisha",
+  "channel": "Bayut"
+ }
+]

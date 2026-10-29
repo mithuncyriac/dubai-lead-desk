@@ -1,0 +1,235 @@
+{
+ "id": "DLDeskLeadDesk01",
+ "name": "Dubai Lead Desk · A · Lead desk",
+ "nodes": [
+  {
+   "id": "enquiry-in-webhook",
+   "name": "Enquiry in (webhook)",
+   "type": "n8n-nodes-base.webhook",
+   "typeVersion": 2,
+   "position": [
+    0,
+    0
+   ],
+   "parameters": {
+    "httpMethod": "POST",
+    "path": "lead-desk",
+    "responseMode": "responseNode",
+    "options": {}
+   },
+   "webhookId": "9b1f0d6e-6a51-4c1e-9f0a-1d2b3c4d5e01"
+  },
+  {
+   "id": "read-the-enquiry",
+   "name": "Read the enquiry",
+   "type": "n8n-nodes-base.code",
+   "typeVersion": 2,
+   "position": [
+    260,
+    100
+   ],
+   "parameters": {
+    "jsCode": "// Dubai Lead Desk: the free, no-AI reading of a buyer enquiry. An exact port of scripts/rule_parser.py\n// (tests/test_desk_parity.py checks both give identical output on every test message), plus the tier rule,\n// phone clean-up for duplicates and the drafted reply. Used inside the n8n Code nodes and by the dashboard.\n\nconst DESK = (() => {\n  const MONTHS = ['jan', 'feb', 'mar', 'apr', 'may', 'jun', 'jul', 'aug', 'sep', 'oct', 'nov', 'dec'];\n  const WORDNUM = { one: 1, two: 2, three: 3, four: 4, five: 5, six: 6, seven: 7, eight: 8, nine: 9, ten: 10, twelve: 12, eighteen: 18 };\n\n  // Python's round(x, -4) rounds halves to even; match it so budgets agree to the dirham\n  function roundTo10k(v) {\n    const q = v / 1e4, f = Math.floor(q), diff = q - f;\n    const r = Math.abs(diff - 0.5) < 1e-9 ? (f % 2 === 0 ? f : f + 1) : Math.round(q);\n    return r * 1e4;\n  }\n\n  function area(t) {\n    if (/\\b(jvc|jumeirah village circle|jumeira village)\\b/.test(t)) return 'JVC';\n    if (/\\b(dubai marina|marina|mrna)\\b/.test(t)) return 'Dubai Marina';\n    return 'unknown';\n  }\n\n  function beds(t) {\n    const found = [];\n    for (const m of t.matchAll(/\\bstudio\\b/g)) found.push([m.index, 0]);\n    for (const m of t.matchAll(/\\b(\\d)\\s*-?\\s*(?:br|bhk|bed|beds|bedroom|bedrooms|b\\/r)\\b/g)) found.push([m.index, +m[1]]);\n    if (!found.length) return 'unknown';\n    found.sort((a, b) => a[0] - b[0] || a[1] - b[1]);\n    return found[found.length - 1][1];                // last mention wins (\"sorry, I meant 2 beds\")\n  }\n\n  function budget(t) {\n    let best = null;\n    for (const m of t.matchAll(/(?:aed|dhs|dh)?\\s*(\\d+(?:[.,]\\d+)*)\\s*(m|mn|mil|million|k)?\\b/g)) {\n      const num = m[1], unit = m[2] || '';\n      const s = num.includes(',') && unit === '' ? num.replace(/,/g, '') : num.replace(/,/g, '.');\n      if (!/^\\d+(\\.\\d+)?$/.test(s)) continue;          // Python's float() rejects \"1.500.000\"\n      let v = parseFloat(s);\n      v = ['m', 'mn', 'mil', 'million'].includes(unit) ? v * 1e6 : unit === 'k' ? v * 1e3 : v;\n      if (!(v >= 2e5 && v <= 5e7)) continue;\n      const ctx = t.slice(Math.max(0, m.index - 40), m.index);\n      let score = /budget|max|up to|upto|range|afford|around|spend/.test(ctx) ? 2 : 1;\n      if (/listed|saw|asking|another (site|portal)|for \\d/.test(ctx)) score = 0;   // decoy prices\n      if (best === null || score > best[0]) best = [score, roundTo10k(v)];\n    }\n    return best && best[0] > 0 ? best[1] : 'unknown';\n  }\n\n  function timeline(t, asOf) {\n    if (/\\b(asap|now|immediately|right away|this week|ready to (buy|move|transfer))\\b/.test(t)) return 0;\n    let m = t.match(new RegExp('\\\\b(\\\\d+|' + Object.keys(WORDNUM).join('|') + ')\\\\s*(month|months|year|years|yr|yrs)\\\\b'));\n    if (m) {\n      const n = /^\\d+$/.test(m[1]) ? +m[1] : WORDNUM[m[1]];\n      return m[2].startsWith('y') ? n * 12 : n;\n    }\n    if (/\\bwithin a month|next month\\b/.test(t)) return 1;\n    if (/\\b(a|one) year\\b|next year/.test(t)) return 12;\n    m = t.match(new RegExp('\\\\b(' + MONTHS.join('|') + ')[a-z]*\\\\s*(20\\\\d\\\\d)?'));\n    if (m) {\n      const mon = MONTHS.indexOf(m[1]) + 1;\n      const y = m[2] ? +m[2] : (mon > asOf.m ? asOf.y : asOf.y + 1);\n      return (y - asOf.y) * 12 + mon - asOf.m;\n    }\n    return 'unknown';\n  }\n\n  function finance(t) {\n    if (/pre-?approv|approval letter|approved (my )?mortgage/.test(t)) return 'mortgage_preapproved';\n    if (/\\bcash\\b|no loan|without (a )?(loan|mortgage)|from (my )?savings|full payment/.test(t)) return 'cash';\n    if (/mortgage|bank|financ|loan/.test(t)) return 'mortgage_not_started';\n    return 'unknown';\n  }\n\n  // asOf = {y, m}: the month \"December\" or \"next year\" is counted from. Tests pin it to Oct 2026.\n  function parse(text, asOf) {\n    const t = String(text).toLowerCase();\n    return { area: area(t), beds: beds(t), budget_aed: budget(t), timeline_months: timeline(t, asOf), finance: finance(t),\n             browsing: /just (looking|browsing|researching)|research(ing)?|not serious|getting a feel|curious/.test(t) };\n  }\n\n  // prices: {\"JVC|1\": 1054123, ...} = DLD post-war median sale price by area and bedrooms\n  function tier(f, prices) {\n    const ref = f.area !== 'unknown' && f.beds !== 'unknown' ? prices[`${f.area}|${f.beds}`] ?? null : null;\n    const ratio = ref && f.budget_aed !== 'unknown' ? f.budget_aed / ref : null;\n    const tl = f.timeline_months;\n    let t = 'Warm';\n    if (f.browsing || (ratio !== null && ratio < 0.70) || (tl !== 'unknown' && tl > 12)) t = 'Cold';\n    else if (ratio !== null && ratio >= 0.85 && tl !== 'unknown' && tl <= 3 && ['cash', 'mortgage_preapproved'].includes(f.finance)) t = 'Hot';\n    return { tier: t, ref, ratio: ratio === null ? null : Math.round(ratio * 1000) / 1000 };\n  }\n\n  // same phone written four ways -> one key (UAE numbers)\n  function e164(raw) {\n    let d = String(raw || '').replace(/\\D/g, '');\n    if (d.startsWith('00')) d = d.slice(2);\n    if (d.startsWith('0')) d = '971' + d.slice(1);\n    if (!d.startsWith('971')) d = '971' + d;\n    return '+' + d;\n  }\n\n  // demo stand-in for an agent's calendar: the next two weekdays after `now`, evening then morning\n  function viewingSlots(now) {\n    const out = [], d = new Date(now), f = x => x.toLocaleDateString('en-GB', { weekday: 'long', day: 'numeric', month: 'short', timeZone: 'Asia/Dubai' });\n    while (out.length < 2) { d.setDate(d.getDate() + 1); if (d.getDay() !== 0 && d.getDay() !== 6) out.push(new Date(d)); }\n    return [`${f(out[0])} at 6pm`, `${f(out[1])} at 11am`];\n  }\n\n  const aed = v => 'AED ' + (v >= 1e6 ? (v / 1e6).toFixed(2).replace(/\\.?0+$/, '') + 'M' : Math.round(v / 1e3) + 'k');\n\n  function draftReply(f, res, now) {\n    const missing = f.budget_aed === 'unknown' ? 'What budget range are you working with?'\n      : f.finance === 'unknown' ? 'Will you be buying with cash or a mortgage?'\n      : f.timeline_months === 'unknown' ? 'When are you hoping to move or complete?'\n      : f.beds === 'unknown' ? 'How many bedrooms do you need?'\n      : f.area === 'unknown' ? 'Which areas are you considering?' : null;\n    const what = `${f.beds === 'unknown' ? 'a home' : f.beds === 0 ? 'a studio' : 'a ' + f.beds + '-bed'}${f.area === 'unknown' ? '' : ' in ' + f.area}`;\n    const reality = res && res.ratio !== null && res.ratio < 0.7 ? `Recent sales for ${what} have been nearer ${aed(res.ref)}, so I can also share options that fit your budget. ` : '';\n    const [s1, s2] = viewingSlots(now);\n    return `Hi, thanks for your message about ${what}. ${reality}${missing ? missing + ' ' : ''}I can show you two options: would ${s1} or ${s2} suit you?`;\n  }\n\n  return { parse, tier, e164, draftReply, viewingSlots, aed };\n})();\n\nif (typeof module !== 'undefined') module.exports = DESK;\n\n\n// ---- n8n: read each enquiry ----\nconst fs = require('fs'), path = require('path');\nconst dir = $env.DESK_DIR, site = $env.SITE_DIR;\nconst { prices } = JSON.parse(fs.readFileSync(path.join(site, 'desk_prices.json'), 'utf8'));\nconst logFile = path.join(dir, 'leads.csv');\nconst seen = fs.existsSync(logFile) ? fs.readFileSync(logFile, 'utf8').split('\\n').slice(1).filter(Boolean).map(l => l.split(',')) : [];\nconst out = [];\nfor (const item of $input.all()) {\n  const b = item.json.body ?? item.json;                         // webhook puts fields in body; the form does not\n  const message = String(b.message ?? b.Message ?? '').trim();\n  if (!message) throw new Error('Enquiry has no message text');\n  const now = new Date();\n  const asOf = b.as_of ? { y: +b.as_of.slice(0, 4), m: +b.as_of.slice(5, 7) } : { y: now.getFullYear(), m: now.getMonth() + 1 };\n  const f = DESK.parse(message, asOf);\n  const t = DESK.tier(f, prices);\n  const phone = DESK.e164(b.phone ?? b.Phone ?? '');\n  // duplicate = same phone within 30 days (column 2 of leads.csv is the phone, column 1 the time)\n  const dup = b.test_run ? null : seen.find(r => r[2] === phone && now - new Date(r[1]) <= 30 * 864e5);\n  const needsHuman = f.area === 'unknown' || (f.budget_aed === 'unknown' && f.beds === 'unknown');\n  out.push({ json: {\n    id: 'L' + now.getTime().toString(36).toUpperCase(), received_at: now.toISOString(),\n    name: String(b.name ?? b.Name ?? '').trim(), phone, channel: b.channel ?? b.Channel ?? 'Web form', message,\n    ...f, reference_price_aed: t.ref, budget_ratio: t.ratio, tier: t.tier,\n    duplicate_of: dup ? dup[0] : null, needs_human: needsHuman, test_run: !!b.test_run,\n    prices_as_of: JSON.parse(fs.readFileSync(path.join(site, 'desk_prices.json'), 'utf8')).as_of,\n  } });\n}\nreturn out;\n",
+    "mode": "runOnceForAllItems",
+    "language": "javaScript"
+   }
+  },
+  {
+   "id": "draft-the-reply",
+   "name": "Draft the reply",
+   "type": "n8n-nodes-base.code",
+   "typeVersion": 2,
+   "position": [
+    500,
+    100
+   ],
+   "parameters": {
+    "jsCode": "// Dubai Lead Desk: the free, no-AI reading of a buyer enquiry. An exact port of scripts/rule_parser.py\n// (tests/test_desk_parity.py checks both give identical output on every test message), plus the tier rule,\n// phone clean-up for duplicates and the drafted reply. Used inside the n8n Code nodes and by the dashboard.\n\nconst DESK = (() => {\n  const MONTHS = ['jan', 'feb', 'mar', 'apr', 'may', 'jun', 'jul', 'aug', 'sep', 'oct', 'nov', 'dec'];\n  const WORDNUM = { one: 1, two: 2, three: 3, four: 4, five: 5, six: 6, seven: 7, eight: 8, nine: 9, ten: 10, twelve: 12, eighteen: 18 };\n\n  // Python's round(x, -4) rounds halves to even; match it so budgets agree to the dirham\n  function roundTo10k(v) {\n    const q = v / 1e4, f = Math.floor(q), diff = q - f;\n    const r = Math.abs(diff - 0.5) < 1e-9 ? (f % 2 === 0 ? f : f + 1) : Math.round(q);\n    return r * 1e4;\n  }\n\n  function area(t) {\n    if (/\\b(jvc|jumeirah village circle|jumeira village)\\b/.test(t)) return 'JVC';\n    if (/\\b(dubai marina|marina|mrna)\\b/.test(t)) return 'Dubai Marina';\n    return 'unknown';\n  }\n\n  function beds(t) {\n    const found = [];\n    for (const m of t.matchAll(/\\bstudio\\b/g)) found.push([m.index, 0]);\n    for (const m of t.matchAll(/\\b(\\d)\\s*-?\\s*(?:br|bhk|bed|beds|bedroom|bedrooms|b\\/r)\\b/g)) found.push([m.index, +m[1]]);\n    if (!found.length) return 'unknown';\n    found.sort((a, b) => a[0] - b[0] || a[1] - b[1]);\n    return found[found.length - 1][1];                // last mention wins (\"sorry, I meant 2 beds\")\n  }\n\n  function budget(t) {\n    let best = null;\n    for (const m of t.matchAll(/(?:aed|dhs|dh)?\\s*(\\d+(?:[.,]\\d+)*)\\s*(m|mn|mil|million|k)?\\b/g)) {\n      const num = m[1], unit = m[2] || '';\n      const s = num.includes(',') && unit === '' ? num.replace(/,/g, '') : num.replace(/,/g, '.');\n      if (!/^\\d+(\\.\\d+)?$/.test(s)) continue;          // Python's float() rejects \"1.500.000\"\n      let v = parseFloat(s);\n      v = ['m', 'mn', 'mil', 'million'].includes(unit) ? v * 1e6 : unit === 'k' ? v * 1e3 : v;\n      if (!(v >= 2e5 && v <= 5e7)) continue;\n      const ctx = t.slice(Math.max(0, m.index - 40), m.index);\n      let score = /budget|max|up to|upto|range|afford|around|spend/.test(ctx) ? 2 : 1;\n      if (/listed|saw|asking|another (site|portal)|for \\d/.test(ctx)) score = 0;   // decoy prices\n      if (best === null || score > best[0]) best = [score, roundTo10k(v)];\n    }\n    return best && best[0] > 0 ? best[1] : 'unknown';\n  }\n\n  function timeline(t, asOf) {\n    if (/\\b(asap|now|immediately|right away|this week|ready to (buy|move|transfer))\\b/.test(t)) return 0;\n    let m = t.match(new RegExp('\\\\b(\\\\d+|' + Object.keys(WORDNUM).join('|') + ')\\\\s*(month|months|year|years|yr|yrs)\\\\b'));\n    if (m) {\n      const n = /^\\d+$/.test(m[1]) ? +m[1] : WORDNUM[m[1]];\n      return m[2].startsWith('y') ? n * 12 : n;\n    }\n    if (/\\bwithin a month|next month\\b/.test(t)) return 1;\n    if (/\\b(a|one) year\\b|next year/.test(t)) return 12;\n    m = t.match(new RegExp('\\\\b(' + MONTHS.join('|') + ')[a-z]*\\\\s*(20\\\\d\\\\d)?'));\n    if (m) {\n      const mon = MONTHS.indexOf(m[1]) + 1;\n      const y = m[2] ? +m[2] : (mon > asOf.m ? asOf.y : asOf.y + 1);\n      return (y - asOf.y) * 12 + mon - asOf.m;\n    }\n    return 'unknown';\n  }\n\n  function finance(t) {\n    if (/pre-?approv|approval letter|approved (my )?mortgage/.test(t)) return 'mortgage_preapproved';\n    if (/\\bcash\\b|no loan|without (a )?(loan|mortgage)|from (my )?savings|full payment/.test(t)) return 'cash';\n    if (/mortgage|bank|financ|loan/.test(t)) return 'mortgage_not_started';\n    return 'unknown';\n  }\n\n  // asOf = {y, m}: the month \"December\" or \"next year\" is counted from. Tests pin it to Oct 2026.\n  function parse(text, asOf) {\n    const t = String(text).toLowerCase();\n    return { area: area(t), beds: beds(t), budget_aed: budget(t), timeline_months: timeline(t, asOf), finance: finance(t),\n             browsing: /just (looking|browsing|researching)|research(ing)?|not serious|getting a feel|curious/.test(t) };\n  }\n\n  // prices: {\"JVC|1\": 1054123, ...} = DLD post-war median sale price by area and bedrooms\n  function tier(f, prices) {\n    const ref = f.area !== 'unknown' && f.beds !== 'unknown' ? prices[`${f.area}|${f.beds}`] ?? null : null;\n    const ratio = ref && f.budget_aed !== 'unknown' ? f.budget_aed / ref : null;\n    const tl = f.timeline_months;\n    let t = 'Warm';\n    if (f.browsing || (ratio !== null && ratio < 0.70) || (tl !== 'unknown' && tl > 12)) t = 'Cold';\n    else if (ratio !== null && ratio >= 0.85 && tl !== 'unknown' && tl <= 3 && ['cash', 'mortgage_preapproved'].includes(f.finance)) t = 'Hot';\n    return { tier: t, ref, ratio: ratio === null ? null : Math.round(ratio * 1000) / 1000 };\n  }\n\n  // same phone written four ways -> one key (UAE numbers)\n  function e164(raw) {\n    let d = String(raw || '').replace(/\\D/g, '');\n    if (d.startsWith('00')) d = d.slice(2);\n    if (d.startsWith('0')) d = '971' + d.slice(1);\n    if (!d.startsWith('971')) d = '971' + d;\n    return '+' + d;\n  }\n\n  // demo stand-in for an agent's calendar: the next two weekdays after `now`, evening then morning\n  function viewingSlots(now) {\n    const out = [], d = new Date(now), f = x => x.toLocaleDateString('en-GB', { weekday: 'long', day: 'numeric', month: 'short', timeZone: 'Asia/Dubai' });\n    while (out.length < 2) { d.setDate(d.getDate() + 1); if (d.getDay() !== 0 && d.getDay() !== 6) out.push(new Date(d)); }\n    return [`${f(out[0])} at 6pm`, `${f(out[1])} at 11am`];\n  }\n\n  const aed = v => 'AED ' + (v >= 1e6 ? (v / 1e6).toFixed(2).replace(/\\.?0+$/, '') + 'M' : Math.round(v / 1e3) + 'k');\n\n  function draftReply(f, res, now) {\n    const missing = f.budget_aed === 'unknown' ? 'What budget range are you working with?'\n      : f.finance === 'unknown' ? 'Will you be buying with cash or a mortgage?'\n      : f.timeline_months === 'unknown' ? 'When are you hoping to move or complete?'\n      : f.beds === 'unknown' ? 'How many bedrooms do you need?'\n      : f.area === 'unknown' ? 'Which areas are you considering?' : null;\n    const what = `${f.beds === 'unknown' ? 'a home' : f.beds === 0 ? 'a studio' : 'a ' + f.beds + '-bed'}${f.area === 'unknown' ? '' : ' in ' + f.area}`;\n    const reality = res && res.ratio !== null && res.ratio < 0.7 ? `Recent sales for ${what} have been nearer ${aed(res.ref)}, so I can also share options that fit your budget. ` : '';\n    const [s1, s2] = viewingSlots(now);\n    return `Hi, thanks for your message about ${what}. ${reality}${missing ? missing + ' ' : ''}I can show you two options: would ${s1} or ${s2} suit you?`;\n  }\n\n  return { parse, tier, e164, draftReply, viewingSlots, aed };\n})();\n\nif (typeof module !== 'undefined') module.exports = DESK;\n\n\n// ---- n8n: draft the first reply (the agent approves before anything is sent) ----\nreturn $input.all().map(item => {\n  const j = item.json;\n  const draft = j.duplicate_of\n    ? `Duplicate of ${j.duplicate_of}: same phone in the last 30 days. Add this message to that lead; no new reply.`\n    : DESK.draftReply(j, { ref: j.reference_price_aed, ratio: j.budget_ratio }, new Date());\n  return { json: { ...j, draft, status: j.duplicate_of ? 'merged' : j.needs_human ? 'needs a person' : 'awaiting approval' } };\n});\n",
+    "mode": "runOnceForAllItems",
+    "language": "javaScript"
+   }
+  },
+  {
+   "id": "test-run",
+   "name": "Test run?",
+   "type": "n8n-nodes-base.if",
+   "typeVersion": 2.2,
+   "position": [
+    740,
+    100
+   ],
+   "parameters": {
+    "conditions": {
+     "options": {
+      "caseSensitive": true,
+      "leftValue": "",
+      "typeValidation": "loose",
+      "version": 2
+     },
+     "combinator": "and",
+     "conditions": [
+      {
+       "id": "t1",
+       "leftValue": "={{ $json.test_run }}",
+       "rightValue": true,
+       "operator": {
+        "type": "boolean",
+        "operation": "true",
+        "singleValue": true
+       }
+      }
+     ]
+    },
+    "looseTypeValidation": true,
+    "options": {}
+   }
+  },
+  {
+   "id": "log-lead-and-save-draft",
+   "name": "Log lead + save draft",
+   "type": "n8n-nodes-base.code",
+   "typeVersion": 2,
+   "position": [
+    980,
+    200
+   ],
+   "parameters": {
+    "jsCode": "// ---- n8n: log every lead to leads.csv (opens in Excel or Google Sheets) and save the draft for approval ----\nconst fs = require('fs'), path = require('path');\nconst dir = $env.DESK_DIR;\nfs.mkdirSync(path.join(dir, 'drafts'), { recursive: true });\nconst file = path.join(dir, 'leads.csv');\nconst cols = ['id', 'received_at', 'phone', 'name', 'channel', 'area', 'beds', 'budget_aed', 'timeline_months', 'finance', 'browsing',\n              'reference_price_aed', 'budget_ratio', 'tier', 'duplicate_of', 'status', 'message'];\nconst cell = v => { const s = v === null || v === undefined ? '' : String(v); return /[\",\\n]/.test(s) ? '\"' + s.replace(/\"/g, '\"\"') + '\"' : s; };\nif (!fs.existsSync(file)) fs.writeFileSync(file, cols.join(',') + '\\n');\nfor (const { json: j } of $input.all()) {\n  fs.appendFileSync(file, cols.map(c => cell(j[c])).join(',') + '\\n');\n  if (!j.duplicate_of) fs.writeFileSync(path.join(dir, 'drafts', `${j.id}-${j.tier}.txt`),\n    `Lead ${j.id} · ${j.tier} · ${j.status}\\nFrom: ${j.name || 'unknown'} (${j.phone}) via ${j.channel}\\nMessage: ${j.message}\\n\\n` +\n    `Read as: area ${j.area}, beds ${j.beds}, budget ${j.budget_aed}, timeline ${j.timeline_months}, payment ${j.finance}` +\n    (j.budget_ratio ? `, budget is ${Math.round(j.budget_ratio * 100)}% of the DLD median (AED ${j.reference_price_aed})` : '') +\n    `\\n\\nDRAFT REPLY (approve or edit before sending):\\n${j.draft}\\n`);\n}\nreturn $input.all();\n",
+    "mode": "runOnceForAllItems",
+    "language": "javaScript"
+   }
+  },
+  {
+   "id": "send-draft-to-telegram-optional",
+   "name": "Send draft to Telegram (optional)",
+   "type": "n8n-nodes-base.telegram",
+   "typeVersion": 1.2,
+   "position": [
+    1220,
+    200
+   ],
+   "parameters": {
+    "chatId": "={{ $env.TELEGRAM_CHAT_ID }}",
+    "text": "={{ `New ${$json.tier} lead ${$json.id}\\n${$json.message}\\n\\nDraft:\\n${$json.draft}` }}",
+    "additionalFields": {
+     "appendAttribution": false
+    }
+   },
+   "disabled": true
+  },
+  {
+   "id": "reply-to-caller",
+   "name": "Reply to caller",
+   "type": "n8n-nodes-base.respondToWebhook",
+   "typeVersion": 1.1,
+   "position": [
+    1700,
+    100
+   ],
+   "parameters": {
+    "respondWith": "json",
+    "responseBody": "={{ { id: $json.id, tier: $json.tier, status: $json.status, read_as: { area: $json.area, beds: $json.beds, budget_aed: $json.budget_aed, timeline_months: $json.timeline_months, finance: $json.finance, browsing: $json.browsing }, budget_vs_dld_median: $json.budget_ratio, duplicate_of: $json.duplicate_of, draft: $json.draft } }}",
+    "options": {}
+   }
+  },
+  {
+   "id": "note-7126",
+   "name": "Note 7126",
+   "type": "n8n-nodes-base.stickyNote",
+   "typeVersion": 1,
+   "position": [
+    -40,
+    -300
+   ],
+   "parameters": {
+    "content": "## A · Lead desk\nEnquiries arrive at the webhook: from the form (workflow F), a portal or a WhatsApp bridge. Reads the enquiry with rules (no AI, no cost), checks the budget against DLD's post-war median price, sets Hot/Warm/Cold and drafts a reply.\n\nNothing is sent to the buyer: drafts wait in `desk/runtime/drafts/` for an agent. Every lead goes to `leads.csv`.\n\nTelegram is off. To use it: add a Telegram credential, set TELEGRAM_CHAT_ID, enable the node.",
+    "width": 520,
+    "height": 260,
+    "color": 4
+   }
+  }
+ ],
+ "connections": {
+  "Enquiry in (webhook)": {
+   "main": [
+    [
+     {
+      "node": "Read the enquiry",
+      "type": "main",
+      "index": 0
+     }
+    ]
+   ]
+  },
+  "Read the enquiry": {
+   "main": [
+    [
+     {
+      "node": "Draft the reply",
+      "type": "main",
+      "index": 0
+     }
+    ]
+   ]
+  },
+  "Draft the reply": {
+   "main": [
+    [
+     {
+      "node": "Test run?",
+      "type": "main",
+      "index": 0
+     }
+    ]
+   ]
+  },
+  "Test run?": {
+   "main": [
+    [
+     {
+      "node": "Reply to caller",
+      "type": "main",
+      "index": 0
+     }
+    ],
+    [
+     {
+      "node": "Log lead + save draft",
+      "type": "main",
+      "index": 0
+     }
+    ]
+   ]
+  },
+  "Log lead + save draft": {
+   "main": [
+    [
+     {
+      "node": "Send draft to Telegram (optional)",
+      "type": "main",
+      "index": 0
+     }
+    ]
+   ]
+  },
+  "Send draft to Telegram (optional)": {
+   "main": [
+    [
+     {
+      "node": "Reply to caller",
+      "type": "main",
+      "index": 0
+     }
+    ]
+   ]
+  }
+ },
+ "settings": {
+  "executionOrder": "v1",
+  "timezone": "Asia/Dubai",
+  "saveManualExecutions": true,
+  "errorWorkflow": "DLDeskErrors0001"
+ },
+ "active": false,
+ "pinData": {}
+}

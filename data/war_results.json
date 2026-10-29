@@ -1,0 +1,1132 @@
+{
+ "window": {
+  "first": "2024-01-01",
+  "last": "2026-10-19",
+  "rows": 472404
+ },
+ "rows_by_year": {
+  "2024": 164525,
+  "2025": 191100,
+  "2026": 116779
+ },
+ "dubai": {
+  "trend": {
+   "effect_pct": -34.7,
+   "ci_low_pct": -41.7,
+   "ci_high_pct": -26.7,
+   "actual_post": 87052,
+   "counterfactual_post": 133072,
+   "lost_deals": 46020,
+   "r2": 0.98,
+   "n_days": 1023
+  },
+  "year_effects": {
+   "effect_pct": -36.6,
+   "ci_low_pct": -48.1,
+   "ci_high_pct": -22.7,
+   "actual_post": 87052,
+   "counterfactual_post": 137260,
+   "lost_deals": 50208,
+   "r2": 0.98,
+   "n_days": 1023
+  }
+ },
+ "dubai_monthly_cf": [
+  {
+   "month": "2026-02",
+   "actual": 0,
+   "counterfactual": 0
+  },
+  {
+   "month": "2026-03",
+   "actual": 12408,
+   "counterfactual": 18370
+  },
+  {
+   "month": "2026-04",
+   "actual": 12726,
+   "counterfactual": 18197
+  },
+  {
+   "month": "2026-05",
+   "actual": 9541,
+   "counterfactual": 13580
+  },
+  {
+   "month": "2026-06",
+   "actual": 12223,
+   "counterfactual": 18990
+  },
+  {
+   "month": "2026-07",
+   "actual": 12768,
+   "counterfactual": 19236
+  },
+  {
+   "month": "2026-08",
+   "actual": 11041,
+   "counterfactual": 18268
+  },
+  {
+   "month": "2026-09",
+   "actual": 10238,
+   "counterfactual": 18943
+  },
+  {
+   "month": "2026-10",
+   "actual": 6107,
+   "counterfactual": 11677
+  }
+ ],
+ "yoy_raw": {
+  "q3_2026": 34047,
+  "q3_2025": 53609,
+  "first12_mar_2026": 5323,
+  "first12_mar_2025": 5688,
+  "feb13_24_2026": 5778,
+  "jan_sep_2026": 110672,
+  "jan_sep_2025": 138174,
+  "janfeb_2026_per_month": 14864,
+  "marsep_2026_per_month": 11564,
+  "q3_value_2026_bn": 67.9,
+  "q3_value_2025_bn": 126.7
+ },
+ "segments": [
+  {
+   "segment": "Price \u00b7 Under AED 1M",
+   "effect_pct": -19.7,
+   "ci_low_pct": -33.9,
+   "ci_high_pct": -2.5,
+   "actual_post": 32136,
+   "counterfactual_post": 37122,
+   "lost_deals": 4986
+  },
+  {
+   "segment": "Price \u00b7 AED 1\u20132M",
+   "effect_pct": -38.2,
+   "ci_low_pct": -49.6,
+   "ci_high_pct": -24.3,
+   "actual_post": 29030,
+   "counterfactual_post": 47108,
+   "lost_deals": 18078
+  },
+  {
+   "segment": "Price \u00b7 AED 2\u20135M",
+   "effect_pct": -44.8,
+   "ci_low_pct": -56.6,
+   "ci_high_pct": -29.8,
+   "actual_post": 20958,
+   "counterfactual_post": 39277,
+   "lost_deals": 18319
+  },
+  {
+   "segment": "Price \u00b7 AED 5M+",
+   "effect_pct": -52.4,
+   "ci_low_pct": -61.4,
+   "ci_high_pct": -41.3,
+   "actual_post": 4928,
+   "counterfactual_post": 10565,
+   "lost_deals": 5637
+  },
+  {
+   "segment": "Type \u00b7 Off-plan",
+   "effect_pct": -39.5,
+   "ci_low_pct": -51.0,
+   "ci_high_pct": -25.5,
+   "actual_post": 63502,
+   "counterfactual_post": 101427,
+   "lost_deals": 37925
+  },
+  {
+   "segment": "Type \u00b7 Ready",
+   "effect_pct": -35.1,
+   "ci_low_pct": -50.5,
+   "ci_high_pct": -15.0,
+   "actual_post": 23550,
+   "counterfactual_post": 37964,
+   "lost_deals": 14414
+  },
+  {
+   "segment": "Area \u00b7 JVC",
+   "effect_pct": -39.5,
+   "ci_low_pct": -50.8,
+   "ci_high_pct": -25.4,
+   "actual_post": 5872,
+   "counterfactual_post": 10516,
+   "lost_deals": 4644
+  },
+  {
+   "segment": "Area \u00b7 Dubai Marina",
+   "effect_pct": -27.9,
+   "ci_low_pct": -40.9,
+   "ci_high_pct": -12.1,
+   "actual_post": 1131,
+   "counterfactual_post": 1739,
+   "lost_deals": 608
+  }
+ ],
+ "price_index": [
+  {
+   "area": "JVC",
+   "kind": "Ready",
+   "month": "2025-01",
+   "n": 316,
+   "index": 93.4,
+   "raw_median_index": 90.0
+  },
+  {
+   "area": "JVC",
+   "kind": "Ready",
+   "month": "2025-02",
+   "n": 416,
+   "index": 91.8,
+   "raw_median_index": 88.4
+  },
+  {
+   "area": "JVC",
+   "kind": "Ready",
+   "month": "2025-03",
+   "n": 400,
+   "index": 94.4,
+   "raw_median_index": 93.7
+  },
+  {
+   "area": "JVC",
+   "kind": "Ready",
+   "month": "2025-04",
+   "n": 401,
+   "index": 94.8,
+   "raw_median_index": 91.3
+  },
+  {
+   "area": "JVC",
+   "kind": "Ready",
+   "month": "2025-05",
+   "n": 535,
+   "index": 94.9,
+   "raw_median_index": 91.4
+  },
+  {
+   "area": "JVC",
+   "kind": "Ready",
+   "month": "2025-06",
+   "n": 383,
+   "index": 96.0,
+   "raw_median_index": 91.6
+  },
+  {
+   "area": "JVC",
+   "kind": "Ready",
+   "month": "2025-07",
+   "n": 727,
+   "index": 97.6,
+   "raw_median_index": 88.1
+  },
+  {
+   "area": "JVC",
+   "kind": "Ready",
+   "month": "2025-08",
+   "n": 381,
+   "index": 96.5,
+   "raw_median_index": 91.7
+  },
+  {
+   "area": "JVC",
+   "kind": "Ready",
+   "month": "2025-09",
+   "n": 423,
+   "index": 97.6,
+   "raw_median_index": 95.0
+  },
+  {
+   "area": "JVC",
+   "kind": "Ready",
+   "month": "2025-10",
+   "n": 466,
+   "index": 97.4,
+   "raw_median_index": 98.0
+  },
+  {
+   "area": "JVC",
+   "kind": "Ready",
+   "month": "2025-11",
+   "n": 384,
+   "index": 100.5,
+   "raw_median_index": 96.9
+  },
+  {
+   "area": "JVC",
+   "kind": "Ready",
+   "month": "2025-12",
+   "n": 463,
+   "index": 97.5,
+   "raw_median_index": 100.3
+  },
+  {
+   "area": "JVC",
+   "kind": "Ready",
+   "month": "2026-01",
+   "n": 383,
+   "index": 100.0,
+   "raw_median_index": 100.0
+  },
+  {
+   "area": "JVC",
+   "kind": "Ready",
+   "month": "2026-02",
+   "n": 388,
+   "index": 97.8,
+   "raw_median_index": 95.7
+  },
+  {
+   "area": "JVC",
+   "kind": "Ready",
+   "month": "2026-03",
+   "n": 265,
+   "index": 99.8,
+   "raw_median_index": 101.6
+  },
+  {
+   "area": "JVC",
+   "kind": "Ready",
+   "month": "2026-04",
+   "n": 236,
+   "index": 97.9,
+   "raw_median_index": 97.1
+  },
+  {
+   "area": "JVC",
+   "kind": "Ready",
+   "month": "2026-05",
+   "n": 216,
+   "index": 89.2,
+   "raw_median_index": 88.9
+  },
+  {
+   "area": "JVC",
+   "kind": "Ready",
+   "month": "2026-06",
+   "n": 321,
+   "index": 92.6,
+   "raw_median_index": 93.4
+  },
+  {
+   "area": "JVC",
+   "kind": "Ready",
+   "month": "2026-07",
+   "n": 446,
+   "index": 91.5,
+   "raw_median_index": 87.8
+  },
+  {
+   "area": "JVC",
+   "kind": "Ready",
+   "month": "2026-08",
+   "n": 327,
+   "index": 88.7,
+   "raw_median_index": 89.6
+  },
+  {
+   "area": "JVC",
+   "kind": "Ready",
+   "month": "2026-09",
+   "n": 343,
+   "index": 91.1,
+   "raw_median_index": 89.3
+  },
+  {
+   "area": "JVC",
+   "kind": "Ready",
+   "month": "2026-10",
+   "n": 223,
+   "index": 92.1,
+   "raw_median_index": 90.1
+  },
+  {
+   "area": "JVC",
+   "kind": "Off-plan",
+   "month": "2025-01",
+   "n": 534,
+   "index": 94.6,
+   "raw_median_index": 90.1
+  },
+  {
+   "area": "JVC",
+   "kind": "Off-plan",
+   "month": "2025-02",
+   "n": 745,
+   "index": 97.1,
+   "raw_median_index": 94.4
+  },
+  {
+   "area": "JVC",
+   "kind": "Off-plan",
+   "month": "2025-03",
+   "n": 890,
+   "index": 95.2,
+   "raw_median_index": 94.9
+  },
+  {
+   "area": "JVC",
+   "kind": "Off-plan",
+   "month": "2025-04",
+   "n": 1111,
+   "index": 97.3,
+   "raw_median_index": 96.9
+  },
+  {
+   "area": "JVC",
+   "kind": "Off-plan",
+   "month": "2025-05",
+   "n": 1234,
+   "index": 98.3,
+   "raw_median_index": 98.5
+  },
+  {
+   "area": "JVC",
+   "kind": "Off-plan",
+   "month": "2025-06",
+   "n": 1038,
+   "index": 98.7,
+   "raw_median_index": 100.4
+  },
+  {
+   "area": "JVC",
+   "kind": "Off-plan",
+   "month": "2025-07",
+   "n": 1030,
+   "index": 97.9,
+   "raw_median_index": 95.8
+  },
+  {
+   "area": "JVC",
+   "kind": "Off-plan",
+   "month": "2025-08",
+   "n": 1089,
+   "index": 100.0,
+   "raw_median_index": 101.0
+  },
+  {
+   "area": "JVC",
+   "kind": "Off-plan",
+   "month": "2025-09",
+   "n": 1561,
+   "index": 98.2,
+   "raw_median_index": 102.0
+  },
+  {
+   "area": "JVC",
+   "kind": "Off-plan",
+   "month": "2025-10",
+   "n": 1109,
+   "index": 100.7,
+   "raw_median_index": 101.7
+  },
+  {
+   "area": "JVC",
+   "kind": "Off-plan",
+   "month": "2025-11",
+   "n": 903,
+   "index": 97.8,
+   "raw_median_index": 102.0
+  },
+  {
+   "area": "JVC",
+   "kind": "Off-plan",
+   "month": "2025-12",
+   "n": 984,
+   "index": 101.9,
+   "raw_median_index": 105.2
+  },
+  {
+   "area": "JVC",
+   "kind": "Off-plan",
+   "month": "2026-01",
+   "n": 565,
+   "index": 100.0,
+   "raw_median_index": 100.0
+  },
+  {
+   "area": "JVC",
+   "kind": "Off-plan",
+   "month": "2026-02",
+   "n": 664,
+   "index": 98.8,
+   "raw_median_index": 97.0
+  },
+  {
+   "area": "JVC",
+   "kind": "Off-plan",
+   "month": "2026-03",
+   "n": 606,
+   "index": 97.4,
+   "raw_median_index": 98.9
+  },
+  {
+   "area": "JVC",
+   "kind": "Off-plan",
+   "month": "2026-04",
+   "n": 561,
+   "index": 97.9,
+   "raw_median_index": 110.1
+  },
+  {
+   "area": "JVC",
+   "kind": "Off-plan",
+   "month": "2026-05",
+   "n": 300,
+   "index": 96.8,
+   "raw_median_index": 100.8
+  },
+  {
+   "area": "JVC",
+   "kind": "Off-plan",
+   "month": "2026-06",
+   "n": 379,
+   "index": 95.9,
+   "raw_median_index": 103.4
+  },
+  {
+   "area": "JVC",
+   "kind": "Off-plan",
+   "month": "2026-07",
+   "n": 389,
+   "index": 96.1,
+   "raw_median_index": 101.6
+  },
+  {
+   "area": "JVC",
+   "kind": "Off-plan",
+   "month": "2026-08",
+   "n": 357,
+   "index": 96.7,
+   "raw_median_index": 100.7
+  },
+  {
+   "area": "JVC",
+   "kind": "Off-plan",
+   "month": "2026-09",
+   "n": 423,
+   "index": 96.1,
+   "raw_median_index": 98.3
+  },
+  {
+   "area": "JVC",
+   "kind": "Off-plan",
+   "month": "2026-10",
+   "n": 243,
+   "index": 96.1,
+   "raw_median_index": 107.5
+  },
+  {
+   "area": "Dubai Marina",
+   "kind": "Ready",
+   "month": "2025-01",
+   "n": 213,
+   "index": 96.4,
+   "raw_median_index": 95.4
+  },
+  {
+   "area": "Dubai Marina",
+   "kind": "Ready",
+   "month": "2025-02",
+   "n": 242,
+   "index": 95.9,
+   "raw_median_index": 98.5
+  },
+  {
+   "area": "Dubai Marina",
+   "kind": "Ready",
+   "month": "2025-03",
+   "n": 265,
+   "index": 97.8,
+   "raw_median_index": 87.5
+  },
+  {
+   "area": "Dubai Marina",
+   "kind": "Ready",
+   "month": "2025-04",
+   "n": 244,
+   "index": 96.1,
+   "raw_median_index": 92.3
+  },
+  {
+   "area": "Dubai Marina",
+   "kind": "Ready",
+   "month": "2025-05",
+   "n": 249,
+   "index": 97.9,
+   "raw_median_index": 93.5
+  },
+  {
+   "area": "Dubai Marina",
+   "kind": "Ready",
+   "month": "2025-06",
+   "n": 193,
+   "index": 96.4,
+   "raw_median_index": 103.4
+  },
+  {
+   "area": "Dubai Marina",
+   "kind": "Ready",
+   "month": "2025-07",
+   "n": 189,
+   "index": 97.1,
+   "raw_median_index": 98.6
+  },
+  {
+   "area": "Dubai Marina",
+   "kind": "Ready",
+   "month": "2025-08",
+   "n": 158,
+   "index": 96.3,
+   "raw_median_index": 95.1
+  },
+  {
+   "area": "Dubai Marina",
+   "kind": "Ready",
+   "month": "2025-09",
+   "n": 185,
+   "index": 96.1,
+   "raw_median_index": 100.6
+  },
+  {
+   "area": "Dubai Marina",
+   "kind": "Ready",
+   "month": "2025-10",
+   "n": 201,
+   "index": 98.6,
+   "raw_median_index": 103.6
+  },
+  {
+   "area": "Dubai Marina",
+   "kind": "Ready",
+   "month": "2025-11",
+   "n": 197,
+   "index": 97.6,
+   "raw_median_index": 103.1
+  },
+  {
+   "area": "Dubai Marina",
+   "kind": "Ready",
+   "month": "2025-12",
+   "n": 178,
+   "index": 102.5,
+   "raw_median_index": 110.9
+  },
+  {
+   "area": "Dubai Marina",
+   "kind": "Ready",
+   "month": "2026-01",
+   "n": 142,
+   "index": 100.0,
+   "raw_median_index": 100.0
+  },
+  {
+   "area": "Dubai Marina",
+   "kind": "Ready",
+   "month": "2026-02",
+   "n": 174,
+   "index": 100.1,
+   "raw_median_index": 100.7
+  },
+  {
+   "area": "Dubai Marina",
+   "kind": "Ready",
+   "month": "2026-03",
+   "n": 124,
+   "index": 102.5,
+   "raw_median_index": 104.6
+  },
+  {
+   "area": "Dubai Marina",
+   "kind": "Ready",
+   "month": "2026-04",
+   "n": 107,
+   "index": 97.9,
+   "raw_median_index": 101.0
+  },
+  {
+   "area": "Dubai Marina",
+   "kind": "Ready",
+   "month": "2026-05",
+   "n": 95,
+   "index": 93.0,
+   "raw_median_index": 92.0
+  },
+  {
+   "area": "Dubai Marina",
+   "kind": "Ready",
+   "month": "2026-06",
+   "n": 126,
+   "index": 94.5,
+   "raw_median_index": 96.3
+  },
+  {
+   "area": "Dubai Marina",
+   "kind": "Ready",
+   "month": "2026-07",
+   "n": 168,
+   "index": 94.3,
+   "raw_median_index": 112.7
+  },
+  {
+   "area": "Dubai Marina",
+   "kind": "Ready",
+   "month": "2026-08",
+   "n": 170,
+   "index": 95.3,
+   "raw_median_index": 115.7
+  },
+  {
+   "area": "Dubai Marina",
+   "kind": "Ready",
+   "month": "2026-09",
+   "n": 124,
+   "index": 92.0,
+   "raw_median_index": 99.2
+  },
+  {
+   "area": "Dubai Marina",
+   "kind": "Ready",
+   "month": "2026-10",
+   "n": 72,
+   "index": 95.2,
+   "raw_median_index": 89.1
+  },
+  {
+   "area": "Dubai Marina",
+   "kind": "Off-plan",
+   "month": "2025-01",
+   "n": 123,
+   "index": 93.4,
+   "raw_median_index": 114.8
+  },
+  {
+   "area": "Dubai Marina",
+   "kind": "Off-plan",
+   "month": "2025-02",
+   "n": 113,
+   "index": 91.4,
+   "raw_median_index": 113.1
+  },
+  {
+   "area": "Dubai Marina",
+   "kind": "Off-plan",
+   "month": "2025-03",
+   "n": 279,
+   "index": 92.5,
+   "raw_median_index": 147.0
+  },
+  {
+   "area": "Dubai Marina",
+   "kind": "Off-plan",
+   "month": "2025-04",
+   "n": 325,
+   "index": 93.5,
+   "raw_median_index": 150.0
+  },
+  {
+   "area": "Dubai Marina",
+   "kind": "Off-plan",
+   "month": "2025-05",
+   "n": 142,
+   "index": 93.6,
+   "raw_median_index": 139.0
+  },
+  {
+   "area": "Dubai Marina",
+   "kind": "Off-plan",
+   "month": "2025-06",
+   "n": 74,
+   "index": 96.1,
+   "raw_median_index": 123.3
+  },
+  {
+   "area": "Dubai Marina",
+   "kind": "Off-plan",
+   "month": "2025-07",
+   "n": 95,
+   "index": 97.6,
+   "raw_median_index": 147.1
+  },
+  {
+   "area": "Dubai Marina",
+   "kind": "Off-plan",
+   "month": "2025-08",
+   "n": 82,
+   "index": 96.1,
+   "raw_median_index": 136.3
+  },
+  {
+   "area": "Dubai Marina",
+   "kind": "Off-plan",
+   "month": "2025-09",
+   "n": 52,
+   "index": 95.2,
+   "raw_median_index": 140.6
+  },
+  {
+   "area": "Dubai Marina",
+   "kind": "Off-plan",
+   "month": "2025-10",
+   "n": 25,
+   "index": 100.4,
+   "raw_median_index": 135.6
+  },
+  {
+   "area": "Dubai Marina",
+   "kind": "Off-plan",
+   "month": "2025-11",
+   "n": 23,
+   "index": 95.6,
+   "raw_median_index": 125.9
+  },
+  {
+   "area": "Dubai Marina",
+   "kind": "Off-plan",
+   "month": "2025-12",
+   "n": 36,
+   "index": 95.3,
+   "raw_median_index": 118.0
+  },
+  {
+   "area": "Dubai Marina",
+   "kind": "Off-plan",
+   "month": "2026-01",
+   "n": 18,
+   "index": 100.0,
+   "raw_median_index": 100.0
+  },
+  {
+   "area": "Dubai Marina",
+   "kind": "Off-plan",
+   "month": "2026-02",
+   "n": 18,
+   "index": 96.1,
+   "raw_median_index": 128.4
+  },
+  {
+   "area": "Dubai Marina",
+   "kind": "Off-plan",
+   "month": "2026-03",
+   "n": 17,
+   "index": 103.3,
+   "raw_median_index": 138.5
+  },
+  {
+   "area": "Dubai Marina",
+   "kind": "Off-plan",
+   "month": "2026-04",
+   "n": 13,
+   "index": 95.9,
+   "raw_median_index": 130.8
+  },
+  {
+   "area": "Dubai Marina",
+   "kind": "Off-plan",
+   "month": "2026-05",
+   "n": 4,
+   "index": 92.8,
+   "raw_median_index": 104.0
+  },
+  {
+   "area": "Dubai Marina",
+   "kind": "Off-plan",
+   "month": "2026-06",
+   "n": 3,
+   "index": 93.4,
+   "raw_median_index": 133.5
+  },
+  {
+   "area": "Dubai Marina",
+   "kind": "Off-plan",
+   "month": "2026-07",
+   "n": 17,
+   "index": 86.0,
+   "raw_median_index": 110.4
+  },
+  {
+   "area": "Dubai Marina",
+   "kind": "Off-plan",
+   "month": "2026-08",
+   "n": 3,
+   "index": 95.6,
+   "raw_median_index": 122.1
+  },
+  {
+   "area": "Dubai Marina",
+   "kind": "Off-plan",
+   "month": "2026-09",
+   "n": 13,
+   "index": 95.7,
+   "raw_median_index": 117.2
+  },
+  {
+   "area": "Dubai Marina",
+   "kind": "Off-plan",
+   "month": "2026-10",
+   "n": 8,
+   "index": 95.1,
+   "raw_median_index": 117.2
+  }
+ ],
+ "postwar_medians": [
+  {
+   "area": "Dubai Marina",
+   "beds": 0.0,
+   "n": 32,
+   "median_price": 985000,
+   "ready_median_psf": 2100
+  },
+  {
+   "area": "Dubai Marina",
+   "beds": 1.0,
+   "n": 257,
+   "median_price": 1750000,
+   "ready_median_psf": 2137
+  },
+  {
+   "area": "Dubai Marina",
+   "beds": 2.0,
+   "n": 185,
+   "median_price": 2850000,
+   "ready_median_psf": 1912
+  },
+  {
+   "area": "Dubai Marina",
+   "beds": 3.0,
+   "n": 77,
+   "median_price": 4300000,
+   "ready_median_psf": 1748
+  },
+  {
+   "area": "JVC",
+   "beds": 0.0,
+   "n": 912,
+   "median_price": 680000,
+   "ready_median_psf": 1425
+  },
+  {
+   "area": "JVC",
+   "beds": 1.0,
+   "n": 1412,
+   "median_price": 1054123,
+   "ready_median_psf": 1206
+  },
+  {
+   "area": "JVC",
+   "beds": 2.0,
+   "n": 386,
+   "median_price": 1634638,
+   "ready_median_psf": 1107
+  },
+  {
+   "area": "JVC",
+   "beds": 3.0,
+   "n": 60,
+   "median_price": 2207355,
+   "ready_median_psf": 1131
+  }
+ ],
+ "postwar_ready_psf": {
+  "JVC": 1230,
+  "Dubai Marina": 1959
+ },
+ "area_monthly_cf": [
+  {
+   "area": "JVC",
+   "month": "2026-02",
+   "actual": 0,
+   "counterfactual": 0
+  },
+  {
+   "area": "JVC",
+   "month": "2026-03",
+   "actual": 890,
+   "counterfactual": 1492
+  },
+  {
+   "area": "JVC",
+   "month": "2026-04",
+   "actual": 819,
+   "counterfactual": 1380
+  },
+  {
+   "area": "JVC",
+   "month": "2026-05",
+   "actual": 530,
+   "counterfactual": 1105
+  },
+  {
+   "area": "JVC",
+   "month": "2026-06",
+   "actual": 718,
+   "counterfactual": 1394
+  },
+  {
+   "area": "JVC",
+   "month": "2026-07",
+   "actual": 898,
+   "counterfactual": 1428
+  },
+  {
+   "area": "JVC",
+   "month": "2026-08",
+   "actual": 746,
+   "counterfactual": 1361
+  },
+  {
+   "area": "JVC",
+   "month": "2026-09",
+   "actual": 785,
+   "counterfactual": 1510
+  },
+  {
+   "area": "JVC",
+   "month": "2026-10",
+   "actual": 486,
+   "counterfactual": 845
+  },
+  {
+   "area": "Dubai Marina",
+   "month": "2026-02",
+   "actual": 0,
+   "counterfactual": 0
+  },
+  {
+   "area": "Dubai Marina",
+   "month": "2026-03",
+   "actual": 141,
+   "counterfactual": 245
+  },
+  {
+   "area": "Dubai Marina",
+   "month": "2026-04",
+   "actual": 121,
+   "counterfactual": 224
+  },
+  {
+   "area": "Dubai Marina",
+   "month": "2026-05",
+   "actual": 104,
+   "counterfactual": 196
+  },
+  {
+   "area": "Dubai Marina",
+   "month": "2026-06",
+   "actual": 130,
+   "counterfactual": 237
+  },
+  {
+   "area": "Dubai Marina",
+   "month": "2026-07",
+   "actual": 226,
+   "counterfactual": 256
+  },
+  {
+   "area": "Dubai Marina",
+   "month": "2026-08",
+   "actual": 190,
+   "counterfactual": 243
+  },
+  {
+   "area": "Dubai Marina",
+   "month": "2026-09",
+   "actual": 137,
+   "counterfactual": 209
+  },
+  {
+   "area": "Dubai Marina",
+   "month": "2026-10",
+   "actual": 82,
+   "counterfactual": 129
+  }
+ ],
+ "band_mix": [
+  {
+   "area": "All",
+   "band": "Under AED 1M",
+   "sales": 32136,
+   "share": 0.3692,
+   "mean_value": 686181
+  },
+  {
+   "area": "All",
+   "band": "AED 1\u20132M",
+   "sales": 29030,
+   "share": 0.3335,
+   "mean_value": 1410280
+  },
+  {
+   "area": "All",
+   "band": "AED 2\u20135M",
+   "sales": 20958,
+   "share": 0.2408,
+   "mean_value": 2999748
+  },
+  {
+   "area": "All",
+   "band": "AED 5M+",
+   "sales": 4928,
+   "share": 0.0566,
+   "mean_value": 12290107
+  },
+  {
+   "area": "JVC",
+   "band": "Under AED 1M",
+   "sales": 3009,
+   "share": 0.5124,
+   "mean_value": 729845
+  },
+  {
+   "area": "JVC",
+   "band": "AED 1\u20132M",
+   "sales": 2529,
+   "share": 0.4307,
+   "mean_value": 1309605
+  },
+  {
+   "area": "JVC",
+   "band": "AED 2\u20135M",
+   "sales": 328,
+   "share": 0.0559,
+   "mean_value": 2724621
+  },
+  {
+   "area": "JVC",
+   "band": "AED 5M+",
+   "sales": 6,
+   "share": 0.001,
+   "mean_value": 15841666
+  },
+  {
+   "area": "Dubai Marina",
+   "band": "Under AED 1M",
+   "sales": 130,
+   "share": 0.1149,
+   "mean_value": 501230
+  },
+  {
+   "area": "Dubai Marina",
+   "band": "AED 1\u20132M",
+   "sales": 403,
+   "share": 0.3563,
+   "mean_value": 1494981
+  },
+  {
+   "area": "Dubai Marina",
+   "band": "AED 2\u20135M",
+   "sales": 525,
+   "share": 0.4642,
+   "mean_value": 3009609
+  },
+  {
+   "area": "Dubai Marina",
+   "band": "AED 5M+",
+   "sales": 73,
+   "share": 0.0645,
+   "mean_value": 8358597
+  }
+ ]
+}

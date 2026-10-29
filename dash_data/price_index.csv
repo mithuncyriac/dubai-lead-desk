@@ -1,0 +1,89 @@
+key,area,kind,month,n,index,raw_median_index
+JVC|Ready|2025-01,JVC,Ready,2025-01,316,93.4,90.0
+JVC|Ready|2025-02,JVC,Ready,2025-02,416,91.8,88.4
+JVC|Ready|2025-03,JVC,Ready,2025-03,400,94.4,93.7
+JVC|Ready|2025-04,JVC,Ready,2025-04,401,94.8,91.3
+JVC|Ready|2025-05,JVC,Ready,2025-05,535,94.9,91.4
+JVC|Ready|2025-06,JVC,Ready,2025-06,383,96.0,91.6
+JVC|Ready|2025-07,JVC,Ready,2025-07,727,97.6,88.1
+JVC|Ready|2025-08,JVC,Ready,2025-08,381,96.5,91.7
+JVC|Ready|2025-09,JVC,Ready,2025-09,423,97.6,95.0
+JVC|Ready|2025-10,JVC,Ready,2025-10,466,97.4,98.0
+JVC|Ready|2025-11,JVC,Ready,2025-11,384,100.5,96.9
+JVC|Ready|2025-12,JVC,Ready,2025-12,463,97.5,100.3
+JVC|Ready|2026-01,JVC,Ready,2026-01,383,100.0,100.0
+JVC|Ready|2026-02,JVC,Ready,2026-02,388,97.8,95.7
+JVC|Ready|2026-03,JVC,Ready,2026-03,265,99.8,101.6
+JVC|Ready|2026-04,JVC,Ready,2026-04,236,97.9,97.1
+JVC|Ready|2026-05,JVC,Ready,2026-05,216,89.2,88.9
+JVC|Ready|2026-06,JVC,Ready,2026-06,321,92.6,93.4
+JVC|Ready|2026-07,JVC,Ready,2026-07,446,91.5,87.8
+JVC|Ready|2026-08,JVC,Ready,2026-08,327,88.7,89.6
+JVC|Ready|2026-09,JVC,Ready,2026-09,343,91.1,89.3
+JVC|Ready|2026-10,JVC,Ready,2026-10,223,92.1,90.1
+JVC|Off-plan|2025-01,JVC,Off-plan,2025-01,534,94.6,90.1
+JVC|Off-plan|2025-02,JVC,Off-plan,2025-02,745,97.1,94.4
+JVC|Off-plan|2025-03,JVC,Off-plan,2025-03,890,95.2,94.9
+JVC|Off-plan|2025-04,JVC,Off-plan,2025-04,1111,97.3,96.9
+JVC|Off-plan|2025-05,JVC,Off-plan,2025-05,1234,98.3,98.5
+JVC|Off-plan|2025-06,JVC,Off-plan,2025-06,1038,98.7,100.4
+JVC|Off-plan|2025-07,JVC,Off-plan,2025-07,1030,97.9,95.8
+JVC|Off-plan|2025-08,JVC,Off-plan,2025-08,1089,100.0,101.0
+JVC|Off-plan|2025-09,JVC,Off-plan,2025-09,1561,98.2,102.0
+JVC|Off-plan|2025-10,JVC,Off-plan,2025-10,1109,100.7,101.7
+JVC|Off-plan|2025-11,JVC,Off-plan,2025-11,903,97.8,102.0
+JVC|Off-plan|2025-12,JVC,Off-plan,2025-12,984,101.9,105.2
+JVC|Off-plan|2026-01,JVC,Off-plan,2026-01,565,100.0,100.0
+JVC|Off-plan|2026-02,JVC,Off-plan,2026-02,664,98.8,97.0
+JVC|Off-plan|2026-03,JVC,Off-plan,2026-03,606,97.4,98.9
+JVC|Off-plan|2026-04,JVC,Off-plan,2026-04,561,97.9,110.1
+JVC|Off-plan|2026-05,JVC,Off-plan,2026-05,300,96.8,100.8
+JVC|Off-plan|2026-06,JVC,Off-plan,2026-06,379,95.9,103.4
+JVC|Off-plan|2026-07,JVC,Off-plan,2026-07,389,96.1,101.6
+JVC|Off-plan|2026-08,JVC,Off-plan,2026-08,357,96.7,100.7
+JVC|Off-plan|2026-09,JVC,Off-plan,2026-09,423,96.1,98.3
+JVC|Off-plan|2026-10,JVC,Off-plan,2026-10,243,96.1,107.5
+Dubai Marina|Ready|2025-01,Dubai Marina,Ready,2025-01,213,96.4,95.4
+Dubai Marina|Ready|2025-02,Dubai Marina,Ready,2025-02,242,95.9,98.5
+Dubai Marina|Ready|2025-03,Dubai Marina,Ready,2025-03,265,97.8,87.5
+Dubai Marina|Ready|2025-04,Dubai Marina,Ready,2025-04,244,96.1,92.3
+Dubai Marina|Ready|2025-05,Dubai Marina,Ready,2025-05,249,97.9,93.5
+Dubai Marina|Ready|2025-06,Dubai Marina,Ready,2025-06,193,96.4,103.4
+Dubai Marina|Ready|2025-07,Dubai Marina,Ready,2025-07,189,97.1,98.6
+Dubai Marina|Ready|2025-08,Dubai Marina,Ready,2025-08,158,96.3,95.1
+Dubai Marina|Ready|2025-09,Dubai Marina,Ready,2025-09,185,96.1,100.6
+Dubai Marina|Ready|2025-10,Dubai Marina,Ready,2025-10,201,98.6,103.6
+Dubai Marina|Ready|2025-11,Dubai Marina,Ready,2025-11,197,97.6,103.1
+Dubai Marina|Ready|2025-12,Dubai Marina,Ready,2025-12,178,102.5,110.9
+Dubai Marina|Ready|2026-01,Dubai Marina,Ready,2026-01,142,100.0,100.0
+Dubai Marina|Ready|2026-02,Dubai Marina,Ready,2026-02,174,100.1,100.7
+Dubai Marina|Ready|2026-03,Dubai Marina,Ready,2026-03,124,102.5,104.6
+Dubai Marina|Ready|2026-04,Dubai Marina,Ready,2026-04,107,97.9,101.0
+Dubai Marina|Ready|2026-05,Dubai Marina,Ready,2026-05,95,93.0,92.0
+Dubai Marina|Ready|2026-06,Dubai Marina,Ready,2026-06,126,94.5,96.3
+Dubai Marina|Ready|2026-07,Dubai Marina,Ready,2026-07,168,94.3,112.7
+Dubai Marina|Ready|2026-08,Dubai Marina,Ready,2026-08,170,95.3,115.7
+Dubai Marina|Ready|2026-09,Dubai Marina,Ready,2026-09,124,92.0,99.2
+Dubai Marina|Ready|2026-10,Dubai Marina,Ready,2026-10,72,95.2,89.1
+Dubai Marina|Off-plan|2025-01,Dubai Marina,Off-plan,2025-01,123,93.4,114.8
+Dubai Marina|Off-plan|2025-02,Dubai Marina,Off-plan,2025-02,113,91.4,113.1
+Dubai Marina|Off-plan|2025-03,Dubai Marina,Off-plan,2025-03,279,92.5,147.0
+Dubai Marina|Off-plan|2025-04,Dubai Marina,Off-plan,2025-04,325,93.5,150.0
+Dubai Marina|Off-plan|2025-05,Dubai Marina,Off-plan,2025-05,142,93.6,139.0
+Dubai Marina|Off-plan|2025-06,Dubai Marina,Off-plan,2025-06,74,96.1,123.3
+Dubai Marina|Off-plan|2025-07,Dubai Marina,Off-plan,2025-07,95,97.6,147.1
+Dubai Marina|Off-plan|2025-08,Dubai Marina,Off-plan,2025-08,82,96.1,136.3
+Dubai Marina|Off-plan|2025-09,Dubai Marina,Off-plan,2025-09,52,95.2,140.6
+Dubai Marina|Off-plan|2025-10,Dubai Marina,Off-plan,2025-10,25,100.4,135.6
+Dubai Marina|Off-plan|2025-11,Dubai Marina,Off-plan,2025-11,23,95.6,125.9
+Dubai Marina|Off-plan|2025-12,Dubai Marina,Off-plan,2025-12,36,95.3,118.0
+Dubai Marina|Off-plan|2026-01,Dubai Marina,Off-plan,2026-01,18,100.0,100.0
+Dubai Marina|Off-plan|2026-02,Dubai Marina,Off-plan,2026-02,18,96.1,128.4
+Dubai Marina|Off-plan|2026-03,Dubai Marina,Off-plan,2026-03,17,103.3,138.5
+Dubai Marina|Off-plan|2026-04,Dubai Marina,Off-plan,2026-04,13,95.9,130.8
+Dubai Marina|Off-plan|2026-05,Dubai Marina,Off-plan,2026-05,4,92.8,104.0
+Dubai Marina|Off-plan|2026-06,Dubai Marina,Off-plan,2026-06,3,93.4,133.5
+Dubai Marina|Off-plan|2026-07,Dubai Marina,Off-plan,2026-07,17,86.0,110.4
+Dubai Marina|Off-plan|2026-08,Dubai Marina,Off-plan,2026-08,3,95.6,122.1
+Dubai Marina|Off-plan|2026-09,Dubai Marina,Off-plan,2026-09,13,95.7,117.2
+Dubai Marina|Off-plan|2026-10,Dubai Marina,Off-plan,2026-10,8,95.1,117.2

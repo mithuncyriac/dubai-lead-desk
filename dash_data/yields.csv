@@ -1,0 +1,9 @@
+area,size_band,gross_yield_pct,full_year_yield_pct,median_new_rent_aed,median_ready_price_aed,new_leases,ready_sales
+JVC,Studio-size (<45 m²),7.21,7.49,45000,615000,2361,259
+JVC,1-bed size (45–85 m²),7.22,7.22,65000,903000,4860,712
+JVC,2-bed size (85–130 m²),7.34,7.17,80000,1150000,1754,296
+JVC,3-bed size (130–200 m²),7.36,7.19,115000,1580000,384,85
+Dubai Marina,Studio-size (<45 m²),6.86,6.36,55000,900000,239,21
+Dubai Marina,1-bed size (45–85 m²),5.1,5.85,85000,1625000,1922,199
+Dubai Marina,2-bed size (85–130 m²),5.15,5.8,119839,2200000,1658,171
+Dubai Marina,3-bed size (130–200 m²),5.02,5.4,160000,3100000,1086,113

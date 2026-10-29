@@ -1,0 +1,122 @@
+{
+ "n_cases": 90,
+ "changed": 4,
+ "moves": {
+  "Warm \u2192 Hot": 2,
+  "Cold \u2192 Warm": 2
+ },
+ "detail": [
+  {
+   "case": "E30",
+   "area": "JVC",
+   "beds": 2,
+   "budget_aed": 1390000,
+   "old_ref": 1690998,
+   "new_ref": 1634638,
+   "old_tier": "Warm",
+   "new_tier": "Hot"
+  },
+  {
+   "case": "H06",
+   "area": "Dubai Marina",
+   "beds": 2,
+   "budget_aed": 2360000,
+   "old_ref": 3465492,
+   "new_ref": 2850000,
+   "old_tier": "Cold",
+   "new_tier": "Warm"
+  },
+  {
+   "case": "H23",
+   "area": "Dubai Marina",
+   "beds": 2,
+   "budget_aed": 2490000,
+   "old_ref": 3463143,
+   "new_ref": 2850000,
+   "old_tier": "Warm",
+   "new_tier": "Hot"
+  },
+  {
+   "case": "H30",
+   "area": "Dubai Marina",
+   "beds": 0,
+   "budget_aed": 740000,
+   "old_ref": 1239531,
+   "new_ref": 985000,
+   "old_tier": "Cold",
+   "new_tier": "Warm"
+  }
+ ],
+ "parser_accuracy_v2": 0.856,
+ "parser_by_set": {
+  "E": "54/60",
+  "H": "23/30"
+ },
+ "parser_misses": [
+  {
+   "case": "E13",
+   "truth": "Hot",
+   "parser": "Warm"
+  },
+  {
+   "case": "E18",
+   "truth": "Hot",
+   "parser": "Warm"
+  },
+  {
+   "case": "E45",
+   "truth": "Cold",
+   "parser": "Warm"
+  },
+  {
+   "case": "E50",
+   "truth": "Cold",
+   "parser": "Warm"
+  },
+  {
+   "case": "E10",
+   "truth": "Hot",
+   "parser": "Warm"
+  },
+  {
+   "case": "E51",
+   "truth": "Cold",
+   "parser": "Warm"
+  },
+  {
+   "case": "H03",
+   "truth": "Cold",
+   "parser": "Warm"
+  },
+  {
+   "case": "H04",
+   "truth": "Hot",
+   "parser": "Warm"
+  },
+  {
+   "case": "H07",
+   "truth": "Hot",
+   "parser": "Warm"
+  },
+  {
+   "case": "H15",
+   "truth": "Cold",
+   "parser": "Hot"
+  },
+  {
+   "case": "H19",
+   "truth": "Hot",
+   "parser": "Warm"
+  },
+  {
+   "case": "H24",
+   "truth": "Cold",
+   "parser": "Warm"
+  },
+  {
+   "case": "H27",
+   "truth": "Cold",
+   "parser": "Warm"
+  }
+ ]
+}

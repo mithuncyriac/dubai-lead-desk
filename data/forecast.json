@@ -1,0 +1,12 @@
+{
+ "month": "2026-11",
+ "expected_without_war": 18378,
+ "whole_period_gap_pct": -36.6,
+ "recent_gap_pct": -46.6,
+ "recent_window": "2026-09-01 to 2026-10-19",
+ "forecast_low": 9800,
+ "forecast_high": 11600,
+ "check_on": "2026-12-07",
+ "rule": "Right if DLD's November 2026 residential sales land between forecast_low and forecast_high.",
+ "forecast_mid": 10700
+}

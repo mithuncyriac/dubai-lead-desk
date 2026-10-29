@@ -1,0 +1,722 @@
+[
+ {
+  "id": "E09",
+  "set": "plain",
+  "message": "Hi, 1BR JVC, budget 960k AED. Mortgage pre-approval done, ready to buy now, can view today or tmrw",
+  "name": "Aisha Nair",
+  "phone": "+971508089011",
+  "truth": "Hot"
+ },
+ {
+  "id": "E56",
+  "set": "plain",
+  "message": "hi, looking for 1 bed in JVC maybe in 3 yrs time. budget 1,110,000 aed",
+  "name": "Arjun Reddy",
+  "phone": "+971509007676",
+  "truth": "Cold"
+ },
+ {
+  "id": "E34",
+  "set": "plain",
+  "message": "Hi, Nadia here from Beirut. Looking for a 3BR in Dubai Marina, budget 4.77M AED cash. Want to buy in around 4 months",
+  "name": "Nadia Haddad",
+  "phone": "+971501116664",
+  "truth": "Warm"
+ },
+ {
+  "id": "E05",
+  "set": "plain",
+  "message": "Hi, I'm in Manila. Studio in JVC, budget 700,000 AED. Bank pre-approval for the mortgage is done. Want to buy within a month.",
+  "name": "Rahul Khan",
+  "phone": "+971504658710",
+  "truth": "Hot"
+ },
+ {
+  "id": "E07",
+  "set": "plain",
+  "message": "Hi, I live in Amman and would like to buy a 2BR in Jumeirah Village Circle in the next 3 months. Cash buyer, budget 1.69 million AED.",
+  "name": "Layla Haddad",
+  "phone": "+971506406667",
+  "truth": "Hot"
+ },
+ {
+  "id": "E36",
+  "set": "plain",
+  "message": "hey, want a 2 bedroom in jvc in about a year. budget 1.69m. i'll need a mortgage, haven't spoken to a bank yet",
+  "name": "Priya Ivanova",
+  "phone": "+971509771516",
+  "truth": "Warm"
+ },
+ {
+  "id": "E40",
+  "set": "plain",
+  "message": "Salam, looking for studio in JVC around 540k. will need mortgage, havent talked to any bank yet. want to buy within 1 month",
+  "name": "Omar Menon",
+  "phone": "+971505393501",
+  "truth": "Warm"
+ },
+ {
+  "id": "E29",
+  "set": "plain",
+  "message": "Good day, I want to buy a 3 bed apartment in JVC in about 12 months. Budget AED 2.54M, paying cash.",
+  "name": "Rahul Smith",
+  "phone": "+971506707564",
+  "truth": "Warm"
+ },
+ {
+  "id": "E48",
+  "set": "plain",
+  "message": "Hi, 2 bedroom JVC. Budget 1,610,000. Cash buyer. Looking to buy in 2 years time.",
+  "name": "Tom Petrova",
+  "phone": "+971508964021",
+  "truth": "Cold"
+ },
+ {
+  "id": "E03",
+  "set": "plain",
+  "message": "Hello, 2BR in JVC, AED 1.45M, mortgage pre-approved. Want to buy in the next 3 months.",
+  "name": "Ahmed Smith",
+  "phone": "+971506879922",
+  "truth": "Hot"
+ },
+ {
+  "id": "E42",
+  "set": "plain",
+  "message": "Just browsing tbh, not looking to buy seriously yet. What's out there for 2BR in Dubai Marina around 3.47M? maybe in 6 months",
+  "name": "Sarah Aziz",
+  "phone": "+971509565242",
+  "truth": "Cold"
+ },
+ {
+  "id": "E21",
+  "set": "plain",
+  "message": "Hi, looking for a 1 bedroom in JVC, AED 870,000, cash. Plan to buy in 6 months. Currently in Karachi.",
+  "name": "Fatima Al Hashimi",
+  "phone": "+971504043105",
+  "truth": "Warm"
+ },
+ {
+  "id": "E47",
+  "set": "plain",
+  "message": "Hello, just browsing for now, not serious yet. Curious about 1BR prices in Dubai Marina, something around 1.7M AED. Maybe in the next 3 months, we'll see. Living in Paris.",
+  "name": "Arjun Petrova",
+  "phone": "+971503914070",
+  "truth": "Cold"
+ },
+ {
+  "id": "E49",
+  "set": "plain",
+  "message": "hello 1 bed in dubai marina, budget 1.43m. in 2 years. will need mortgage, havent spoken to bank",
+  "name": "Sarah Walker",
+  "phone": "+971509850664",
+  "truth": "Cold"
+ },
+ {
+  "id": "E46",
+  "set": "plain",
+  "message": "Hi, just looking, no plans yet really. Studio in Dubai Marina around 1.24M? would need a mortgage, haven't spoken to any bank. maybe next 3 months. I'm in Kyiv",
+  "name": "Olga Ivanova",
+  "phone": "+971503136711",
+  "truth": "Cold"
+ },
+ {
+  "id": "E18",
+  "set": "plain",
+  "message": "Hi! studio in dubai marina pls 🙏 budget AED 1.24M, my mortgage pre approval is done. I'm in Mumbai rn, plan to buy in next 3 months",
+  "name": "Khalid Sharma",
+  "phone": "+971504982899",
+  "truth": "Hot"
+ },
+ {
+  "id": "E53",
+  "set": "plain",
+  "message": "Need studio in dubai marina for 680k within a month. will take a mortgage, not spoken to bank yet",
+  "name": "Ahmed Johnson",
+  "phone": "+971509922396",
+  "truth": "Cold"
+ },
+ {
+  "id": "E27",
+  "set": "plain",
+  "message": "Hi, from Dublin. 2BR JVC, budget AED 1.22M. Need a mortgage, not been to a bank yet. Want to buy in 4 months.",
+  "name": "Fatima Reddy",
+  "phone": "+971502036087",
+  "truth": "Warm"
+ },
+ {
+  "id": "E55",
+  "set": "plain",
+  "message": "hi just looking around, no real plans yet 😅 how much for 1br in jvc? i have around 1.06m cash. maybe in the next 3 months idk. im in cairo",
+  "name": "Vikram Khan",
+  "phone": "+971504410089",
+  "truth": "Cold"
+ },
+ {
+  "id": "E16",
+  "set": "plain",
+  "message": "Hi, I'm flying in from Istanbul this week and ready to buy now. 2BR in JVC, budget 1.69M AED, mortgage pre-approval already done.",
+  "name": "Elena Clarke",
+  "phone": "+971509528621",
+  "truth": "Hot"
+ },
+ {
+  "id": "E01",
+  "set": "plain",
+  "message": "hey 👋 need 3bhk in jvc asap, ready to buy now. cash 💰 budget 2.43m",
+  "name": "Elena Aziz",
+  "phone": "+971502172395",
+  "truth": "Hot"
+ },
+ {
+  "id": "E06",
+  "set": "plain",
+  "message": "Hello, I'm in Kuala Lumpur and plan to buy a 1BR in Dubai Marina in the next 3 months. Budget AED 1.88M, cash buyer.",
+  "name": "Sanjay Haddad",
+  "phone": "+971505333489",
+  "truth": "Hot"
+ },
+ {
+  "id": "E28",
+  "set": "plain",
+  "message": "Hey! 3 bedroom JVC, budget 2.31M. I'm in Dhaka now. Need a mortgage, haven't contacted any bank. Planning in 9 months 🏠",
+  "name": "Khalid Rahman",
+  "phone": "+971502639987",
+  "truth": "Warm"
+ },
+ {
+  "id": "E43",
+  "set": "plain",
+  "message": "Hi need 1BR Dubai Marina, budget 1.22M AED cash. In next 3 months. Currently in Baku.",
+  "name": "Elena Petrova",
+  "phone": "+971508592403",
+  "truth": "Cold"
+ },
+ {
+  "id": "E38",
+  "set": "plain",
+  "message": "Hello from London. Interested in studios in Dubai Marina, budget 1.36M AED, cash purchase. Planning to buy in about 4 months when I'm back in Dubai.",
+  "name": "Aisha Saeed",
+  "phone": "+971508309662",
+  "truth": "Warm"
+ },
+ {
+  "id": "E44",
+  "set": "plain",
+  "message": "Hello, 2 bedroom in JVC, 1.05M AED cash, need within a month. I'm in Tashkent.",
+  "name": "Khalid Sharma",
+  "phone": "+971501343814",
+  "truth": "Cold"
+ },
+ {
+  "id": "E31",
+  "set": "plain",
+  "message": "Interest: 1 bedroom, JVC. Budget AED 800k. Mortgage pre-approved. Want to buy within a month.",
+  "name": "Olga Smith",
+  "phone": "+971503652878",
+  "truth": "Warm"
+ },
+ {
+  "id": "E59",
+  "set": "plain",
+  "message": "Hi, I'm a cash buyer looking at 2bhk in JVC, budget 1.61M. Not urgent, plan to buy in 2 years.",
+  "name": "Elena Menon",
+  "phone": "+971508358790",
+  "truth": "Cold"
+ },
+ {
+  "id": "E45",
+  "set": "plain",
+  "message": "Hello, maybe in a year and a half I'd like to buy a 2 bed in JVC. Budget AED 1.35M. Will need a mortgage, haven't been to a bank yet.",
+  "name": "Arjun Al Hashimi",
+  "phone": "+971506686915",
+  "truth": "Cold"
+ },
+ {
+  "id": "E08",
+  "set": "plain",
+  "message": "hi looking for studio jvc 600k budget mortgage preapproved already. want to buy in 2 months",
+  "name": "Elena Volkov",
+  "phone": "+971509013200",
+  "truth": "Hot"
+ },
+ {
+  "id": "E25",
+  "set": "plain",
+  "message": "Hello, need a 2BR in JVC within a month. budget AED 1.32M. I'll need a mortgage but haven't approached any bank yet",
+  "name": "Dmitri Saeed",
+  "phone": "+971509390406",
+  "truth": "Warm"
+ },
+ {
+  "id": "E19",
+  "set": "plain",
+  "message": "Hi, I'm in Dubai this week from Johannesburg and ready to buy now. 1BR in Dubai Marina, budget AED 1.88M, cash buyer.",
+  "name": "Omar Johnson",
+  "phone": "+971505239354",
+  "truth": "Hot"
+ },
+ {
+  "id": "E12",
+  "set": "plain",
+  "message": "Hi 1BR JVC, AED 1,000,000 cash, in next 3 months",
+  "name": "Olga Saeed",
+  "phone": "+971503035111",
+  "truth": "Hot"
+ },
+ {
+  "id": "E26",
+  "set": "plain",
+  "message": "Hey, 2 bed JVC, budget 1.52M, cash. Thinking in a year.",
+  "name": "Tom Ivanova",
+  "phone": "+971503510190",
+  "truth": "Warm"
+ },
+ {
+  "id": "E04",
+  "set": "plain",
+  "message": "hiii 2br marina 3.12m cash buyer 💸 within a month pls",
+  "name": "Fatima Petrova",
+  "phone": "+971502780646",
+  "truth": "Hot"
+ },
+ {
+  "id": "E02",
+  "set": "plain",
+  "message": "Hello, I'm based in Almaty and want to purchase a 2 bedroom in JVC within a month. Budget AED 1.94M, cash.",
+  "name": "Khalid Volkov",
+  "phone": "+971506872625",
+  "truth": "Hot"
+ },
+ {
+  "id": "E41",
+  "set": "plain",
+  "message": "Hi, planning to buy a 2 bed in Dubai Marina in about 3 years. Budget 2.77M. Would need a mortgage, haven't spoken to a bank yet.",
+  "name": "James Gupta",
+  "phone": "+971504078463",
+  "truth": "Cold"
+ },
+ {
+  "id": "E52",
+  "set": "plain",
+  "message": "Hi I'm living in Toronto, planning to move to Dubai in 2 years and buy a 2 bedroom in Jumeirah Village Circle. Budget around 1.61 million AED. Will need mortgage, havent spoken to a bank yet",
+  "name": "Olga Saeed",
+  "phone": "+971504882292",
+  "truth": "Cold"
+ },
+ {
+  "id": "E14",
+  "set": "plain",
+  "message": "Hello, 2 bedroom in JVC needed, budget AED 1.61M cash. I'm in Riyadh at the moment, looking to buy in the next 3 months.",
+  "name": "Fatima Ivanova",
+  "phone": "+971507174876",
+  "truth": "Hot"
+ },
+ {
+  "id": "E10",
+  "set": "plain",
+  "message": "Looking for a one bedroom in Jumeirah Village Circle. Budget AED 1 million, cash purchase. Within 2 months.",
+  "name": "Elena Volkov",
+  "phone": "+971509633475",
+  "truth": "Hot"
+ },
+ {
+  "id": "E30",
+  "set": "plain",
+  "message": "Looking for a 2-bedroom apartment in JVC. Budget: AED 1,390,000. Mortgage pre-approved already. Timeline: within a month.",
+  "name": "Sarah Sokolova",
+  "phone": "+971509534240",
+  "truth": "Hot"
+ },
+ {
+  "id": "E23",
+  "set": "plain",
+  "message": "Hii, any studio in Marina? my budget is 1.24 mn, mortgage preapproval already done ✅ looking to buy in around 4 months",
+  "name": "Aisha Haddad",
+  "phone": "+971503848624",
+  "truth": "Warm"
+ },
+ {
+  "id": "E60",
+  "set": "plain",
+  "message": "hi bro need 1br jvc budget 610k cash. want to close within a month. im in moscow now",
+  "name": "Dmitri Menon",
+  "phone": "+971509427241",
+  "truth": "Cold"
+ },
+ {
+  "id": "E54",
+  "set": "plain",
+  "message": "hello 🙂 just researching for now, no real intent yet. 3 bed in JVC about 2.2M, maybe in 6 months. I'm in Lagos",
+  "name": "Nadia Sharma",
+  "phone": "+971505365318",
+  "truth": "Cold"
+ },
+ {
+  "id": "E13",
+  "set": "plain",
+  "message": "Good afternoon. I am interested in a one-bedroom apartment in Dubai Marina. My budget is AED 1,790,000 and I'm a cash buyer. I'm currently based in Germany but would like to complete within a month.",
+  "name": "Olga Aziz",
+  "phone": "+971501328387",
+  "truth": "Hot"
+ },
+ {
+  "id": "E37",
+  "set": "plain",
+  "message": "Hi, 2BR Dubai Marina, budget 3.47M AED, looking to buy in 2 months.",
+  "name": "Arjun Gupta",
+  "phone": "+971509980637",
+  "truth": "Warm"
+ },
+ {
+  "id": "E22",
+  "set": "plain",
+  "message": "hi! 1bhk in marina, 1.29m cash. plan to buy in 9 months or so",
+  "name": "Nadia Reddy",
+  "phone": "+971505692376",
+  "truth": "Warm"
+ },
+ {
+  "id": "E57",
+  "set": "plain",
+  "message": "1br jvc 690k cash, buying in 6 months",
+  "name": "Olga Al Mansoori",
+  "phone": "+971508783704",
+  "truth": "Cold"
+ },
+ {
+  "id": "E24",
+  "set": "plain",
+  "message": "salam 1 bed jvc 800k? mortgage pre approval done 👍 need it within a month",
+  "name": "Omar Menon",
+  "phone": "+971503799487",
+  "truth": "Warm"
+ },
+ {
+  "id": "E58",
+  "set": "plain",
+  "message": "Hi, just researching the market for now, no rush. Maybe a 1 bedroom in Dubai Marina around AED 1.7 million, would pay cash. Possibly in the next 3 months but just looking at the moment.",
+  "name": "Irina Khan",
+  "phone": "+971501683440",
+  "truth": "Cold"
+ },
+ {
+  "id": "E11",
+  "set": "plain",
+  "message": "Hi team, I'm based in Singapore and looking at 1 bedroom units in Dubai Marina. Budget AED 1.79m. Mortgage pre-approval is already in place. Aim to buy in the next 3 months.",
+  "name": "Hannah Petrova",
+  "phone": "+971502440101",
+  "truth": "Hot"
+ },
+ {
+  "id": "E51",
+  "set": "plain",
+  "message": "hi just checking prices, not buying yet really. studio in marina around 990k cash? maybe in 6 months. im in london",
+  "name": "Hannah Sokolova",
+  "phone": "+971508112431",
+  "truth": "Cold"
+ },
+ {
+  "id": "E15",
+  "set": "plain",
+  "message": "Hi, saw your listing on Bayut. Looking for a 1BR in Dubai Marina, budget AED 2.06M. Mortgage pre-approval already done with my bank. Want to buy in the next 3 months. Pls call",
+  "name": "Khalid Ivanova",
+  "phone": "+971508293923",
+  "truth": "Hot"
+ },
+ {
+  "id": "E32",
+  "set": "plain",
+  "message": "Hello, we are a family looking for a 3 bedroom in Dubai Marina, sea view preferred. Budget AED 5.51M. Looking to purchase in about 6 months.",
+  "name": "Aisha Sharma",
+  "phone": "+971503085760",
+  "truth": "Warm"
+ },
+ {
+  "id": "E33",
+  "set": "plain",
+  "message": "Hi, based in Sydney. Interested in a 1BR in Dubai Marina, budget AED 1.97M. Mortgage pre-approval already done. Planning to buy in about 9 months.",
+  "name": "Fatima Nair",
+  "phone": "+971506590909",
+  "truth": "Warm"
+ },
+ {
+  "id": "E50",
+  "set": "plain",
+  "message": "Hi, I'm abroad (Nairobi). Looking for 2BR in JVC around 1.05M AED, in about 6 months.",
+  "name": "Hannah Sharma",
+  "phone": "+971504252322",
+  "truth": "Cold"
+ },
+ {
+  "id": "E39",
+  "set": "plain",
+  "message": "Hi, living in Hyderabad, looking for 1 bedroom in JVC, budget 1M AED, plan to buy in 9 months",
+  "name": "Sanjay Reddy",
+  "phone": "+971507195697",
+  "truth": "Warm"
+ },
+ {
+  "id": "E35",
+  "set": "plain",
+  "message": "Hello, overseas buyer (Lahore). 2 bed in JVC, 1.32M AED. Hoping to buy in about 4 months.",
+  "name": "Vikram Sokolova",
+  "phone": "+971502038765",
+  "truth": "Warm"
+ },
+ {
+  "id": "E20",
+  "set": "plain",
+  "message": "Hello, I'm looking for a 3 bedroom apartment in Jumeirah Village Circle. Budget is AED 2,430,000, cash buyer. Ready to move this week if we find the right unit.",
+  "name": "Arjun Clarke",
+  "phone": "+971501472849",
+  "truth": "Hot"
+ },
+ {
+  "id": "E17",
+  "set": "plain",
+  "message": "Hi, I'm in Zurich, looking to buy a 2BR in Dubai Marina in the next 3 months. Budget AED 3,290,000, cash.",
+  "name": "Vikram Volkov",
+  "phone": "+971504842307",
+  "truth": "Hot"
+ },
+ {
+  "id": "H01",
+  "set": "stress",
+  "message": "Hi, I was looking at a Marina 2BR listed at 3.4M on another site, way out of my range lol. So sticking with JVC. Need a 2 bedroom, my budget is 1.86M max. Paying cash, want to close within the next 2 months. Pls send what you have",
+  "name": "Test buyer",
+  "phone": "+971 52 157 0114",
+  "truth": "Hot"
+ },
+ {
+  "id": "H02",
+  "set": "stress",
+  "message": "Hello, interested in 2 bed apartments in Dubai Marina, budget around 2.98M. Would like to be moved in by end of January once the holidays are over. Haven't started anything with the mortgage yet, will need help with that. Thanks",
+  "name": "Test buyer",
+  "phone": "0522516760",
+  "truth": "Warm"
+ },
+ {
+  "id": "H03",
+  "set": "stress",
+  "message": "dxb marina 3br 6.12m, mortgage not started, ~18mo",
+  "name": "Test buyer",
+  "phone": "+971522001037",
+  "truth": "Cold"
+ },
+ {
+  "id": "H04",
+  "set": "stress",
+  "message": "hi there, looking for a studio in Marina, budget 1.24m. Want it done and dusted before New Year. Cash buyer. Let me know",
+  "name": "Test buyer",
+  "phone": "052 231 0677",
+  "truth": "Hot"
+ },
+ {
+  "id": "H05",
+  "set": "stress",
+  "message": "Hi, my friend just bought a 1BR in the Marina for 1.35M which is crazy. I'm being more realistic, looking for a 1 bed in JVC, 960k is my ceiling. Planning to buy in about 5 months. Can you share a few options?",
+  "name": "Test buyer",
+  "phone": "00971522011319",
+  "truth": "Warm"
+ },
+ {
+  "id": "H06",
+  "set": "stress",
+  "message": "Good evening. I am looking for a two bedroom apartment in Dubai Marina. My budget is two point three six million dirhams. Full cash payment. I want to finalise within one month. Regards",
+  "name": "Test buyer",
+  "phone": "+971-52-555-1451",
+  "truth": "Warm"
+ },
+ {
+  "id": "H07",
+  "set": "stress",
+  "message": "jvc studio 630k mtg preapproved 3mo",
+  "name": "Test buyer",
+  "phone": "0528841342",
+  "truth": "Hot"
+ },
+ {
+  "id": "H08",
+  "set": "stress",
+  "message": "Hello, searching 1 bedroom JVC. budget eight hundred ninety thousand dhs. looking to buy within the next month if i find the right unit",
+  "name": "Test buyer",
+  "phone": "+971 525 098 822",
+  "truth": "Warm"
+ },
+ {
+  "id": "H09",
+  "set": "stress",
+  "message": "Hi, just doing some research at this point, not ready to book viewings or make offers. Saw a 3 bed on the Palm at 9.5M which is a bit much. Marina 3 bed is more what I'd consider, bank has pre-approved my mortgage up to 6.73M. Theoretically I could move immediately if something perfect came up but really just getting a feel for the market",
+  "name": "Test buyer",
+  "phone": "+971521813554",
+  "truth": "Cold"
+ },
+ {
+  "id": "H10",
+  "set": "stress",
+  "message": "Hi, looking for a 3BR in Dubai Marina, budget 5.26M. The bank already issued my approval letter last week so I'm good to go. Want to complete within a month",
+  "name": "Test buyer",
+  "phone": "+971 52 738 3878",
+  "truth": "Hot"
+ },
+ {
+  "id": "H11",
+  "set": "stress",
+  "message": "Hello, interested in 3 bedroom units in Dubai Marina around 6.12M. I'll need to sort the financing with a bank, haven't approached any yet. Want to wrap it up in the next month ideally",
+  "name": "Test buyer",
+  "phone": "052-781-1040",
+  "truth": "Warm"
+ },
+ {
+  "id": "H12",
+  "set": "stress",
+  "message": "hi, want a 2bed in JVC around 1.01M. mortgage pre approval already done. will buy after my bonus comes in March",
+  "name": "Test buyer",
+  "phone": "0526958705",
+  "truth": "Cold"
+ },
+ {
+  "id": "H13",
+  "set": "stress",
+  "message": "Hi, looking for a 3 bed in JVC / sorry I meant 2 beds not 3. budget 1.45M, cash / need it asap, can transfer right away",
+  "name": "Test buyer",
+  "phone": "+971526606486",
+  "truth": "Hot"
+ },
+ {
+  "id": "H14",
+  "set": "stress",
+  "message": "Hi, I'm after a 3 bedroom in Dubai Marina, preferably high floor with sea view. Budget is 6.73M. Looking to buy in roughly 3 months. Please send options",
+  "name": "Test buyer",
+  "phone": "+971 52 203 6655",
+  "truth": "Warm"
+ },
+ {
+  "id": "H15",
+  "set": "stress",
+  "message": "Hello, I know JVC 1BRs go for like 750k but I really want Marina. 1 bedroom, budget 1.22M cash. No rush, thinking around 18 months from now",
+  "name": "Test buyer",
+  "phone": "00971 52 110 9581",
+  "truth": "Cold"
+ },
+ {
+  "id": "H16",
+  "set": "stress",
+  "message": "Hey, need a studio in JVC, up to 770k. Bank already sent me their approval letter. Looking to buy by around late January",
+  "name": "Test buyer",
+  "phone": "0524165627",
+  "truth": "Hot"
+ },
+ {
+  "id": "H17",
+  "set": "stress",
+  "message": "Hi, 2BR in JVC please, budget AED 1,520k. I'll need a mortgage but haven't started on it yet. Want to move immediately",
+  "name": "Test buyer",
+  "phone": "+971526048940",
+  "truth": "Warm"
+ },
+ {
+  "id": "H18",
+  "set": "stress",
+  "message": "jvc 2br 1.01m cash 2mo",
+  "name": "Test buyer",
+  "phone": "052 891 6770",
+  "truth": "Cold"
+ },
+ {
+  "id": "H19",
+  "set": "stress",
+  "message": "Hello, looking for a 1 bedroom in Dubai Marina. Budget is one million nine hundred seventy thousand dirhams, paying cash. Ready to buy now",
+  "name": "Test buyer",
+  "phone": "+971 52 675 2451",
+  "truth": "Hot"
+ },
+ {
+  "id": "H20",
+  "set": "stress",
+  "message": "jvc studio 700k cash 12mo",
+  "name": "Test buyer",
+  "phone": "0521125613",
+  "truth": "Warm"
+ },
+ {
+  "id": "H21",
+  "set": "stress",
+  "message": "hello, JVC 1 bed? / sorry, I meant 2 beds. budget about 1.01M / not in a hurry, maybe 18 months from now",
+  "name": "Test buyer",
+  "phone": "+971529786439",
+  "truth": "Cold"
+ },
+ {
+  "id": "H22",
+  "set": "stress",
+  "message": "Hi, studio in Dubai Marina, 1.07 mn dhs, cash. Ready to buy immediately",
+  "name": "Test buyer",
+  "phone": "+971 527 231 484",
+  "truth": "Hot"
+ },
+ {
+  "id": "H23",
+  "set": "stress",
+  "message": "Hi, the 2BR you have listed at 3.1M in Marina is too much for me. I'm looking for a 2 bed in Marina too but my budget is 2.49M. Paying cash and ready to go right now",
+  "name": "Test buyer",
+  "phone": "052-701-8335",
+  "truth": "Hot"
+ },
+ {
+  "id": "H24",
+  "set": "stress",
+  "message": "Hi, interested in a 2 bed in Dubai Marina, budget 2.36M. My job contract here ends in April 2028, planning to buy around then",
+  "name": "Test buyer",
+  "phone": "+971521895060",
+  "truth": "Cold"
+ },
+ {
+  "id": "H25",
+  "set": "stress",
+  "message": "Hello, looking for a 3BR in Marina, budget 6.12M. The bank already issued my approval letter. Ready to proceed right now, can view this week",
+  "name": "Test buyer",
+  "phone": "+971 52 947 9449",
+  "truth": "Hot"
+ },
+ {
+  "id": "H26",
+  "set": "stress",
+  "message": "jvc 3br 1.99m asap",
+  "name": "Test buyer",
+  "phone": "0523565865",
+  "truth": "Warm"
+ },
+ {
+  "id": "H27",
+  "set": "stress",
+  "message": "hi looking for 1BR in JVC / sorry I meant 2 beds. 1.01M max, mortgage is pre-approved / want to buy within 2 months",
+  "name": "Test buyer",
+  "phone": "+971529432407",
+  "truth": "Cold"
+ },
+ {
+  "id": "H28",
+  "set": "stress",
+  "message": "Hi! need a 2 bed in JVC / sorry, I meant 3 beds. budget 2.54M, mortgage preapproved / ready to move now, can do viewings today",
+  "name": "Test buyer",
+  "phone": "+971 52 890 2744",
+  "truth": "Hot"
+ },
+ {
+  "id": "H29",
+  "set": "stress",
+  "message": "Hi, looking for a 1 bed in Dubai Marina around 1.79M. Mortgage is pre-approved. Planning to buy once my lease ends next October",
+  "name": "Test buyer",
+  "phone": "052 402 3598",
+  "truth": "Warm"
+ },
+ {
+  "id": "H30",
+  "set": "stress",
+  "message": "hi, looking for a 1BR in Marina / sorry I meant studio. budget 740k / mortgage preapproved, want to buy within a month",
+  "name": "Test buyer",
+  "phone": "0525108873",
+  "truth": "Warm"
+ }
+]

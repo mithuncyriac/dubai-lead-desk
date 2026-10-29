@@ -1,0 +1,67 @@
+{
+ "n": 30,
+ "accuracy": 1.0,
+ "hot_recall": 1.0,
+ "hot_false_alarms": 0,
+ "field_errors": {
+  "area": 0,
+  "beds": 0,
+  "budget": 0,
+  "timeline": 1,
+  "finance": 0,
+  "browsing": 0
+ },
+ "by_hardness": {
+  "decoy_numbers": {
+   "label": "decoy price or area in the text",
+   "n": 5,
+   "correct": 5,
+   "field_errors": 1,
+   "note": "1 with a misread fact"
+  },
+  "relative_timeline": {
+   "label": "timeline relative to a date",
+   "n": 5,
+   "correct": 5,
+   "field_errors": 0,
+   "note": "all facts read correctly"
+  },
+  "terse": {
+   "label": "under 15 words, abbreviations",
+   "n": 5,
+   "correct": 5,
+   "field_errors": 0,
+   "note": "all facts read correctly"
+  },
+  "budget_words": {
+   "label": "budget in words or odd format",
+   "n": 5,
+   "correct": 5,
+   "field_errors": 0,
+   "note": "all facts read correctly"
+  },
+  "implicit_finance": {
+   "label": "payment implied, not named",
+   "n": 5,
+   "correct": 5,
+   "field_errors": 0,
+   "note": "all facts read correctly"
+  },
+  "thread": {
+   "label": "facts spread over 3 messages",
+   "n": 5,
+   "correct": 5,
+   "field_errors": 0,
+   "note": "all facts read correctly"
+  }
+ },
+ "misses": [
+  {
+   "id": "H09",
+   "hardness": "decoy price or area in the text",
+   "true": "Cold",
+   "got": "Cold",
+   "why": "misread timeline (unknown vs 0)"
+  }
+ ]
+}

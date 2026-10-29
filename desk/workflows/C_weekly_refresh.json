@@ -1,0 +1,239 @@
+{
+ "id": "DLDeskRefresh001",
+ "name": "Dubai Lead Desk · C · Weekly refresh",
+ "nodes": [
+  {
+   "id": "every-monday-07:00",
+   "name": "Every Monday 07:00",
+   "type": "n8n-nodes-base.scheduleTrigger",
+   "typeVersion": 1.2,
+   "position": [
+    0,
+    0
+   ],
+   "parameters": {
+    "rule": {
+     "interval": [
+      {
+       "field": "weeks",
+       "weeksInterval": 1,
+       "triggerAtDay": [
+        1
+       ],
+       "triggerAtHour": 7
+      }
+     ]
+    }
+   }
+  },
+  {
+   "id": "refresh-now-webhook",
+   "name": "Refresh now (webhook)",
+   "type": "n8n-nodes-base.webhook",
+   "typeVersion": 2,
+   "position": [
+    0,
+    200
+   ],
+   "parameters": {
+    "httpMethod": "POST",
+    "path": "desk-refresh",
+    "responseMode": "responseNode",
+    "options": {}
+   },
+   "webhookId": "9b1f0d6e-6a51-4c1e-9f0a-1d2b3c4d5e04"
+  },
+  {
+   "id": "rerun-the-numbers",
+   "name": "Rerun the numbers",
+   "type": "n8n-nodes-base.httpRequest",
+   "typeVersion": 4.2,
+   "position": [
+    260,
+    100
+   ],
+   "parameters": {
+    "method": "POST",
+    "url": "={{ $env.PIPELINE_URL }}/refresh",
+    "options": {
+     "timeout": 900000
+    }
+   }
+  },
+  {
+   "id": "summarise-and-log",
+   "name": "Summarise + log",
+   "type": "n8n-nodes-base.code",
+   "typeVersion": 2,
+   "position": [
+    500,
+    100
+   ],
+   "parameters": {
+    "jsCode": "const fs = require('fs'), path = require('path');\nconst r = $json;\nconst line = `${new Date().toISOString()} data_to=${r.data_to} new_export=${(r.new_export || []).join('+') || 'none'} ` +\n  `changed=${Object.keys(r.changed || {}).length} tests=${r.tests} commit=${r.commit} pushed=${r.pushed}\\n`;\nfs.appendFileSync(path.join($env.DESK_DIR, 'refresh_log.txt'), line);\nconst moved = Object.entries(r.changed || {}).map(([k, [a, b]]) => `${k}: ${a} → ${b}`);\nreturn [{ json: { ...r, summary: moved.length ? `Numbers moved: ${moved.join('; ')}` : `No headline number moved (data to ${r.data_to}).` } }];\n",
+    "mode": "runOnceForAllItems",
+    "language": "javaScript"
+   }
+  },
+  {
+   "id": "tell-me-on-telegram-optional",
+   "name": "Tell me on Telegram (optional)",
+   "type": "n8n-nodes-base.telegram",
+   "typeVersion": 1.2,
+   "position": [
+    740,
+    100
+   ],
+   "parameters": {
+    "chatId": "={{ $env.TELEGRAM_CHAT_ID }}",
+    "text": "={{ 'Dubai Lead Desk refresh: ' + $json.summary }}",
+    "additionalFields": {
+     "appendAttribution": false
+    }
+   },
+   "disabled": true
+  },
+  {
+   "id": "came-from-webhook",
+   "name": "Came from webhook?",
+   "type": "n8n-nodes-base.if",
+   "typeVersion": 2.2,
+   "position": [
+    980,
+    100
+   ],
+   "parameters": {
+    "conditions": {
+     "options": {
+      "caseSensitive": true,
+      "leftValue": "",
+      "typeValidation": "loose",
+      "version": 2
+     },
+     "combinator": "and",
+     "conditions": [
+      {
+       "id": "w3",
+       "leftValue": "={{ $('Refresh now (webhook)').isExecuted }}",
+       "rightValue": true,
+       "operator": {
+        "type": "boolean",
+        "operation": "true",
+        "singleValue": true
+       }
+      }
+     ]
+    },
+    "looseTypeValidation": true,
+    "options": {}
+   }
+  },
+  {
+   "id": "return-summary",
+   "name": "Return summary",
+   "type": "n8n-nodes-base.respondToWebhook",
+   "typeVersion": 1.1,
+   "position": [
+    1220,
+    100
+   ],
+   "parameters": {
+    "respondWith": "json",
+    "responseBody": "={{ $json }}",
+    "options": {}
+   }
+  },
+  {
+   "id": "note-5325",
+   "name": "Note 5325",
+   "type": "n8n-nodes-base.stickyNote",
+   "typeVersion": 1,
+   "position": [
+    -40,
+    -280
+   ],
+   "parameters": {
+    "content": "## C · Weekly refresh\nDrop the new DLD Transactions export into `desk/inbox/`. On Monday (or on demand) the pipeline service extracts it, reruns `run_all.py`, checks the tests, and commits facts.json + chart data to the public repo. Start the service with `python desk/pipeline_server.py`.",
+    "width": 520,
+    "height": 220,
+    "color": 6
+   }
+  }
+ ],
+ "connections": {
+  "Every Monday 07:00": {
+   "main": [
+    [
+     {
+      "node": "Rerun the numbers",
+      "type": "main",
+      "index": 0
+     }
+    ]
+   ]
+  },
+  "Refresh now (webhook)": {
+   "main": [
+    [
+     {
+      "node": "Rerun the numbers",
+      "type": "main",
+      "index": 0
+     }
+    ]
+   ]
+  },
+  "Rerun the numbers": {
+   "main": [
+    [
+     {
+      "node": "Summarise + log",
+      "type": "main",
+      "index": 0
+     }
+    ]
+   ]
+  },
+  "Summarise + log": {
+   "main": [
+    [
+     {
+      "node": "Tell me on Telegram (optional)",
+      "type": "main",
+      "index": 0
+     }
+    ]
+   ]
+  },
+  "Tell me on Telegram (optional)": {
+   "main": [
+    [
+     {
+      "node": "Came from webhook?",
+      "type": "main",
+      "index": 0
+     }
+    ]
+   ]
+  },
+  "Came from webhook?": {
+   "main": [
+    [
+     {
+      "node": "Return summary",
+      "type": "main",
+      "index": 0
+     }
+    ]
+   ]
+  }
+ },
+ "settings": {
+  "executionOrder": "v1",
+  "timezone": "Asia/Dubai",
+  "saveManualExecutions": true,
+  "errorWorkflow": "DLDeskErrors0001"
+ },
+ "active": false,
+ "pinData": {}
+}

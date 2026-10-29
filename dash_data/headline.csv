@@ -1,0 +1,21 @@
+metric,value,detail
+listings_audited,214,"Bayut 97 + Property Finder 117, JVC and Dubai Marina, 21 Oct 2026"
+duplicate_share_pct,13.6,29 surplus copies across 27 units listed more than once
+cross_agency_units,10,units advertised by two or more different agencies
+max_same_unit_spread_pct,28.6,largest asking-price gap for one unit across listings
+stale_offplan,6,"of 28 Bayut off-plan listings show a handover date already passed; DLD still records these projects as off-plan, so handover is late"
+stress_accuracy_pct,100.0,"tier accuracy on 30 deliberately hard enquiries, scored blind"
+clean_accuracy_pct,100.0,"tier accuracy on 60 plainly written enquiries, 3 blind runs"
+dupes_caught,12,of 12 planted re-enquiries merged; 0 false merges
+dld_sales_read,128178,"DLD residential sales, 2026-01-01 to 2026-10-21, plus 46,023 Ejari flat leases in the two areas"
+war_effect_pct,-36.6,"Dubai residential sales vs expected, 28 Feb – 19 Oct 2026 (95% range -48.1% to -22.7%)"
+lost_sales,50208,"87,052 sales registered vs 137,260 expected without the war"
+under1m_effect_pct,-19.7,sales under AED 1M vs expected
+over5m_effect_pct,-52.4,sales above AED 5M vs expected
+tier_changes,4,"of 90 test leads change tier with post-war prices, all upward"
+jvc_asking_premium_pct,7.3,"median asking AED 1,320/sq ft vs DLD post-war sold AED 1,230 (ready flats, Jul–Oct 2026)"
+marina_asking_premium_pct,9.4,"median asking AED 2,143/sq ft vs DLD post-war sold AED 1,959 (ready flats, Jul–Oct 2026)"
+launched_after_war_units,58030,"units in projects started 28 Feb – 21 Oct 2026 across Dubai, vs 27,291 in Jan–Feb (DLD Projects)"
+jvc_launch_months,4.9,"months of post-war JVC sales needed to absorb the 3,775 units launched in 2026"
+jvc_pipeline_months,25.8,"months of post-war JVC sales in the 19,756 units sold off-plan since 2024 and not yet handed over (DLD)"
+jvc_valuation_gap_pct,-20.0,"DLD valuations vs sale prices, JVC flats Jul–Oct 2026 (n=27 valuations)"

@@ -1,0 +1,362 @@
+[
+  {
+    "id": "E15-ar",
+    "base_id": "E15",
+    "lang": "ar",
+    "message": "مرحبا، أبحث عن شقة غرفة نوم واحدة في دبي مارينا، الميزانية 2.06 مليون درهم. الموافقة المبدئية على التمويل العقاري جاهزة. أريد الشراء خلال 3 أشهر"
+  },
+  {
+    "id": "E15-hi-latn",
+    "base_id": "E15",
+    "lang": "hi-latn",
+    "message": "Hi bhai, Dubai Marina mein 1BHK chahiye, budget 2.06M AED hai. Mortgage pre-approval ho chuka hai already. Agle 3 mahine mein lena hai"
+  },
+  {
+    "id": "E15-ru",
+    "base_id": "E15",
+    "lang": "ru",
+    "message": "Здравствуйте, ищу квартиру с 1 спальней (1BR) в Dubai Marina, бюджет 2 060 000 AED. Предварительное одобрение ипотеки уже есть. Планирую купить в ближайшие 3 месяца"
+  },
+  {
+    "id": "E15-en-broken",
+    "base_id": "E15",
+    "lang": "en-broken",
+    "message": "helo im lookin 1 bedrom apartmnt dubai marnia , budjet 2.06 milion aed. morgage pre aproval allready done. want buy in next 3 month"
+  },
+  {
+    "id": "E20-ar",
+    "base_id": "E20",
+    "lang": "ar",
+    "message": "السلام عليكم، أبغى شقة 3 غرف نوم في قرية جميرا الدائرية JVC، الميزانية 2,430,000 درهم كاش. جاهز أشتري الحين هذا الأسبوع"
+  },
+  {
+    "id": "E20-hi-latn",
+    "base_id": "E20",
+    "lang": "hi-latn",
+    "message": "Hello, JVC mein 3 bedroom flat dekh raha hoon. Budget AED 2,430,000, full cash payment. Isi week shift hone ke liye ready hoon"
+  },
+  {
+    "id": "E20-ru",
+    "base_id": "E20",
+    "lang": "ru",
+    "message": "Добрый день! Нужна квартира с 3 спальнями в JVC (Jumeirah Village Circle). Бюджет 2.43 млн AED, оплата наличными. Готов купить прямо сейчас, на этой неделе"
+  },
+  {
+    "id": "E20-en-broken",
+    "base_id": "E20",
+    "lang": "en-broken",
+    "message": "hello need 3 bed room apartmen in jumeirah vilage circel, budgt aed 2,430,000 , cash buyr. redy to move this weak"
+  },
+  {
+    "id": "E01-ar",
+    "base_id": "E01",
+    "lang": "ar",
+    "message": "هلا 👋 أبي 3 غرف نوم في JVC بأسرع وقت، جاهز أشتري الحين. الدفع كاش 💰 الميزانية 2.43 مليون"
+  },
+  {
+    "id": "E01-hi-latn",
+    "base_id": "E01",
+    "lang": "hi-latn",
+    "message": "hey 👋 jvc mein 3bhk chahiye jaldi, abhi lene ke liye ready hoon. cash 💰 budget 2.43m"
+  },
+  {
+    "id": "E01-ru",
+    "base_id": "E01",
+    "lang": "ru",
+    "message": "привет 👋 нужна квартира с 3 спальнями в JVC срочно, готов купить сейчас. наличка 💰 бюджет 2.43m"
+  },
+  {
+    "id": "E01-en-broken",
+    "base_id": "E01",
+    "lang": "en-broken",
+    "message": "hey 👋 need 3bhk jvc asap redy to by now. cash 💰 budjet 2.43m"
+  },
+  {
+    "id": "E58-ar",
+    "base_id": "E58",
+    "lang": "ar",
+    "message": "مرحبا، حاليا بس أستكشف السوق وما عندي نية جدية للشراء. يمكن شقة غرفة نوم وحدة في دبي مارينا بحدود 1.7 مليون درهم، والدفع راح يكون كاش. يمكن خلال 3 أشهر بس الحين مجرد استطلاع"
+  },
+  {
+    "id": "E58-hi-latn",
+    "base_id": "E58",
+    "lang": "hi-latn",
+    "message": "Hi, abhi sirf market research kar rahi hoon, koi jaldi nahi. Dubai Marina mein 1 bedroom around AED 1.7 million, cash mein pay karungi. Shayad agle 3 mahine mein, abhi bas dekh rahi hoon"
+  },
+  {
+    "id": "E58-ru",
+    "base_id": "E58",
+    "lang": "ru",
+    "message": "Здравствуйте, пока просто изучаю рынок, ничего срочного. Возможно, квартира с 1 спальней в Dubai Marina в районе 1.7 млн AED, оплата наличными. Может быть в ближайшие 3 месяца, но пока просто смотрю"
+  },
+  {
+    "id": "E58-en-broken",
+    "base_id": "E58",
+    "lang": "en-broken",
+    "message": "hi just reserching marekt for now no rush. mabye 1 bedrom in dubai marina aroud aed 1.7 milion, wil pay cash. posibly next 3 month but just lookng at the momnt"
+  },
+  {
+    "id": "E38-ar",
+    "base_id": "E38",
+    "lang": "ar",
+    "message": "مرحبا من لندن. مهتمة بستوديو في دبي مارينا، الميزانية 1.36 مليون درهم، شراء كاش. أخطط أشتري بعد حوالي 4 أشهر لما أرجع دبي"
+  },
+  {
+    "id": "E38-hi-latn",
+    "base_id": "E38",
+    "lang": "hi-latn",
+    "message": "Hello, London se message kar rahi hoon. Dubai Marina mein studio chahiye, budget 1.36M AED, cash purchase. Around 4 mahine mein lena hai jab Dubai wapas aaungi"
+  },
+  {
+    "id": "E38-ru",
+    "base_id": "E38",
+    "lang": "ru",
+    "message": "Здравствуйте, пишу из Лондона. Интересует студия в Dubai Marina, бюджет 1.36M AED, покупка за наличные. Планирую купить примерно через 4 месяца, когда вернусь в Дубай"
+  },
+  {
+    "id": "E38-en-broken",
+    "base_id": "E38",
+    "lang": "en-broken",
+    "message": "helo from londn. intrested in studoi in dubai marnia, budjet 1.36M aed, cash purchse. planing buy in abt 4 monts when im bak in dubai"
+  },
+  {
+    "id": "E60-ar",
+    "base_id": "E60",
+    "lang": "ar",
+    "message": "هلا أخوي، أبغى شقة غرفة نوم وحدة (1BR) في JVC الميزانية 610 ألف درهم كاش. أبي أخلص خلال شهر. أنا حاليا في موسكو"
+  },
+  {
+    "id": "E60-hi-latn",
+    "base_id": "E60",
+    "lang": "hi-latn",
+    "message": "bhai jvc mein 1bhk chahiye budget 610k cash. ek mahine ke andar close karna hai. abhi moscow mein hoon"
+  },
+  {
+    "id": "E60-ru",
+    "base_id": "E60",
+    "lang": "ru",
+    "message": "привет, нужна 1br в jvc, бюджет 610 000 AED наличными. хочу закрыть сделку в течение месяца. сейчас в москве"
+  },
+  {
+    "id": "E60-en-broken",
+    "base_id": "E60",
+    "lang": "en-broken",
+    "message": "hi bro ned 1br jvc budgt 610k cash. wnt to close with in a mnth. im in moscw now"
+  },
+  {
+    "id": "E23-ar",
+    "base_id": "E23",
+    "lang": "ar",
+    "message": "هاي، في ستوديو بالمارينا؟ ميزانيتي 1.24 مليون، الموافقة المبدئية على القرض العقاري خلصت ✅ ناوية أشتري خلال 4 أشهر تقريبا"
+  },
+  {
+    "id": "E23-hi-latn",
+    "base_id": "E23",
+    "lang": "hi-latn",
+    "message": "Hii, Marina mein koi studio hai? mera budget 1.24 mn hai, mortgage pre-approval ho gaya ✅ around 4 mahine mein kharidna hai"
+  },
+  {
+    "id": "E23-ru",
+    "base_id": "E23",
+    "lang": "ru",
+    "message": "Привет, есть студии в Марине? бюджет 1.24 млн, предодобрение ипотеки уже получено ✅ планирую купить примерно через 4 месяца"
+  },
+  {
+    "id": "E23-en-broken",
+    "base_id": "E23",
+    "lang": "en-broken",
+    "message": "hii any studo in marnia? my budjet is 1.24 mn , morgage preaprovel alredy done ✅ lookng to by in arnd 4 month"
+  },
+  {
+    "id": "E13-ar",
+    "base_id": "E13",
+    "lang": "ar",
+    "message": "مساء الخير. أنا مهتمة بشقة غرفة نوم واحدة في دبي مارينا. ميزانيتي 1,790,000 درهم وسأدفع نقداً. أنا حالياً في ألمانيا لكن أرغب بإتمام الشراء خلال شهر"
+  },
+  {
+    "id": "E13-hi-latn",
+    "base_id": "E13",
+    "lang": "hi-latn",
+    "message": "Good afternoon. Dubai Marina mein ek one-bedroom apartment mein interest hai. Budget AED 1,790,000 hai aur main cash buyer hoon. Abhi Germany mein hoon lekin ek mahine ke andar complete karna chahti hoon"
+  },
+  {
+    "id": "E13-ru",
+    "base_id": "E13",
+    "lang": "ru",
+    "message": "Добрый день. Интересует квартира с одной спальней в Dubai Marina. Бюджет 1 790 000 AED, покупаю за наличные. Сейчас нахожусь в Германии, но хотела бы завершить сделку в течение месяца"
+  },
+  {
+    "id": "E13-en-broken",
+    "base_id": "E13",
+    "lang": "en-broken",
+    "message": "good aftrnoon. i am intrested in one-bedrom apartmant in dubai marina. my budjet aed 1,790,000 and im cash buyr. curently in germny but want complet within a month"
+  },
+  {
+    "id": "E40-ar",
+    "base_id": "E40",
+    "lang": "ar",
+    "message": "السلام عليكم، أدور ستوديو في JVC بحدود 540 ألف درهم. راح أحتاج تمويل عقاري، ما كلمت أي بنك لسا. أبي أشتري خلال شهر"
+  },
+  {
+    "id": "E40-hi-latn",
+    "base_id": "E40",
+    "lang": "hi-latn",
+    "message": "Salam, JVC mein studio dhoondh raha hoon around 540k. Mortgage lena padega, abhi tak kisi bank se baat nahi ki. 1 mahine ke andar lena hai"
+  },
+  {
+    "id": "E40-ru",
+    "base_id": "E40",
+    "lang": "ru",
+    "message": "Салам, ищу студию в JVC за 540 000 AED. Понадобится ипотека, в банк пока не обращался. Хочу купить в течение месяца"
+  },
+  {
+    "id": "E40-en-broken",
+    "base_id": "E40",
+    "lang": "en-broken",
+    "message": "salam lookng for studoi in jvc arond 540k. will ned morgage, havnt talk to any bank yet. wan to by with in 1 month"
+  },
+  {
+    "id": "E41-ar",
+    "base_id": "E41",
+    "lang": "ar",
+    "message": "مرحبا، أخطط أشتري شقة غرفتين نوم في دبي مارينا بعد حوالي 3 سنوات. الميزانية 2.77 مليون درهم. راح أحتاج قرض عقاري وما تواصلت مع بنك لحد الحين"
+  },
+  {
+    "id": "E41-hi-latn",
+    "base_id": "E41",
+    "lang": "hi-latn",
+    "message": "Hi, main lagbhag 3 saal baad Dubai Marina mein 2 bedroom lene ka plan kar raha hoon. Budget 2.77M. Mortgage chahiye hoga, bank se abhi baat nahi hui"
+  },
+  {
+    "id": "E41-ru",
+    "base_id": "E41",
+    "lang": "ru",
+    "message": "Здравствуйте, планирую купить квартиру с 2 спальнями в Dubai Marina примерно через 3 года. Бюджет 2.77M AED. Понадобится ипотека, с банком ещё не общался"
+  },
+  {
+    "id": "E41-en-broken",
+    "base_id": "E41",
+    "lang": "en-broken",
+    "message": "hi im planing to by 2 bed in dubai marnia in abt 3 yeers. budjet 2.77M. wud need morgage, havnt spokn to bank yet"
+  },
+  {
+    "id": "E25-ar",
+    "base_id": "E25",
+    "lang": "ar",
+    "message": "مرحبا، أحتاج شقة غرفتين نوم في JVC خلال شهر. الميزانية 1.32 مليون درهم. راح آخذ قرض عقاري بس ما رحت لأي بنك لحد الآن"
+  },
+  {
+    "id": "E25-hi-latn",
+    "base_id": "E25",
+    "lang": "hi-latn",
+    "message": "Hello, JVC mein 2BR chahiye ek mahine ke andar. Budget AED 1.32M. Mortgage lunga lekin abhi tak kisi bank se approach nahi kiya"
+  },
+  {
+    "id": "E25-ru",
+    "base_id": "E25",
+    "lang": "ru",
+    "message": "Здравствуйте, нужна 2BR в JVC в течение месяца. Бюджет 1.32M AED. Буду брать ипотеку, но в банк ещё не обращался"
+  },
+  {
+    "id": "E25-en-broken",
+    "base_id": "E25",
+    "lang": "en-broken",
+    "message": "helo need 2br in jvc with in a month. budgt aed 1.32M. i wil need morgage but havnt aproched any bank yet"
+  },
+  {
+    "id": "E52-ar",
+    "base_id": "E52",
+    "lang": "ar",
+    "message": "مرحبا، أنا ساكنة في تورونتو، وأخطط أنتقل لدبي بعد سنتين وأشتري شقة غرفتين نوم في قرية جميرا الدائرية. الميزانية حوالي 1.61 مليون درهم. راح أحتاج قرض عقاري وما كلمت بنك لسا"
+  },
+  {
+    "id": "E52-hi-latn",
+    "base_id": "E52",
+    "lang": "hi-latn",
+    "message": "Hi, main Toronto mein rehti hoon, 2 saal mein Dubai shift hone ka plan hai aur Jumeirah Village Circle mein 2 bedroom lena hai. Budget around 1.61 million AED. Mortgage lena padega, bank se abhi baat nahi ki"
+  },
+  {
+    "id": "E52-ru",
+    "base_id": "E52",
+    "lang": "ru",
+    "message": "Привет, я живу в Торонто, планирую переехать в Дубай через 2 года и купить квартиру с 2 спальнями в Jumeirah Village Circle. Бюджет около 1.61 млн AED. Нужна будет ипотека, в банк ещё не обращалась"
+  },
+  {
+    "id": "E52-en-broken",
+    "base_id": "E52",
+    "lang": "en-broken",
+    "message": "hi im livng in toronot , planing move to dubai in 2 yers and by 2 bedrom in jumeira vilage circle. budjet arond 1.61 milion aed. wil need morgage , havent spokn to bank yet"
+  },
+  {
+    "id": "E18-ar",
+    "base_id": "E18",
+    "lang": "ar",
+    "message": "هاي! أبي ستوديو في دبي مارينا 🙏 الميزانية 1.24 مليون درهم، والموافقة المسبقة على التمويل العقاري جاهزة. أنا حاليا في مومباي، وناوي أشتري خلال 3 أشهر"
+  },
+  {
+    "id": "E18-hi-latn",
+    "base_id": "E18",
+    "lang": "hi-latn",
+    "message": "Hi! dubai marina mein studio chahiye pls 🙏 budget AED 1.24M, mortgage pre approval ho chuka hai. abhi Mumbai mein hoon, agle 3 mahine mein kharidna hai"
+  },
+  {
+    "id": "E18-ru",
+    "base_id": "E18",
+    "lang": "ru",
+    "message": "Привет! нужна студия в Dubai Marina 🙏 бюджет 1.24M AED, предварительное одобрение ипотеки уже есть. сейчас в Мумбаи, планирую купить в ближайшие 3 месяца"
+  },
+  {
+    "id": "E18-en-broken",
+    "base_id": "E18",
+    "lang": "en-broken",
+    "message": "hi! studoi in dubai marnia pls 🙏 budjet aed 1.24M, my morgage pre aproval is done. im in mumbay rn, plan to by in next 3 mnths"
+  },
+  {
+    "id": "E47-ar",
+    "base_id": "E47",
+    "lang": "ar",
+    "message": "مرحبا، بس أتفرج حاليا ومو جاد للحين. حاب أعرف أسعار شقق غرفة نوم وحدة في دبي مارينا، بحدود 1.7 مليون درهم. يمكن خلال 3 أشهر، نشوف. أنا ساكن في باريس"
+  },
+  {
+    "id": "E47-hi-latn",
+    "base_id": "E47",
+    "lang": "hi-latn",
+    "message": "Hello, abhi sirf browse kar raha hoon, serious nahi hoon. Dubai Marina mein 1BR ke prices jaanne the, around 1.7M AED. Shayad agle 3 mahine mein, dekhte hain. Paris mein rehta hoon"
+  },
+  {
+    "id": "E47-ru",
+    "base_id": "E47",
+    "lang": "ru",
+    "message": "Здравствуйте, пока просто смотрю, ничего серьёзного. Интересно узнать цены на 1BR в Dubai Marina, где-то 1.7M AED. Может в ближайшие 3 месяца, посмотрим. Живу в Париже"
+  },
+  {
+    "id": "E47-en-broken",
+    "base_id": "E47",
+    "lang": "en-broken",
+    "message": "helo just browsng for now not seriuos yet. curius abt 1br price in dubai marnia, somthing arnd 1.7M aed. mabe in next 3 month we will see. livng in paris"
+  },
+  {
+    "id": "E11-ar",
+    "base_id": "E11",
+    "lang": "ar",
+    "message": "مرحبا، أنا مقيمة في سنغافورة وأبحث عن شقق غرفة نوم واحدة في دبي مارينا. الميزانية 1.79 مليون درهم. الموافقة المسبقة على الرهن العقاري موجودة. هدفي الشراء خلال الـ3 أشهر القادمة"
+  },
+  {
+    "id": "E11-hi-latn",
+    "base_id": "E11",
+    "lang": "hi-latn",
+    "message": "Hi team, main Singapore mein based hoon aur Dubai Marina mein 1 bedroom units dekh rahi hoon. Budget AED 1.79m. Mortgage pre-approval already ho chuka hai. Agle 3 mahine mein buy karna hai"
+  },
+  {
+    "id": "E11-ru",
+    "base_id": "E11",
+    "lang": "ru",
+    "message": "Здравствуйте, я живу в Сингапуре и рассматриваю квартиры с 1 спальней в Dubai Marina. Бюджет 1.79m AED. Предодобрение ипотеки уже есть. Цель — купить в ближайшие 3 месяца"
+  },
+  {
+    "id": "E11-en-broken",
+    "base_id": "E11",
+    "lang": "en-broken",
+    "message": "hi team im basd in singapre and lookin at 1 bedrom units in dubai marnia. budjet aed 1.79m. morgage pre-aproval is alredy in place. aim to by in next 3 mnths"
+  }
+]

@@ -1,0 +1,29 @@
+# Dubai Lead Desk: self-hosted n8n + the Python pipeline it calls. Free; needs Docker Desktop.
+#   docker compose up -d        then open http://localhost:5678
+services:
+  n8n:
+    image: n8nio/n8n:2.42.5
+    ports: ["5678:5678"]
+    environment:
+      GENERIC_TIMEZONE: Asia/Dubai
+      TZ: Asia/Dubai
+      N8N_DIAGNOSTICS_ENABLED: "false"
+      N8N_PERSONALIZATION_ENABLED: "false"
+      NODE_FUNCTION_ALLOW_BUILTIN: fs,path      # the Code nodes read prices and write leads.csv
+      N8N_BLOCK_ENV_ACCESS_IN_NODE: "false"     # they also read the folder settings below
+      DESK_DIR: /desk/runtime
+      SITE_DIR: /site
+      PIPELINE_URL: http://pipeline:8765
+      TELEGRAM_CHAT_ID: ""                      # optional
+    volumes:
+      - n8n_data:/home/node/.n8n
+      - ./desk:/desk
+      - ./site:/site
+    restart: unless-stopped
+  pipeline:
+    build: { context: ., dockerfile: desk/Dockerfile.pipeline }
+    environment: { PIPELINE_HOST: 0.0.0.0 }
+    volumes: [".:/app"]
+    restart: unless-stopped
+volumes:
+  n8n_data:
