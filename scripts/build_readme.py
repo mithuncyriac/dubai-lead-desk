@@ -42,7 +42,7 @@ A brokerage gets enquiries every day. It has to decide which ones get a fast rep
 ## What the data shows
 
 - About {n(round(MK['sales_per_month_mar_sep'], -2))} homes sold a month from March to September. The third quarter had {n(MK['q3_sales'])} sales worth AED {MK['q3_value_aed_bn']} billion.
-- Since 28 February, sales ran at about two-thirds of the usual pace: {n(F['sales_actual_post'])} registered against about {n(F['sales_expected_post'])}. The likely range is {P['low_pct']}% to {P['high_pct']}%. The pace was {P['march_pct']}% in March and {P['september_pct']}% in September.
+- Since late February, sales ran at about two-thirds of the usual pace: {n(F['sales_actual_post'])} registered against about {n(F['sales_expected_post'])}. The likely range is {P['low_pct']}% to {P['high_pct']}%. The pace was {P['march_pct']}% in March and {P['september_pct']}% in September.
 - Homes under AED 1M were the steadiest part of the market, at about {P['under1m_pct']}% of their usual pace. Above AED 5M, about {P['over5m_pct']}%.
 - Prices moved less than sales. Comparing the same buildings, JVC ready flats are about {abs(round(F['jvc_ready_price_change_pct']))}% below January and Dubai Marina about {abs(round(F['marina_ready_price_change_pct']))}%.
 - Asking prices on the portals sit about {round(F['jvc_asking_premium_pct'])}% above recent sales in JVC and {round(F['marina_asking_premium_pct'])}% in Dubai Marina.
@@ -88,7 +88,7 @@ My totals against figures other people published from the same DLD records: {ver
 
 **Two checks anyone can run.** One is a one-minute comprehension test with five people outside property ([proof/comprehension_test.md](proof/comprehension_test.md)). The other is a sheet for one agent to sort 20 real enquiries blind against the desk ([proof/agent_blind_test.md](proof/agent_blind_test.md)). Results go here once they're done.
 
-**A forecast you can check.** Dubai home sales in November 2026 should land between **{n(FC['forecast_low'])} and {n(FC['forecast_high'])}**. The usual pattern would expect about {n(round(FC['expected_without_war'], -2))}. The low end assumes the pace of recent weeks continues ({round(100 + FC['recent_gap_pct'])}% of usual). The high end assumes the average pace since 28 February ({round(100 + FC['whole_period_gap_pct'])}%). I'll check it against DLD's November records on {check_on}, and again on {date.fromisoformat(FC['recheck_on']).day} {date.fromisoformat(FC['recheck_on']):%B %Y}, because DLD can still add late registrations. If it lands outside the range, the model needs another look.
+**A forecast you can check.** Dubai home sales in November 2026 should land between **{n(FC['forecast_low'])} and {n(FC['forecast_high'])}**. The usual pattern would expect about {n(round(FC['expected_without_war'], -2))}. The low end assumes the pace of recent weeks continues ({round(100 + FC['recent_gap_pct'])}% of usual). The high end assumes the average pace since late February ({round(100 + FC['whole_period_gap_pct'])}%). I'll check it against DLD's November records on {check_on}, and again on {date.fromisoformat(FC['recheck_on']).day} {date.fromisoformat(FC['recheck_on']):%B %Y}, because DLD can still add late registrations. If it lands outside the range, the model needs another look.
 
 ## Data
 

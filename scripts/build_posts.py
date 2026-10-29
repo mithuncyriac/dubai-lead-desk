@@ -21,7 +21,7 @@ months = round(F["jvc_pipeline_months"])
 per_month = n(round(M["sales_per_month_mar_sep"], -2))
 yield_jvc = round(M["jvc_yield_low_pct"])
 
-linkedin = f"""Since 28 February, Dubai home sales have run at about {P['overall_pct']}% of their usual pace (likely {P['low_pct']}–{P['high_pct']}%). "Usual" means what past years' patterns predict. That is still about {per_month} homes a month.
+linkedin = f"""Since late February, Dubai home sales have run at about {P['overall_pct']}% of their usual pace (likely {P['low_pct']}–{P['high_pct']}%). "Usual" means what past years' patterns predict. That is still about {per_month} homes a month.
 
 The pace held best at the lower end. Homes under AED 1M kept about {P['under1m_pct']}% of their usual pace; above AED 5M, about {P['over5m_pct']}%. In the same buildings, JVC ready flats are about {a(F['jvc_ready_price_change_pct'])}% below January. Asking prices sit about {round(F['jvc_asking_premium_pct'])}% above recent sales.
 
@@ -40,7 +40,7 @@ comment = f"""Dashboard (one page, works on a phone): {PAGES}
 Code, data and every check: {REPO}
 The longer write-up on Medium: [paste the Medium link here]
 
-About the slides: eight pages of charts from DLD data. They show the pace of sales by month and by price, and prices in the same buildings. Then new homes to come in JVC, the lead desk and the November forecast.
+About the slides: eight pages of charts from DLD data. They show the pace of sales by month and by price, and prices in the same buildings. Then new homes to come in JVC, the tool that answers buyer enquiries, and the November forecast.
 
 Source: Dubai Land Department open data, to {F['data_to_label']}. Independent analysis, not financial advice.
 """
@@ -63,7 +63,7 @@ From March to September, about {per_month} homes sold in Dubai each month. In th
 
 To judge the pace fairly, you can't just compare this year with last. Sales move with the seasons, with Ramadan and Eid, and with the day of the week. So I fitted a model to the usual pattern, from January 2024 to February 2026. Then I compared each month since with what that pattern would expect.
 
-Since 28 February, {n(F['sales_actual_post'])} sales were registered, against about {n(F['sales_expected_post'])} in the usual pattern. That's about two-thirds of the usual pace, likely somewhere between {P['low_pct']}% and {P['high_pct']}%. The pace was {P['march_pct']}% in March and {P['september_pct']}% in September.
+Since late February, {n(F['sales_actual_post'])} sales were registered, against about {n(F['sales_expected_post'])} in the usual pattern. That's about two-thirds of the usual pace, likely somewhere between {P['low_pct']}% and {P['high_pct']}%. The pace was {P['march_pct']}% in March and {P['september_pct']}% in September.
 
 [Image: carousel slide 2, monthly sales against the usual pattern]
 
@@ -88,7 +88,7 @@ Asking prices haven't fully caught up. The listings I checked on Bayut and Prope
 
 ## Renting out still pays
 
-I matched Ejari leases with DLD sale prices since 28 February. A JVC flat earns a gross rental yield of about {yield_jvc}% a year. In Dubai Marina it's between {round(M['marina_yield_low_pct'])}% and {round(M['marina_yield_high_pct'])}%.
+I matched Ejari leases with DLD sale prices since late February. A JVC flat earns a gross rental yield of about {yield_jvc}% a year. In Dubai Marina it's between {round(M['marina_yield_low_pct'])}% and {round(M['marina_yield_high_pct'])}%.
 
 ## A lot of new supply is on the way
 

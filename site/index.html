@@ -6,7 +6,7 @@
 <title>Dubai Lead Desk</title>
 <meta name="description" content="Who kept buying homes in Dubai since late February 2026, explained for first-time buyers, from the Dubai Land Department's open data. Data to 19 Oct 2026.">
 <meta property="og:title" content="Dubai Lead Desk: who kept buying homes in Dubai since late February">
-<meta property="og:description" content="Sales ran at about 63% of their usual pace since 28 February, holding best under AED 1M. From the Dubai Land Department's open data, to 19 Oct 2026.">
+<meta property="og:description" content="Sales ran at about 63% of their usual pace since late February, holding best under AED 1M. From the Dubai Land Department's open data, to 19 Oct 2026.">
 <meta property="og:image" content="https://mithuncyriac.github.io/dubai-lead-desk/banner-1-findings.png">
 <meta property="og:url" content="https://mithuncyriac.github.io/dubai-lead-desk/">
 <meta name="twitter:card" content="summary_large_image">
@@ -106,7 +106,7 @@ footer { margin-top: 96px; font-size: 13px; color: var(--ink-3); border-top: 1px
 <main>
 <header class="top"><span><b>Dubai Lead Desk</b> · independent analysis</span><button class="themebtn" id="theme" type="button" aria-label="Switch light or dark theme">Theme</button></header>
 
-<h1>Since 28 February, Dubai home sales have run at about 63% of their usual pace. Homes under AED 1M held up best.</h1>
+<h1>Since late February, Dubai home sales have run at about 63% of their usual pace. Homes under AED 1M held up best.</h1>
 <p class="lede">What the Dubai Land Department's open records show. Written for first-time buyers in JVC and Dubai Marina.</p>
 <span class="stamp">Data to <b>19 Oct 2026</b> · Source: Dubai Land Department open data</span>
 
@@ -133,7 +133,7 @@ footer { margin-top: 96px; font-size: 13px; color: var(--ink-3); border-top: 1px
   <h2>Who kept buying</h2>
   <div class="card">
     <h3>Homes under AED 1M were the steadiest part of the market</h3>
-    <p class="sub">Sales since 28 February as a share of the usual pace, by price. 100% is the usual pace.</p>
+    <p class="sub">Sales since late February as a share of the usual pace, by price. 100% is the usual pace.</p>
     <div class="chart" id="c-bands"></div>
     <p class="means" id="m-bands"></p>
     <details><summary>Show the numbers</summary><div class="tablewrap" id="t-bands"></div></details>
@@ -416,7 +416,7 @@ if (typeof module !== 'undefined') module.exports = DESK;
 
   // ---------- tiles ----------
   $('tiles').innerHTML = [
-    [F.pace.overall_pct + '%', `of the usual pace of home sales across Dubai since 28 February (likely ${F.pace.low_pct}–${F.pace.high_pct}%)`],
+    [F.pace.overall_pct + '%', `of the usual pace of home sales across Dubai since late February (likely ${F.pace.low_pct}–${F.pace.high_pct}%)`],
     [F.pace.under1m_pct + '%', 'of the usual pace for homes under AED 1M, the part of the market that held up best'],
     [int(Math.round(F.market.sales_per_month_mar_sep / 100) * 100), 'homes sold a month on average, March to September 2026'],
     [`${Math.round(Math.abs(F.jvc_ready_price_change_pct))}%`, 'below January for JVC ready flats, comparing the same buildings'],
@@ -555,7 +555,7 @@ if (typeof module !== 'undefined') module.exports = DESK;
     `<b>Renting out still pays.</b> Gross rental yields on JVC flats are about ${Math.round(F.market.jvc_yield_low_pct)}%.`,
   ].map(s => `<li>${s}</li>`).join('');
   $('decision-list').innerHTML = [
-    `${F.market.under2m_share_pct}% of sales since 28 February were under AED 2M. That volume suits a fast, automatic first reply.`,
+    `${F.market.under2m_share_pct}% of sales since late February were under AED 2M. That volume suits a fast, automatic first reply.`,
     `Above AED 5M, sales run at about half their usual pace. Those buyers are fewer and each purchase is large, so a senior agent should take them from the first message.`,
     `Budgets should be checked against current DLD prices, refreshed every month. With older average prices, ${F.tier_changes} of 90 test leads would land in the wrong tier.`,
   ].map(s => `<li>${s}</li>`).join('');
@@ -618,7 +618,7 @@ if (typeof module !== 'undefined') module.exports = DESK;
   const fc = F.forecast;
   $('fc-range').textContent = `${int(fc.forecast_low)} to ${int(fc.forecast_high)}`;
   $('fc-sub').innerHTML = `Expected Dubai home sales in November 2026, written down on ${new Date(F.built).toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' })}. The usual pattern would expect about ${int(Math.round(fc.expected_without_war / 100) * 100)}. <b>First check on ${new Date(fc.check_on).toLocaleDateString('en-GB', { day: 'numeric', month: 'long' })}</b>, and again on ${new Date(fc.recheck_on).toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' })}, because DLD can still add late registrations.`;
-  $('fc-why').innerHTML = `How it was made: the low end assumes the pace of recent weeks continues (${Math.round(100 + fc.recent_gap_pct)}% of usual). The high end assumes the average pace since 28 February (${Math.round(100 + fc.whole_period_gap_pct)}%). If the real number lands outside this range, the model needs another look. Archived on 2026-10-29 with DOI <a href="https://doi.org/10.5281/zenodo.23759152">10.5281/zenodo.23759152</a>, so the timing can be checked.`;
+  $('fc-why').innerHTML = `How it was made: the low end assumes the pace of recent weeks continues (${Math.round(100 + fc.recent_gap_pct)}% of usual). The high end assumes the average pace since late February (${Math.round(100 + fc.whole_period_gap_pct)}%). If the real number lands outside this range, the model needs another look. Archived on 2026-10-29 with DOI <a href="https://doi.org/10.5281/zenodo.23759152">10.5281/zenodo.23759152</a>, so the timing can be checked.`;
 
   // ---------- validation ----------
   const V = C.validation;

@@ -16,7 +16,7 @@ A brokerage gets enquiries every day. It has to decide which ones get a fast rep
 ## What the data shows
 
 - About 11,600 homes sold a month from March to September. The third quarter had 34,047 sales worth AED 67.9 billion.
-- Since 28 February, sales ran at about two-thirds of the usual pace: 87,052 registered against about 137,260. The likely range is 52% to 77%. The pace was 68% in March and 54% in September.
+- Since late February, sales ran at about two-thirds of the usual pace: 87,052 registered against about 137,260. The likely range is 52% to 77%. The pace was 68% in March and 54% in September.
 - Homes under AED 1M were the steadiest part of the market, at about 80% of their usual pace. Above AED 5M, about 48%.
 - Prices moved less than sales. Comparing the same buildings, JVC ready flats are about 8% below January and Dubai Marina about 5%.
 - Asking prices on the portals sit about 7% above recent sales in JVC and 9% in Dubai Marina.
@@ -73,7 +73,7 @@ My totals against figures other people published from the same DLD records: 6 ma
 
 **Two checks anyone can run.** One is a one-minute comprehension test with five people outside property ([proof/comprehension_test.md](proof/comprehension_test.md)). The other is a sheet for one agent to sort 20 real enquiries blind against the desk ([proof/agent_blind_test.md](proof/agent_blind_test.md)). Results go here once they're done.
 
-**A forecast you can check.** Dubai home sales in November 2026 should land between **9,800 and 11,600**. The usual pattern would expect about 18,400. The low end assumes the pace of recent weeks continues (53% of usual). The high end assumes the average pace since 28 February (63%). I'll check it against DLD's November records on 7 December 2026, and again on 7 January 2027, because DLD can still add late registrations. If it lands outside the range, the model needs another look.
+**A forecast you can check.** Dubai home sales in November 2026 should land between **9,800 and 11,600**. The usual pattern would expect about 18,400. The low end assumes the pace of recent weeks continues (53% of usual). The high end assumes the average pace since late February (63%). I'll check it against DLD's November records on 7 December 2026, and again on 7 January 2027, because DLD can still add late registrations. If it lands outside the range, the model needs another look.
 
 ## Data
 

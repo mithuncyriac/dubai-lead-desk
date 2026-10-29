@@ -61,7 +61,7 @@ bands = [(b["band"], round(100 + b["gap"]), "") for b in C["bands"]]
 slides = [
     f"""<section class="s cover"><div class="top"><span class="k">Dubai Lead Desk</span><span class="pg">1 / {TOTAL}</span></div>
 <h1>Who kept buying homes in Dubai since late February?</h1>
-<div class="hero"><div><div class="big">{P['overall_pct']}%</div><p>of the usual pace of home sales across Dubai since 28 February (likely {P['low_pct']}–{P['high_pct']}%)</p></div>
+<div class="hero"><div><div class="big">{P['overall_pct']}%</div><p>of the usual pace of home sales across Dubai since late February (likely {P['low_pct']}–{P['high_pct']}%)</p></div>
 <div><div class="big">{P['under1m_pct']}%</div><p>of the usual pace for homes under AED 1M, the part that held up best</p></div></div>
 <p class="lede">From {n(F['sales_read'])} Dubai Land Department sales records. Swipe for what it means.</p>
 <div class="foot">Independent analysis by Mithun Cyriac · not financial advice</div></section>""",
@@ -69,7 +69,7 @@ slides = [
           f'<div class="legend"><span><i style="background:{BLUE}"></i>sales registered</span><span><i style="background:{REF}"></i>usual pattern</span></div>{monthly_svg()}'
           f'<p class="note">Sales ran at {P["march_pct"]}% of the usual pace in March and {P["september_pct"]}% in September. *October covers 1–19 Oct.</p>'),
     slide(3, "Who kept buying", "Homes under AED 1M were the steadiest part of the market",
-          '<p class="sub">Sales since 28 Feb as a share of the usual pace</p>' + bars(bands, BLUE, ref=100, first=HL) +
+          '<p class="sub">Sales since late February as a share of the usual pace</p>' + bars(bands, BLUE, ref=100, first=HL) +
           f'<p class="note">Under AED 1M, homes still sell at about {P["under1m_pct"]}% of the usual pace. Above AED 5M, buyers have more time: about {P["over5m_pct"]}%.</p>'),
     slide(4, "Prices", "Same-building prices are 5–8% below January",
           f'<div class="pair"><div><div class="big">{a(F["jvc_ready_price_change_pct"])}%</div><p>below January for JVC ready flats, same buildings</p></div>'
@@ -77,7 +77,7 @@ slides = [
           f'<p class="note">Asking prices sit about {round(F["jvc_asking_premium_pct"])}% above recent sales in JVC and {round(F["marina_asking_premium_pct"])}% in Dubai Marina. Start from sold prices. A JVC flat still earns about {round(MK["jvc_yield_low_pct"])}% a year in gross rent.</p>'),
     slide(5, "Supply", f"JVC has about {round(F['jvc_pipeline_months'])} months of off-plan supply to come",
           f'<div class="pair"><div><div class="big">{n(F["jvc_pipeline_units"])}</div><p>flats sold off-plan since 2024, not yet handed over</p></div>'
-          f'<div><div class="big">{n(F["jvc_sales_per_month"])}</div><p>JVC sales a month since 28 February</p></div></div>'
+          f'<div><div class="big">{n(F["jvc_sales_per_month"])}</div><p>JVC sales a month since late February</p></div></div>'
           '<p class="note">That is a lot of new supply, so there is time to compare ready and off-plan.</p>'),
     slide(6, "The lead desk", "A free lead desk for the everyday enquiries",
           '<ol class="steps"><li>An enquiry arrives by form or message</li><li>It reads area, bedrooms, budget, timing and payment</li>'
